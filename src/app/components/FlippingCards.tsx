@@ -201,25 +201,11 @@ function FlippingCard({
 
 export function FlippingCards() {
     return (
-        <section className="py-2 bg-linear-to-b from-white to-gray-50">
+        <section className="py-24 bg-linear-to-b from-[#eedba4] to-[#fffaf0]">
+
             <div className="container mx-auto px-6">
-                <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className="text-center mb-16"
-                >
-                    <h2 className="text-5xl md:text-6xl font-extrabold mb-6">
-                        <span className="bg-linear-to-r from-slate-700 via-gray-500 to-slate-700 bg-clip-text text-transparent">
-                            Our Core Pillars
-                        </span>
-                    </h2>
-
-                    <p className="text-lg md:text-xl font-semibold text-transparent bg-linear-to-r from-slate-700 via-gray-500 to-slate-500 bg-clip-text uppercase tracking-widest whitespace-nowrap max-w-full mx-auto">
-                        Combining strategic advisory with cutting-edge innovation to deliver comprehensive digital risk solutions.
-                    </p>
-                </motion.div>
-
+               
+            
                 <FlippingCardsCarousel />
             </div>
 
