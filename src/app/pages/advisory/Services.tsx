@@ -155,7 +155,8 @@ export function Services() {
       </section>
 
       {/* Services Grid */}
-      <section className="py-20 bg-white">
+      <div className="h-px w-full bg-linear-to-r from-transparent via-amber-600/70 to-transparent"></div>
+      <section className="py-20 bg-linear-to-b from-[#eedba4] to-[#fffaf0]">
         <div className="container mx-auto px-6">
           <div className="grid md:grid-cols-3 gap-10 max-w-9xl mx-auto">
             {services.map((service, index) => (
@@ -253,6 +254,8 @@ export function Services() {
       </section>
 
       {/* Innovation Spotlight - PRISM */}
+      <div className="h-px w-full bg-linear-to-r from-transparent via-amber-600/70 to-transparent"></div>
+
       <section className="py-20 bg-linear-to-b from-gray-50 to-white relative overflow-hidden">
 
         {/* subtle grid background */}
@@ -341,7 +344,9 @@ export function Services() {
       </section>
 
       {/* Industries Section */}
-      <section className="py-20 bg-linear-to-b from-gray-50 to-white">
+      <div className="h-px w-full bg-linear-to-r from-transparent via-amber-600/70 to-transparent"></div>
+
+      <section className="py-20 bg-linear-to-b from-[#eedba4] to-[#fffaf0]">
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -387,7 +392,7 @@ export function Services() {
         </div>
       </section>
 
-      
+
     </div>
   );
 }
