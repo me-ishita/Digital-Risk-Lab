@@ -124,6 +124,13 @@ export default function AdvisoryHome() {
     }
   ];
 
+  const sectionStyles = {
+    light: "bg-gradient-to-b from-[#fffdf7] to-[#fffaf0]", // warm cream
+    soft: "bg-gradient-to-b from-[#fff7e6] to-[#fffdf7]",  // light amber
+    warm: "bg-gradient-to-b from-[#fff1cc] to-[#fff7e6]",  // caramel tint
+    base: "bg-white"
+  };
+
   /* AUTO SLIDE */
   useEffect(() => {
     if (paused) return;
@@ -157,7 +164,7 @@ export default function AdvisoryHome() {
   };
 
   return (
-    <div className="bg-linear-to-br from-white via-slate-50 to-slate-100 text-slate-900">
+    <div className="bg-linear-to-br from-[#fffdf7] via-[#fffaf0] to-[#fff7e6] text-slate-800">
 
       {/* HERO */}
       <section className="relative h-screen w-full overflow-hidden">
@@ -221,27 +228,45 @@ export default function AdvisoryHome() {
       </section>
 
       {/* CORE PILLARS - CLICK FLIP */}
-      <section className="py-24 px-6 md:px-20 bg-white">
-
+      <div className="h-px w-full bg-linear-to-r from-transparent via-amber-600/70 to-transparent"></div>
+      <section className={`py-24 px-6 md:px-20 ${sectionStyles.warm}`}>
+      <div className="absolute inset-0 bg-[radial-gradient(#00000005_1px,transparent_1px)] bg-size-[20px_20px] pointer-events-none"></div>
         {/* Flipping Cards */}
+         <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="text-center mb-16"
+                >
+                    <h2 className="text-5xl md:text-6xl font-extrabold mb-6">
+                        <span className="bg-linear-to-r from-slate-700 via-gray-500 to-slate-700 bg-clip-text text-transparent">
+                            Our Core Pillars
+                        </span>
+                    </h2>
+
+                    <p className="text-lg md:text-xl font-semibold text-transparent bg-linear-to-r from-slate-700 via-gray-500 to-slate-500 bg-clip-text uppercase tracking-widest whitespace-nowrap max-w-full mx-auto">
+                        Combining strategic advisory with cutting-edge innovation to deliver comprehensive digital risk solutions.
+                    </p>
+                </motion.div>
         <FlippingCards />
 
       </section>
 
       {/* ABOUT */}
-
-      <section className="py-24 bg-linear-to-b from-gray-50 to-white overflow-hidden">
+      <div className="h-px w-full bg-linear-to-r from-transparent via-amber-600/70 to-transparent"></div>
+      <section className={`py-24 ${sectionStyles.warm} overflow-hidden`}>
+        
         <div className="container mx-auto px-6">
 
           {/* HEADING */}
           <div className="text-center mb-16">
             <h2 className="text-5xl md:text-6xl font-extrabold mb-6">
               <span className="bg-linear-to-r from-slate-700 via-gray-500 to-slate-700 bg-clip-text text-transparent">
-                About Digital Risk Lab
+                About Us
               </span>
             </h2>
 
-            <p className="text-lg md:text-xl font-semibold text-transparent bg-linear-to-r from-slate-700 via-gray-500 to-slate-700 bg-clip-text uppercase tracking-widest whitespace-nowrap max-w-full mx-auto">
+            <p className="text-2xl md:text-xl font-semibold text-transparent bg-linear-to-r from-slate-700 via-gray-500 to-slate-500 bg-clip-text uppercase tracking-widest text-center max-w-4xl mx-auto leading-relaxed px-4 whitespace-normal">
               A forward-thinking consulting firm specializing in cybersecurity, AI risk, and digital resilience.
             </p>
           </div>
@@ -354,7 +379,8 @@ export default function AdvisoryHome() {
       </section>
 
       {/* How We Work */}
-      <section className="py-24 bg-linear-to-b from-gray-50 to-white overflow-hidden">
+      <div className="h-px w-full bg-linear-to-r from-transparent via-amber-600/70 to-transparent"></div>
+      <section className={`py-24 ${sectionStyles.warm} overflow-hidden`}>
         <div className="container mx-auto px-6">
 
           {/* HEADER */}
@@ -418,7 +444,8 @@ export default function AdvisoryHome() {
       </section>
 
       {/* SERVICES GRID */}
-      <section className="py-24 px-6 md:px-20 bg-white">
+      <div className="h-px w-full bg-linear-to-r from-transparent via-amber-600/70 to-transparent"></div>
+      <section className={`py-24 px-6 md:px-20 ${sectionStyles.warm}`}>
 
         {/* HEADER */}
         <div className="text-center mb-20">
@@ -428,7 +455,7 @@ export default function AdvisoryHome() {
             </span>
           </h2>
 
-          <p className="text-lg md:text-xl font-semibold text-transparent bg-linear-to-r from-slate-700 via-gray-500 to-slate-700 bg-clip-text uppercase tracking-widest whitespace-nowrap max-w-full mx-auto">
+          <p className="text-2xl md:text-xl font-semibold text-transparent bg-linear-to-r from-slate-700 via-gray-500 to-slate-500 bg-clip-text uppercase tracking-widest text-center max-w-4xl mx-auto leading-relaxed px-4 whitespace-normal">
             From risk assessment to regulatory compliance, we enable secure and scalable digital transformation
           </p>
         </div>
@@ -518,7 +545,8 @@ export default function AdvisoryHome() {
       </section>
 
       {/* Innovation Spotlight - PRISM */}
-      <section className="py-10 bg-linear-to-b from-gray-50 to-white relative overflow-hidden">
+      <div className="h-px w-full bg-linear-to-r from-transparent via-amber-600/70 to-transparent"></div>
+      <section className={`py-24 ${sectionStyles.soft} relative overflow-hidden`}>
 
         {/* subtle grid background */}
         <div className="absolute inset-0 bg-grid-gray-900/[0.03] bg-size-[50px_50px]"></div>
@@ -606,7 +634,8 @@ export default function AdvisoryHome() {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-5 bg-white">
+      <div className="h-px w-full bg-linear-to-r from-transparent via-amber-600/70 to-transparent"></div>
+      <section className={`py-24 ${sectionStyles.warm}`}>
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
