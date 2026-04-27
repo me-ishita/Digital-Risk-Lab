@@ -47,10 +47,10 @@ const caseStudies = [
 
 export function CaseStudies() {
   return (
-    <div className="pt-20 bg-linear-to-b from-gray-50 via-white to-gray-100 text-slate-900">
+    <div className="pt-20 bg-linear-to-b from-[#fff7e6] to-[#fffdf7] text-slate-900">
 
       {/* HERO */}
-      <section className="py-24">
+      <section className="py-16 bg-linear-to-b from-[#edeae2] to-[#fffaf0]">
         <div className="container mx-auto px-6">
           <motion.div
             className="max-w-4xl mx-auto text-center"
@@ -69,7 +69,9 @@ export function CaseStudies() {
       </section>
 
       {/* CASE STUDIES */}
-      <section className="py-16">
+      <div className="h-px w-full bg-linear-to-r from-transparent via-amber-600/70 to-transparent"></div>
+
+      <section className="py-16 bg-linear-to-b from-[#f1dc9c] to-[#fffaf0]">
         <div className="container mx-auto px-6">
           <div className="space-y-16">
 
@@ -178,8 +180,12 @@ export function CaseStudies() {
       </section>
 
       {/* CTA */}
+      <div className="h-px w-full bg-linear-to-r from-transparent via-amber-600/70 to-transparent"></div>
+
       <section className="py-24">
+
         <div className="container mx-auto px-6">
+
           <div className="max-w-3xl mx-auto text-center bg-linear-to-r from-slate-100 to-gray-200 rounded-3xl p-12 shadow-lg">
 
             <h2 className="text-4xl font-bold mb-6 text-slate-800">
