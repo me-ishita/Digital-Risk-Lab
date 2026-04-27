@@ -107,20 +107,9 @@ export function Research() {
   }, []);
 
   return (
-    <section className="min-h-screen bg-slate-950 pt-32 pb-16 sm:pb-20 md:pb-24">
+    <section className="min-h-screen bg-background pt-32 pb-16 sm:pb-20 md:pb-24">
       <div className="container mx-auto px-4 sm:px-6">
-        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
-          <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-blue-400 bg-blue-500/10 border border-blue-400/30 rounded-full px-4 py-1.5">
-            <FileSearch className="w-3.5 h-3.5" />
-            Top Research
-          </span>
-          <h1 className="mt-4 text-3xl sm:text-4xl md:text-5xl font-bold text-white">
-            Top Research Across Investment Banking and Digital Risk
-          </h1>
-          <p className="mt-4 text-slate-300 text-base sm:text-lg">
-            Ten selected papers. Open any card to view a full-page summary, key findings, and a link to the source paper.
-          </p>
-        </div>
+
 
         {loading ? (
           <div className="text-center text-slate-400 py-20">Loading top research...</div>
@@ -132,7 +121,7 @@ export function Research() {
                 <Link
                   key={paper.id}
                   to={`/research/${encodeURIComponent(paper.id)}`}
-                  className="group block rounded-3xl overflow-hidden bg-white border border-slate-200 shadow-[0_10px_28px_rgba(15,23,42,0.2)] hover:shadow-[0_16px_40px_rgba(15,23,42,0.3)] transition-all duration-300"
+                  className="group block rounded-3xl overflow-hidden bg-card border border-border shadow-lg hover:shadow-xl transition-all duration-300"
                 >
                   <div className="relative h-48 overflow-hidden">
                     <img
@@ -157,13 +146,13 @@ export function Research() {
                   </div>
 
                   <div className="p-5">
-                    <h2 className="text-lg font-bold text-slate-900 leading-snug line-clamp-2">
+                    <h2 className="text-lg font-bold text-foreground leading-snug line-clamp-2">
                       {paper.title}
                     </h2>
                     <p className="mt-2 text-xs text-slate-500 font-medium line-clamp-1">
                       {paper.authors.join(", ")}
                     </p>
-                    <p className="mt-3 text-slate-600 text-sm leading-relaxed line-clamp-3">
+                    <p className="mt-3 text-foreground/70 text-sm leading-relaxed line-clamp-3">
                       {paper.summary}
                     </p>
                     <div className="mt-4 flex items-center justify-between text-xs text-slate-500 font-medium">

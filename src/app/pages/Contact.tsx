@@ -33,26 +33,26 @@ export function Contact() {
     if (status === "success" || status === "error") setStatus("idle");
   };
 
-  const inputBase = "w-full px-4 py-3 text-base bg-slate-900 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition";
+  const inputBase = "w-full px-4 py-3 text-base bg-background border border-border rounded-lg text-foreground placeholder-foreground/40 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition";
 
   return (
     <div className="pt-20">
-      <section className="relative py-16 sm:py-20 md:py-24 bg-gradient-to-br from-slate-950 via-blue-950/20 to-slate-900">
+      <section className="relative py-16 sm:py-20 md:py-24 bg-card/30">
         <div className="container mx-auto px-4 sm:px-6">
           <motion.div
             className="max-w-4xl mx-auto text-center"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
           >
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 sm:mb-6">Get in Touch</h1>
-            <p className="text-base sm:text-lg md:text-xl text-slate-300">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 sm:mb-6 text-foreground">Get in Touch</h1>
+            <p className="text-2xl md:text-xl font-semibold text-primary uppercase tracking-widest text-center max-w-4xl mx-auto leading-relaxed px-4 whitespace-normal">
               Ready to strengthen your digital risk capability? Let's start a conversation.
             </p>
           </motion.div>
         </div>
       </section>
 
-      <section className="py-12 sm:py-16 bg-gradient-to-b from-slate-950 to-slate-900">
+      <section className="py-12 sm:py-16 bg-background">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 max-w-6xl mx-auto">
             <motion.div
@@ -61,8 +61,8 @@ export function Contact() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.2 }}
             >
-              <div className="bg-slate-900/50 border border-slate-800 rounded-xl p-5 sm:p-6 md:p-8">
-                <h2 className="text-xl sm:text-2xl font-bold mb-5 sm:mb-6">Send Us a Message</h2>
+              <div className="bg-card border border-border rounded-xl p-5 sm:p-6 md:p-8 shadow-lg">
+                <h2 className="text-xl sm:text-2xl font-bold mb-5 sm:mb-6 text-foreground">Send Us a Message</h2>
                 <form onSubmit={handleSubmit} className="space-y-5 sm:space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
                     <div>
@@ -144,7 +144,7 @@ export function Contact() {
                   <button
                     type="submit"
                     disabled={status === "submitting"}
-                    className="w-full min-h-[52px] px-6 sm:px-8 py-3.5 sm:py-4 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-lg font-semibold hover:shadow-2xl hover:shadow-blue-500/50 active:scale-[0.99] disabled:opacity-70 disabled:cursor-not-allowed transition-all duration-300 flex items-center justify-center gap-2"
+                    className="w-full min-h-[52px] px-6 sm:px-8 py-3.5 sm:py-4 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary/90 active:scale-[0.99] disabled:opacity-70 disabled:cursor-not-allowed transition-all duration-300 flex items-center justify-center gap-2 shadow-lg"
                   >
                     {status === "submitting" ? (
                       <>
@@ -183,32 +183,32 @@ export function Contact() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.4 }}
             >
-              <div className="bg-slate-900/50 border border-slate-800 rounded-xl p-5 sm:p-6">
-                <h3 className="text-lg sm:text-xl font-bold mb-4">Contact Information</h3>
+              <div className="bg-card border border-border rounded-xl p-5 sm:p-6 shadow-md">
+                <h3 className="text-lg sm:text-xl font-bold mb-4 text-foreground">Contact Information</h3>
                 <div className="space-y-4">
                   <div className="flex items-start gap-3">
-                    <Mail className="w-5 h-5 text-blue-500 mt-1 shrink-0" />
+                    <Mail className="w-5 h-5 text-primary mt-1 shrink-0" />
                     <div className="min-w-0">
                       <div className="font-medium">Email</div>
-                      <a href="mailto:contact@digitalrisklabs.com" className="text-slate-400 hover:text-blue-500 text-sm break-all">
+                      <a href="mailto:contact@digitalrisklabs.com" className="text-primary hover:opacity-80 text-sm break-all font-medium">
                         contact@digitalrisklabs.com
                       </a>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
-                    <Phone className="w-5 h-5 text-blue-500 mt-1 shrink-0" />
+                    <Phone className="w-5 h-5 text-primary mt-1 shrink-0" />
                     <div>
                       <div className="font-medium">Phone</div>
-                      <a href="tel:+1234567890" className="text-slate-400 hover:text-blue-500 text-sm">
+                      <a href="tel:+1234567890" className="text-primary hover:opacity-80 text-sm font-medium">
                         +1 (234) 567-8900
                       </a>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
-                    <MapPin className="w-5 h-5 text-blue-500 mt-1 shrink-0" />
+                    <MapPin className="w-5 h-5 text-primary mt-1 shrink-0" />
                     <div>
                       <div className="font-medium">Location</div>
-                      <p className="text-slate-400 text-sm">
+                      <p className="text-primary text-sm font-medium">
                         Global operations with advisory teams worldwide
                       </p>
                     </div>
@@ -216,27 +216,27 @@ export function Contact() {
                 </div>
               </div>
 
-              <div className="bg-slate-900/50 border border-slate-800 rounded-xl p-5 sm:p-6">
-                <h3 className="text-lg sm:text-xl font-bold mb-4">Office Hours</h3>
+              <div className="bg-card border border-border rounded-xl p-5 sm:p-6 shadow-md">
+                <h3 className="text-lg sm:text-xl font-bold mb-4 text-foreground">Office Hours</h3>
                 <div className="space-y-2 text-sm">
                   <div className="flex justify-between">
-                    <span className="text-slate-400">Monday - Friday</span>
+                    <span className="text-primary font-medium">Monday - Friday</span>
                     <span className="font-medium">9:00 AM - 6:00 PM</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-slate-400">Saturday</span>
+                    <span className="text-primary font-medium">Saturday</span>
                     <span className="font-medium">By Appointment</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-slate-400">Sunday</span>
+                    <span className="text-primary font-medium">Sunday</span>
                     <span className="font-medium">Closed</span>
                   </div>
                 </div>
               </div>
 
-              <div className="bg-gradient-to-r from-blue-500/10 to-orange-500/10 border border-blue-500/20 rounded-xl p-5 sm:p-6">
-                <h3 className="text-lg sm:text-xl font-bold mb-2">Quick Response</h3>
-                <p className="text-slate-300 text-sm">
+              <div className="bg-primary/5 border border-primary/20 rounded-xl p-5 sm:p-6">
+                <h3 className="text-lg sm:text-xl font-bold mb-2 text-foreground">Quick Response</h3>
+                <p className="text-primary text-sm font-medium">
                   We typically respond to all inquiries within 24 hours during business days.
                 </p>
               </div>
@@ -245,16 +245,16 @@ export function Contact() {
         </div>
       </section>
 
-      <section className="py-12 sm:py-16 bg-slate-900/50">
+      <section className="py-12 sm:py-16 bg-card/20">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6">Prefer to Schedule a Call?</h2>
-            <p className="text-base sm:text-lg text-slate-300 mb-6 sm:mb-8">
+            <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-foreground">Prefer to Schedule a Call?</h2>
+            <p className="text-xl font-semibold text-primary uppercase tracking-widest mb-6 sm:mb-8">
               Book a consultation directly with our advisory team.
             </p>
             <a
               href="mailto:contact@digitalrisklabs.com?subject=Consultation%20Request"
-              className="inline-flex items-center gap-2 min-h-[52px] px-6 sm:px-8 py-3.5 sm:py-4 bg-white/5 border border-white/10 text-white rounded-lg font-semibold hover:bg-white/10 active:scale-[0.99] transition-all"
+              className="inline-flex items-center gap-2 min-h-[52px] px-6 sm:px-8 py-3.5 sm:py-4 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary/90 active:scale-[0.99] transition-all shadow-md"
             >
               <Mail className="w-5 h-5" />
               <span>Schedule a Consultation</span>

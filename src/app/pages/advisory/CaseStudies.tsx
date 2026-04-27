@@ -47,21 +47,21 @@ const caseStudies = [
 
 export function CaseStudies() {
   return (
-    <div className="pt-20 bg-linear-to-b from-[#fff7e6] to-[#fffdf7] text-slate-900">
+    <div className="pt-20 bg-background text-foreground">
 
       {/* HERO */}
-      <section className="py-16 bg-linear-to-b from-[#edeae2] to-[#fffaf0]">
+      <section className="py-16 bg-card/30">
         <div className="container mx-auto px-6">
           <motion.div
             className="max-w-4xl mx-auto text-center"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
           >
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-linear-to-r from-slate-700 via-gray-500 to-slate-600 bg-clip-text text-transparent">
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 text-foreground">
               Case Studies & Impact Stories
             </h1>
 
-            <p className="text-2xl md:text-xl font-semibold text-transparent bg-linear-to-r from-slate-700 via-gray-500 to-slate-500 bg-clip-text uppercase tracking-widest text-center max-w-4xl mx-auto leading-relaxed px-4 whitespace-normal">
+            <p className="text-2xl md:text-xl font-semibold text-primary uppercase tracking-widest text-center max-w-4xl mx-auto leading-relaxed px-4 whitespace-normal">
               Real results from organizations we've partnered with to navigate digital risk and drive transformation.
             </p>
           </motion.div>
@@ -71,7 +71,7 @@ export function CaseStudies() {
       {/* CASE STUDIES */}
       <div className="h-px w-full bg-linear-to-r from-transparent via-amber-600/70 to-transparent"></div>
 
-      <section className="py-16 bg-linear-to-b from-[#f1dc9c] to-[#fffaf0]">
+      <section className="py-16 bg-background">
         <div className="container mx-auto px-6">
           <div className="space-y-16">
 
@@ -81,7 +81,7 @@ export function CaseStudies() {
               return (
                 <motion.div
                   key={index}
-                  className="group bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500"
+                  className="group bg-card border border-border rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500"
                   initial={{ opacity: 0, y: 40 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -112,12 +112,12 @@ export function CaseStudies() {
                     <div className="p-8 lg:px-12 flex flex-col justify-center">
 
                       {/* CATEGORY */}
-                      <div className="inline-block px-3 py-1 bg-slate-100 text-slate-600 text-xs font-semibold rounded-full mb-4 w-fit">
+                      <div className="inline-block px-3 py-1 bg-primary/10 text-primary text-xs font-semibold rounded-full mb-4 w-fit">
                         {study.category}
                       </div>
 
                       {/* TITLE */}
-                      <h3 className="text-2xl md:text-3xl font-bold mb-5 text-slate-900">
+                      <h3 className="text-2xl md:text-3xl font-bold mb-5 text-foreground">
                         {study.title}
                       </h3>
 
@@ -127,7 +127,7 @@ export function CaseStudies() {
                           <h4 className="font-semibold text-orange-500 mb-1">
                             Challenge
                           </h4>
-                          <p className="text-slate-600 leading-relaxed">
+                          <p className="text-foreground/70 leading-relaxed">
                             {study.challenge}
                           </p>
                         </div>
@@ -136,7 +136,7 @@ export function CaseStudies() {
                           <h4 className="font-semibold text-blue-600 mb-1">
                             Solution
                           </h4>
-                          <p className="text-slate-600 leading-relaxed">
+                          <p className="text-foreground/70 leading-relaxed">
                             {study.solution}
                           </p>
                         </div>
@@ -144,7 +144,7 @@ export function CaseStudies() {
 
                       {/* RESULTS */}
                       <div>
-                        <h4 className="font-semibold mb-3 flex items-center gap-2 text-slate-800">
+                        <h4 className="font-semibold mb-3 flex items-center gap-2 text-foreground/90">
                           <TrendingUp className="w-5 h-5 text-green-600" />
                           Results
                         </h4>
@@ -163,7 +163,7 @@ export function CaseStudies() {
                               viewport={{ once: true }}
                             >
                               <CheckCircle className="w-4 h-4 text-green-600 mt-1 shrink-0" />
-                              <span className="text-slate-600">{result}</span>
+                              <span className="text-foreground/70">{result}</span>
                             </motion.li>
                           ))}
                         </ul>
@@ -186,15 +186,15 @@ export function CaseStudies() {
 
         <div className="container mx-auto px-6">
 
-          <div className="max-w-3xl mx-auto text-center bg-linear-to-r from-slate-100 to-gray-200 rounded-3xl p-12 shadow-lg">
+          <div className="max-w-3xl mx-auto text-center bg-card border border-border rounded-3xl p-12 shadow-lg">
 
-            <h2 className="text-4xl font-bold mb-6 text-slate-800">
+            <h2 className="text-4xl font-bold mb-6 text-foreground">
               Ready to Create Your Success Story?
             </h2>
 
             <Link
               to="/contact"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-slate-900 text-white rounded-lg font-semibold hover:bg-slate-800 transition-all"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary/90 transition-all"
             >
               <span>Get Started</span>
               <ArrowRight className="w-5 h-5" />

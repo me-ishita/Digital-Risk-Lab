@@ -5,29 +5,10 @@ import { Button } from './ui/button';
 
 const cards = [
     {
-        id: 1,
-        title: 'Advisory',
-        icon: Shield,
-        gradient: 'from-gray-600 via-gray-500 to-gray-700',
-        imageFront:
-            'https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=1200&auto=format&fit=crop&q=60',
-        imageBack:
-            'https://images.unsplash.com/photo-1677442135136-760c813028c0?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTR8fEFJfGVufDB8fDB8fHww',
-        points: [
-            'Enterprise Risk Assessments',
-            'Regulatory Compliance Strategy',
-            'Risk Quantification & Reporting',
-            'Board-Level Risk Advisory',
-            'Security Architecture Design'
-        ],
-        description:
-            'Enterprise-grade cybersecurity advisory delivering risk intelligence, regulatory alignment, and strategic insights to help leadership drive confident, resilient decisions in an evolving threat landscape.'
-    },
-    {
         id: 2,
         title: 'Innovation',
         icon: Sparkles,
-        gradient: 'from-slate-600 via-slate-500 to-slate-700',
+        gradient: 'from-[#b59667] via-[#d0ae79] to-[#b59667]',
         imageFront:
             'https://images.unsplash.com/photo-1674027444485-cec3da58eef4?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8QUl8ZW58MHx8MHx8fDA%3D',
         imageBack:
@@ -47,7 +28,7 @@ const cards = [
         id: 3,
         title: 'Insights',
         icon: BarChart3,
-        gradient: 'from-zinc-600 via-zinc-500 to-zinc-700',
+        gradient: 'from-[#d4af37] via-[#b59667] to-[#d4af37]',
         imageFront:
             'https://images.unsplash.com/photo-1599658880436-c61792e70672?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzF8fGluc2lnaHRzfGVufDB8fDB8fHww',
         imageBack:
@@ -61,6 +42,25 @@ const cards = [
         ],
         description:
             'Thought leadership and advanced insights designed to help enterprises uncover hidden AI risks, stay ahead of regulatory shifts, and navigate evolving cyber threats with confidence.'
+    },
+    {
+        id: 1,
+        title: 'Advisory',
+        icon: Shield,
+        gradient: 'from-[#b59667] via-[#d0ae79] to-[#b59667]',
+        imageFront:
+            'https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=1200&auto=format&fit=crop&q=60',
+        imageBack:
+            'https://images.unsplash.com/photo-1677442135136-760c813028c0?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTR8fEFJfGVufDB8fDB8fHww',
+        points: [
+            'Enterprise Risk Assessments',
+            'Regulatory Compliance Strategy',
+            'Risk Quantification & Reporting',
+            'Board-Level Risk Advisory',
+            'Security Architecture Design'
+        ],
+        description:
+            'Enterprise-grade cybersecurity advisory delivering risk intelligence, regulatory alignment, and strategic insights to help leadership drive confident, resilient decisions in an evolving threat landscape.'
     }
 ];
 
@@ -115,7 +115,7 @@ function FlippingCard({
             >
                 {/* FRONT FACE */}
                 <div className="absolute inset-0 backface-hidden">
-                    <div className="relative h-full bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-100 group cursor-pointer">
+                    <div className="relative h-full bg-card rounded-2xl shadow-2xl overflow-hidden border border-border group cursor-pointer transition-colors duration-300">
 
                         <div className={`absolute inset-0 bg-linear-to-br ${card.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500`} />
 
@@ -146,7 +146,7 @@ function FlippingCard({
                                 </div>
 
                                 {/* DESCRIPTION */}
-                                <p className="text-lg text-gray-800 leading-snug">
+                                <p className="text-lg text-foreground/80 leading-snug">
                                     {card.description}
                                 </p>
 
@@ -201,7 +201,7 @@ function FlippingCard({
 
 export function FlippingCards() {
     return (
-        <section className="py-24 bg-linear-to-b from-[#eedba4] to-[#fffaf0]">
+        <section className="py-24 bg-transparent">
 
             <div className="container mx-auto px-6">
                

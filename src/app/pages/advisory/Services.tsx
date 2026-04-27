@@ -136,27 +136,25 @@ export function Services() {
   return (
     <div className="min-h-screen pt-24">
       {/* Hero Section */}
-      <section className="py-10 bg-linear-to-br from-blue-50 via-purple-50 to-pink-50 relative overflow-hidden">
-        <div className="absolute inset-0 bg-grid-gray-900/[0.02] bg-size-[50px_50px]"></div>
+      <section className="py-10 bg-linear-to-br from-background via-card to-background relative overflow-hidden">
+        <div className="absolute inset-0 bg-grid-primary/5 bg-size-[50px_50px]"></div>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           className="container mx-auto px-6 text-center relative z-10"
         >
-          <h1 className="text-5xl md:text-6xl mb-6">
-            <span className="bg-linear-to-r font-extrabold from-slate-700 via-gray-500 to-slate-700 bg-clip-text text-transparent">
-              Our Services
-            </span>
+          <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6">
+            Our Services
           </h1>
-          <p className="text-lg md:text-xl font-semibold text-transparent bg-linear-to-r from-slate-700 via-gray-500 to-slate-700 bg-clip-text uppercase tracking-widest whitespace-nowrap max-w-full mx-auto">
-            Strategic digital risk solutions aligned with your organization’s goals, resilience, and growth.
+          <p className="text-2xl md:text-xl font-semibold text-primary uppercase tracking-widest text-center max-w-4xl mx-auto leading-relaxed px-4 whitespace-normal">
+            Strategic digital risk solutions aligned with your goals
           </p>
         </motion.div>
       </section>
 
       {/* Services Grid */}
       <div className="h-px w-full bg-linear-to-r from-transparent via-amber-600/70 to-transparent"></div>
-      <section className="py-20 bg-linear-to-b from-[#eedba4] to-[#fffaf0]">
+      <section className="py-20 bg-background">
         <div className="container mx-auto px-6">
           <div className="grid md:grid-cols-3 gap-10 max-w-9xl mx-auto">
             {services.map((service, index) => (
@@ -168,7 +166,7 @@ export function Services() {
                 transition={{ delay: index * 0.1 }}
               >
 
-                <Card className="p-0 h-full group relative overflow-hidden rounded-3xl backdrop-blur-xl bg-white/60 border border-white/30 shadow-xl hover:shadow-2xl transition-all duration-500">
+                <Card className="p-0 h-full group relative overflow-hidden rounded-3xl backdrop-blur-xl bg-card/60 border border-border shadow-xl hover:shadow-2xl transition-all duration-500">
 
                   {/* GLASS GRADIENT OVERLAY */}
                   <div className={`absolute inset-0 bg-linear-to-br ${service.gradient} opacity-10 group-hover:opacity-20 transition`} />
@@ -201,7 +199,7 @@ export function Services() {
                     </div>
 
                     {/* DESCRIPTION */}
-                    <p className="text-[15px] md:text-[16px] font-medium text-gray-700 leading-relaxed mb-5">
+                    <p className="text-[15px] md:text-[16px] font-medium text-foreground/80 leading-relaxed mb-5">
                       {service.description}
                     </p>
 
@@ -212,13 +210,13 @@ export function Services() {
                       </h4>
                       <div className={`relative p-px rounded-2xl bg-linear-to-r ${service.gradient}`}>
 
-                        <div className="bg-white/70 backdrop-blur-md rounded-2xl p-4">
+                        <div className="bg-card/70 backdrop-blur-md rounded-2xl p-4">
 
                           <ul className="space-y-2">
                             {service.offerings.map((offering, idx) => (
                               <li
                                 key={idx}
-                                className="flex items-start gap-2 text-sm text-gray-800"
+                                className="flex items-start gap-2 text-sm text-foreground/90"
                               >
                                 <span className={`w-2 h-2 mt-2 rounded-full bg-linear-to-r ${service.gradient}`} />
                                 <span className="leading-relaxed font-medium">
@@ -256,7 +254,7 @@ export function Services() {
       {/* Innovation Spotlight - PRISM */}
       <div className="h-px w-full bg-linear-to-r from-transparent via-amber-600/70 to-transparent"></div>
 
-      <section className="py-20 bg-linear-to-b from-gray-50 to-white relative overflow-hidden">
+      <section className="py-20 bg-background relative overflow-hidden">
 
         {/* subtle grid background */}
         <div className="absolute inset-0 bg-grid-gray-900/[0.03] bg-size-[50px_50px]"></div>
@@ -272,7 +270,7 @@ export function Services() {
           <div className="max-w-5xl mx-auto">
 
             <div className="relative rounded-3xl p-10 md:p-14 overflow-hidden
-        bg-white/70 backdrop-blur-xl border border-gray-200 shadow-2xl group">
+        bg-card/70 backdrop-blur-xl border border-border shadow-2xl group">
 
               {/* METALLIC SHINE OVERLAY */}
               <div className="pointer-events-none absolute inset-0">
@@ -280,18 +278,19 @@ export function Services() {
               </div>
 
               {/* subtle gradient glow */}
-              <div className="absolute inset-0 bg-linear-to-br from-gray-100 via-white to-gray-100 opacity-80" />
+              <div className="absolute inset-0 bg-linear-to-br from-card via-background to-card opacity-80" />
 
               {/* CONTENT */}
               <div className="relative z-10 text-center">
 
                 {/* TITLE */}
-                <h2 className="text-4xl md:text-5xl mb-6 font-semibold bg-linear-to-r from-gray-600 via-gray-400 to-gray-600 bg-clip-text text-transparent">
-                  Innovation Spotlight: PRISM
+                <h2 className="text-5xl md:text-6xl mb-8 font-bold tracking-tight">
+                  <span className="logo-shine block mb-2">Innovation Spotlight</span>
+                  <span className="text-foreground">PRISM</span>
                 </h2>
 
                 {/* DESCRIPTION */}
-                <p className="text-lg md:text-xl text-gray-700 leading-relaxed max-w-3xl mx-auto mb-10">
+                <p className="text-lg md:text-xl text-foreground/80 leading-relaxed max-w-3xl mx-auto mb-10">
                   PRISM is an automated regulatory intelligence platform built for precision, traceability,
                   and enterprise-scale compliance. It delivers structured, explainable, and audit-ready insights
                   for modern financial ecosystems.
@@ -316,12 +315,12 @@ export function Services() {
                   ].map((item, idx) => (
                     <div
                       key={idx}
-                      className="relative rounded-2xl p-6 bg-white/60 border border-gray-200 shadow-md
+                      className="relative rounded-2xl p-6 bg-card/60 border border-border shadow-md
                 hover:shadow-xl transition group overflow-hidden"
                     >
 
                       {/* inner highlight */}
-                      <div className="absolute inset-0 bg-linear-to-br from-gray-200 via-white to-gray-100 opacity-0 group-hover:opacity-100 transition" />
+                      <div className="absolute inset-0 bg-linear-to-br from-card via-background to-card opacity-0 group-hover:opacity-100 transition" />
 
                       <div className="relative z-10">
                         <h3 className="text-xl font-semibold text-gray-800 mb-2">
@@ -346,7 +345,7 @@ export function Services() {
       {/* Industries Section */}
       <div className="h-px w-full bg-linear-to-r from-transparent via-amber-600/70 to-transparent"></div>
 
-      <section className="py-20 bg-linear-to-b from-[#eedba4] to-[#fffaf0]">
+      <section className="py-20 bg-background">
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -354,13 +353,11 @@ export function Services() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl mb-4">
-              <span className="bg-linear-to-r from-slate-700 via-gray-500 to-slate-700 bg-clip-text text-transparent">
-                Industries We Serve
-              </span>
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+              Industries We Serve
             </h2>
-            <p className="text-lg md:text-xl font-semibold text-transparent bg-linear-to-r from-slate-700 via-gray-500 to-slate-700 bg-clip-text uppercase tracking-widest whitespace-nowrap max-w-full mx-auto">
-              Our solutions are tailored to industry-specific risk landscapes
+            <p className="text-2xl md:text-xl font-semibold text-primary uppercase tracking-widest text-center max-w-4xl mx-auto leading-relaxed px-4 whitespace-normal">
+              Tailored to your specific risk landscape
             </p>
           </motion.div>
 

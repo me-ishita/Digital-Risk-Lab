@@ -6,6 +6,8 @@ import { Button } from "../../components/ui/button";
 import { Card } from "../../components/ui/card";
 import { FlippingCards } from "../../components/FlippingCards";
 import { useNavigate } from 'react-router-dom';
+import aiGovernanceImg from "../../../assets/ai_governance.png";
+import cyberRiskImg from "../../../assets/cyber_risk.png";
 
 
 export default function AdvisoryHome() {
@@ -71,27 +73,22 @@ export default function AdvisoryHome() {
 
   const services = [
     {
-      title: "Cyber Risk",
-      img: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b",
-      description:
-        'Identify, quantify, and mitigate cyber risks through advanced threat modeling, continuous monitoring, and intelligence-driven security frameworks. Gain real-time visibility into vulnerabilities, strengthen your security posture, and proactively defend against evolving cyber threats across your enterprise ecosystem.'
-    },
-    {
       title: "AI Governance",
-      img: "https://images.unsplash.com/photo-1677442136019-21780ecad995",
+      img: aiGovernanceImg,
+      icon: Zap,
       description:
         'Establish robust AI governance frameworks that ensure transparency, accountability, and regulatory compliance across your digital ecosystem. Enable responsible AI adoption with continuous monitoring, ethical safeguards, and risk-aware deployment strategies that align innovation with trust and control.'
     },
     {
-      title: "Compliance",
-      img: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85",
+      title: "Cyber Risk",
+      img: cyberRiskImg,
+      icon: Shield,
       description:
-        'Navigate complex regulatory environments with structured, scalable compliance strategies aligned to global standards and industry best practices. Streamline audits, reduce compliance risk, and build a resilient foundation that adapts to evolving legal and cybersecurity requirements.'
+        'Identify, quantify, and mitigate cyber risks through advanced threat modeling, continuous monitoring, and intelligence-driven security frameworks. Gain real-time visibility into vulnerabilities, strengthen your security posture, and proactively defend against evolving cyber threats across your enterprise ecosystem.'
     },
   ];
 
-  const [active, setActive] = useState(0);
-  const [paused, setPaused] = useState(false);
+
 
   const items = [
     {
@@ -125,30 +122,14 @@ export default function AdvisoryHome() {
   ];
 
   const sectionStyles = {
-    light: "bg-gradient-to-b from-[#fffdf7] to-[#fffaf0]", // warm cream
-    soft: "bg-gradient-to-b from-[#fff7e6] to-[#fffdf7]",  // light amber
-    warm: "bg-gradient-to-b from-[#fff1cc] to-[#fff7e6]",  // caramel tint
-    base: "bg-white"
+    light: "bg-background", 
+    soft: "bg-background",  
+    warm: "bg-background",  
+    base: "bg-background",
+    premium: "bg-background"
   };
 
-  /* AUTO SLIDE */
-  useEffect(() => {
-    if (paused) return;
 
-    const interval = setInterval(() => {
-      setActive((prev) => (prev + 1) % items.length);
-    }, 3500);
-
-    return () => clearInterval(interval);
-  }, [paused]);
-
-  const nextAbout = () => {
-    setActive((prev) => (prev + 1) % items.length);
-  };
-
-  const prevAbout = () => {
-    setActive((prev) => (prev - 1 + items.length) % items.length);
-  };
 
 
   const prev = () => {
@@ -164,7 +145,7 @@ export default function AdvisoryHome() {
   };
 
   return (
-    <div className="bg-linear-to-br from-[#fffdf7] via-[#fffaf0] to-[#fff7e6] text-slate-800">
+    <div className="bg-background text-foreground transition-colors duration-300">
 
       {/* HERO */}
       <section className="relative h-screen w-full overflow-hidden">
@@ -229,7 +210,7 @@ export default function AdvisoryHome() {
 
       {/* CORE PILLARS - CLICK FLIP */}
       <div className="h-px w-full bg-linear-to-r from-transparent via-amber-600/70 to-transparent"></div>
-      <section className={`py-24 px-6 md:px-20 ${sectionStyles.warm}`}>
+      <section className={`py-24 px-6 md:px-20 ${sectionStyles.premium}`}>
       <div className="absolute inset-0 bg-[radial-gradient(#00000005_1px,transparent_1px)] bg-size-[20px_20px] pointer-events-none"></div>
         {/* Flipping Cards */}
          <motion.div
@@ -239,12 +220,12 @@ export default function AdvisoryHome() {
                     className="text-center mb-16"
                 >
                     <h2 className="text-5xl md:text-6xl font-extrabold mb-6">
-                        <span className="bg-linear-to-r from-slate-700 via-gray-500 to-slate-700 bg-clip-text text-transparent">
+                        <span className="text-foreground">
                             Our Core Pillars
                         </span>
                     </h2>
 
-                    <p className="text-lg md:text-xl font-semibold text-transparent bg-linear-to-r from-slate-700 via-gray-500 to-slate-500 bg-clip-text uppercase tracking-widest whitespace-nowrap max-w-full mx-auto">
+                    <p className="text-lg md:text-xl font-semibold text-primary uppercase tracking-widest whitespace-nowrap max-w-full mx-auto">
                         Combining strategic advisory with cutting-edge innovation to deliver comprehensive digital risk solutions.
                     </p>
                 </motion.div>
@@ -261,119 +242,92 @@ export default function AdvisoryHome() {
           {/* HEADING */}
           <div className="text-center mb-16">
             <h2 className="text-5xl md:text-6xl font-extrabold mb-6">
-              <span className="bg-linear-to-r from-slate-700 via-gray-500 to-slate-700 bg-clip-text text-transparent">
+              <span className="text-foreground">
                 About Us
               </span>
             </h2>
 
-            <p className="text-2xl md:text-xl font-semibold text-transparent bg-linear-to-r from-slate-700 via-gray-500 to-slate-500 bg-clip-text uppercase tracking-widest text-center max-w-4xl mx-auto leading-relaxed px-4 whitespace-normal">
+            <p className="text-2xl md:text-xl font-semibold text-primary uppercase tracking-widest text-center max-w-4xl mx-auto leading-relaxed px-4 whitespace-normal">
               A forward-thinking consulting firm specializing in cybersecurity, AI risk, and digital resilience.
             </p>
           </div>
 
-          {/* CAROUSEL */}
-          <div
-            className="relative flex items-center justify-center"
-            onMouseEnter={() => setPaused(true)}
-            onMouseLeave={() => setPaused(false)}
-          >
+          {/* FAN LAYOUT */}
+          <div className="relative min-h-[600px] flex items-center justify-center mt-12 px-4">
+            <div className="relative w-full max-w-7xl flex flex-wrap justify-center gap-6 md:gap-0">
+              {items.map((item, index) => {
+                // Rotation and translation values for the fan effect
+                const rotations = [-15, -5, 5, 15];
+                const xOffsets = [-120, -40, 40, 120];
+                const yOffsets = [40, 0, 0, 40];
 
-            {/* LEFT */}
-            <button
-              onClick={prevAbout}
-              className="absolute left-2 md:left-0 z-20 bg-white/70 backdrop-blur-md p-3 rounded-full shadow hover:scale-110 transition"
-            >
-              <ArrowLeft />
-            </button>
+                return (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 100, rotate: 0, x: 0 }}
+                    whileInView={{ 
+                      opacity: 1, 
+                      y: yOffsets[index], 
+                      rotate: rotations[index],
+                      x: xOffsets[index]
+                    }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    transition={{ 
+                      duration: 0.8, 
+                      delay: index * 0.15,
+                      type: "spring",
+                      stiffness: 50,
+                      damping: 15
+                    }}
+                    whileHover={{ 
+                      scale: 1.05, 
+                      rotate: 0, 
+                      y: -20,
+                      x: xOffsets[index],
+                      zIndex: 50,
+                      transition: { duration: 0.3 }
+                    }}
+                    className="w-[300px] md:w-[320px] lg:w-[350px] shrink-0 md:-ml-20 first:ml-0"
+                    style={{ zIndex: index }}
+                  >
+                    <Card className="h-full rounded-3xl overflow-hidden relative group border border-border shadow-2xl bg-card/40 backdrop-blur-xl transition-all duration-500">
+                      
+                      {/* METALLIC GLASS BACKGROUND */}
+                      <div className="absolute inset-0 bg-card/40 backdrop-blur-xl" />
 
-            {/* TRACK */}
-            <div className="relative w-full max-w-6xl overflow-hidden">
+                      {/* SHINE EFFECT */}
+                      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-700">
+                        <div className="absolute -left-1/2 top-0 h-full w-1/2 bg-linear-to-r from-transparent via-primary/30 to-transparent rotate-12 translate-x-[-100%] group-hover:translate-x-[200%] transition-all duration-1000" />
+                      </div>
 
-              {/* FADE LEFT */}
-              <div className="pointer-events-none absolute left-0 top-0 h-full w-12 md:w-20 bg-linear-to-r from-white to-transparent z-10" />
+                      {/* IMAGE */}
+                      <div className="h-48 md:h-56 overflow-hidden relative z-10">
+                        <img
+                          src={item.image}
+                          alt={item.title}
+                          className="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+                        />
+                      </div>
 
-              {/* FADE RIGHT */}
-              <div className="pointer-events-none absolute right-0 top-0 h-full w-12 md:w-20 bg-linear-to-l from-white to-transparent z-10" />
-
-              <motion.div
-                className="flex gap-6"
-                animate={{
-                  x: -(active * 500)
-                }}
-                transition={{
-                  type: "tween",
-                  ease: "easeInOut",
-                  duration: 0.3
-                }}
-
-
-              >
-                {items.map((item, index) => {
-                  const isActive = index === active;
-
-                  return (
-                    <motion.div
-                      key={index}
-                      className="w-[320px] md:w-[420px] lg:w-[480px] flex-shrink-0"
-                      animate={{
-                        scale: isActive ? 1 : 0.88,
-                      }}
-                      transition={{ duration: 0.4 }}
-                    >
-                      <Card className="h-full rounded-3xl overflow-hidden relative group border border-white/20 shadow-2xl">
-
-                        {/* METALLIC GLASS BACKGROUND */}
-                        <div className="absolute inset-0 bg-linear-to-br from-white/40 via-gray-200/20 to-white/10 backdrop-blur-xl" />
-
-                        {/* SHINE EFFECT */}
-                        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-700">
-                          <div className="absolute -left-1/2 top-0 h-full w-1/2 bg-linear-to-r from-transparent via-white/60 to-transparent rotate-12 translate-x-[-100%] group-hover:translate-x-[200%] transition-all duration-1000" />
-                        </div>
-
-                        {/* IMAGE */}
-                        <div className="h-64 md:h-72 overflow-hidden relative z-10">
-                          <img
-                            src={item.image}
-                            className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
-                          />
-                        </div>
-
-                        {/* CONTENT */}
-                        <div className="p-6 relative z-10 flex flex-col h-65">
-
-                          <div>
-                            <div className="flex items-center gap-4 mb-4 group">
-
-                              <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-gradient-to-br from-gray-500 to-gray-700 shadow-md group-hover:scale-110 transition">
-                                <item.icon className="w-6 h-6 text-white" />
-                              </div>
-
-                              <h3 className="text-2xl md:text-3xl font-semibold text-gray-900">
-                                {item.title}
-                              </h3>
-
-                            </div>
-                            <p className="text-gray-700 text-xl leading-relaxed mt-auto">
-                              {item.description}
-                            </p>
+                      {/* CONTENT */}
+                      <div className="p-6 relative z-10 flex flex-col">
+                        <div className="flex items-center gap-3 mb-3">
+                          <div className="w-10 h-10 flex items-center justify-center rounded-xl bg-gradient-to-br from-gray-500 to-gray-700 shadow-md group-hover:scale-110 transition">
+                            <item.icon className="w-5 h-5 text-white" />
                           </div>
-
-
+                          <h3 className="text-xl md:text-2xl font-semibold text-foreground">
+                            {item.title}
+                          </h3>
                         </div>
-                      </Card>
-                    </motion.div>
-                  );
-                })}
-              </motion.div>
+                        <p className="text-foreground/80 text-sm md:text-base leading-relaxed">
+                          {item.description}
+                        </p>
+                      </div>
+                    </Card>
+                  </motion.div>
+                );
+              })}
             </div>
-
-            {/* RIGHT */}
-            <button
-              onClick={nextAbout}
-              className="absolute right-2 md:right-0 z-20 bg-white/70 backdrop-blur-md p-3 rounded-full shadow hover:scale-110 transition"
-            >
-              <ArrowRight />
-            </button>
           </div>
         </div>
       </section>
@@ -386,12 +340,12 @@ export default function AdvisoryHome() {
           {/* HEADER */}
           <div className="text-center mb-16">
             <h2 className="text-5xl md:text-6xl font-extrabold mb-6">
-              <span className="bg-linear-to-r from-slate-700 via-gray-500 to-slate-700 bg-clip-text text-transparent">
+              <span className="text-foreground">
                 How We Work
               </span>
             </h2>
 
-            <p className="text-lg md:text-xl font-semibold text-transparent bg-linear-to-r from-slate-700 via-gray-500 to-slate-700 bg-clip-text uppercase tracking-widest whitespace-nowrap max-w-full mx-auto">
+            <p className="text-lg md:text-xl font-semibold text-primary uppercase tracking-widest whitespace-nowrap max-w-full mx-auto">
               A structured, intelligence-driven approach to managing digital risk
             </p>
           </div>
@@ -407,7 +361,7 @@ export default function AdvisoryHome() {
               {howWeWork.map((phase, index) => (
                 <motion.div
                   key={index}
-                  className="min-w-[320px] md:min-w-95 bg-white rounded-2xl shadow-xl overflow-hidden snap-center group hover:shadow-2xl transition-all duration-500"
+                  className="min-w-[320px] md:min-w-95 bg-card rounded-2xl shadow-xl overflow-hidden snap-center group hover:shadow-2xl transition-all duration-500"
                   whileHover={{ y: -8 }}
                 >
                   {/* IMAGE */}
@@ -425,11 +379,11 @@ export default function AdvisoryHome() {
 
                   {/* CONTENT */}
                   <div className="p-6">
-                    <h3 className="text-xl font-bold mb-2 bg-linear-to-r from-slate-700 via-gray-500 to-slate-700 bg-clip-text text-transparent">
+                    <h3 className="text-xl font-bold mb-2 text-foreground">
                       {phase.title}
                     </h3>
 
-                    <p className="text-gray-800 text-sm leading-relaxed">
+                    <p className="text-foreground/80 text-sm leading-relaxed">
                       {phase.description}
                     </p>
                   </div>
@@ -438,7 +392,7 @@ export default function AdvisoryHome() {
             </motion.div>
 
             {/* FADE EDGE EFFECT */}
-            <div className="absolute top-0 right-0 w-20 h-full bg-linear-to-l from-white to-transparent pointer-events-none" />
+            <div className="absolute top-0 right-0 w-20 h-full bg-linear-to-l from-background to-transparent pointer-events-none" />
           </div>
         </div>
       </section>
@@ -450,84 +404,66 @@ export default function AdvisoryHome() {
         {/* HEADER */}
         <div className="text-center mb-20">
           <h2 className="text-5xl md:text-6xl font-extrabold mb-6">
-            <span className="bg-linear-to-r from-slate-700 via-gray-500 to-slate-700 bg-clip-text text-transparent">
+            <span className="text-foreground">
               Strategic Capabilities
             </span>
           </h2>
 
-          <p className="text-2xl md:text-xl font-semibold text-transparent bg-linear-to-r from-slate-700 via-gray-500 to-slate-500 bg-clip-text uppercase tracking-widest text-center max-w-4xl mx-auto leading-relaxed px-4 whitespace-normal">
+          <p className="text-2xl md:text-xl font-semibold text-primary uppercase tracking-widest text-center max-w-4xl mx-auto leading-relaxed px-4 whitespace-normal">
             From risk assessment to regulatory compliance, we enable secure and scalable digital transformation
           </p>
         </div>
 
-        {/* CAROUSEL */}
-        <div className="relative max-w-6xl mx-auto">
+        {/* TWO CARD GRID */}
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+            {services.map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: i * 0.2 }}
+                className="group relative"
+              >
+                <div className="bg-card rounded-[2.5rem] shadow-xl hover:shadow-2xl transition-all duration-700 overflow-hidden border border-border flex flex-col h-full">
+                  {/* IMAGE AREA - Zoom effect on hover */}
+                  <div className="h-72 sm:h-80 overflow-hidden relative">
+                    <motion.img
+                      src={item.img}
+                      alt={item.title}
+                      className="w-full h-full object-cover object-center transition-transform duration-1000 ease-out group-hover:scale-110"
+                    />
+                    {/* Subtle Overlay */}
+                    <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors duration-500" />
+                  </div>
 
-          {/* LEFT */}
-          <button
-            onClick={prev}
-            disabled={current === 0}
-            className={`absolute -left-6 top-1/2 -translate-y-1/2 z-10 bg-white shadow-lg rounded-full p-3 transition
-    ${current === 0
-                ? 'opacity-30 cursor-not-allowed'
-                : 'hover:scale-110 hover:shadow-xl'
-              }`}
-          >
-            <ChevronLeft />
-          </button>
-
-          {/* RIGHT */}
-          {current < services.length - 1 && (
-            <button
-              onClick={next}
-              disabled={current === services.length - 1}
-              className={`absolute -right-6 top-1/2 -translate-y-1/2 z-10 bg-white shadow-lg rounded-full p-3 transition
-    ${current === services.length - 1
-                  ? 'opacity-30 cursor-not-allowed'
-                  : 'hover:scale-110 hover:shadow-xl'
-                }`}
-            >
-              <ChevronRight />
-            </button>
-          )}
-
-          {/* SLIDER */}
-          <div className="overflow-hidden">
-            <motion.div
-              className="flex"
-              animate={{ x: `-${current * 100}%` }}
-              transition={{ duration: 0.6 }}
-            >
-              {services.map((item, i) => (
-                <div key={i} className="min-w-full px-4">
-                  <motion.div
-                    whileHover={{ scale: 1.02 }}
-                    className="bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100"                  >
-                    <div className="h-95 md:h-105 overflow-hidden">
-                      <img
-                        src={item.img}
-                        className="w-full h-full object-cover object-center"
-                      />
-                    </div>
-
-                    <div className="p-8">
-                      <h3 className="text-3xl font-bold mb-4 bg-linear-to-r  from-slate-700 via-gray-500 to-slate-700 bg-clip-text text-transparent">
+                  {/* CONTENT AREA */}
+                  <div className="p-10 flex-grow flex flex-col">
+                    <div className="flex items-center gap-4 mb-6">
+                      <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+                        <item.icon className="w-6 h-6 text-primary" />
+                      </div>
+                      <h3 className="text-3xl font-bold text-foreground tracking-tight">
                         {item.title}
                       </h3>
-
-                      <p className="text-gray-800 text-lg leading-relaxed w-full">
-                        {item.description}
-                      </p>
-
-                      <div className="mt-6 flex items-center text-sm font-medium text-gray-700 cursor-pointer">
-                        Learn more
-                        <ArrowRight className="ml-2 w-4 h-4" />
-                      </div>
                     </div>
-                  </motion.div>
+
+                    <p className="text-foreground/80 text-lg leading-relaxed mb-8 flex-grow">
+                      {item.description}
+                    </p>
+
+                    <motion.div 
+                      whileHover={{ x: 5 }}
+                      className="inline-flex items-center text-sm font-bold text-primary cursor-pointer uppercase tracking-widest"
+                    >
+                      Learn more
+                      <ArrowRight className="ml-2 w-4 h-4" />
+                    </motion.div>
+                  </div>
                 </div>
-              ))}
-            </motion.div>
+              </motion.div>
+            ))}
           </div>
         </div>
 
@@ -535,7 +471,7 @@ export default function AdvisoryHome() {
         <div className="text-center mt-16">
           <button
             onClick={() => navigate('/advisory/services')}
-            className="inline-flex items-center gap-1 text-lg font-semibold text-gray-700 hover:text-gray-900 transition"
+            className="inline-flex items-center gap-1 text-lg font-semibold text-foreground/80 hover:text-foreground transition"
           >
             View All Advisory Services
             <ArrowRight className="w-5 h-5" />
@@ -545,84 +481,102 @@ export default function AdvisoryHome() {
       </section>
 
       {/* Innovation Spotlight - PRISM */}
-      <div className="h-px w-full bg-linear-to-r from-transparent via-amber-600/70 to-transparent"></div>
-      <section className={`py-24 ${sectionStyles.soft} relative overflow-hidden`}>
+      <div className="h-px w-full bg-linear-to-r from-transparent via-primary/50 to-transparent"></div>
+      <section className="py-24 relative overflow-hidden bg-background">
 
+        {/* Dynamic Spotlight Glow */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/10 rounded-full blur-[120px] pointer-events-none animate-pulse-slow" />
+        
         {/* subtle grid background */}
-        <div className="absolute inset-0 bg-grid-gray-900/[0.03] bg-size-[50px_50px]"></div>
+        <div className="absolute inset-0 bg-grid-primary/[0.03] bg-size-[50px_50px]"></div>
 
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
+          transition={{ duration: 1, ease: "easeOut" }}
           className="container mx-auto px-6 relative z-10"
         >
 
           {/* FLOATING PRISM CARD */}
           <div className="max-w-5xl mx-auto">
 
-            <div className="relative rounded-3xl p-10 md:p-14 overflow-hidden
-        bg-white/70 backdrop-blur-xl border border-gray-200 shadow-2xl group">
+            <div className="relative rounded-[40px] p-10 md:p-16 overflow-hidden
+        bg-card/30 backdrop-blur-2xl border border-primary/20 shadow-[0_0_50px_rgba(212,175,55,0.1)] group">
 
-              {/* METALLIC SHINE OVERLAY */}
-              <div className="pointer-events-none absolute inset-0">
-                <div className="shine-metal absolute top-0 left-[-120%] h-full w-[60%]" />
+              {/* SPARKLE/LIGHT BEAM EFFECT */}
+              <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                <motion.div 
+                  animate={{ 
+                    x: ['-100%', '200%'],
+                    opacity: [0, 0.3, 0]
+                  }}
+                  transition={{ 
+                    duration: 4, 
+                    repeat: Infinity, 
+                    repeatDelay: 3,
+                    ease: "easeInOut"
+                  }}
+                  className="absolute top-0 left-0 w-32 h-full bg-linear-to-r from-transparent via-primary/40 to-transparent skew-x-[-25deg]"
+                />
               </div>
-
-              {/* subtle gradient glow */}
-              <div className="absolute inset-0 bg-linear-to-br from-gray-100 via-white to-gray-100 opacity-80" />
 
               {/* CONTENT */}
               <div className="relative z-10 text-center">
 
-                {/* TITLE */}
-                <h2 className="text-4xl md:text-5xl mb-6 font-semibold bg-linear-to-r from-gray-600 via-gray-400 to-gray-600 bg-clip-text text-transparent">
-                  Innovation Spotlight: PRISM
+                {/* LOGO-SHINE TITLE */}
+                <h2 className="text-5xl md:text-6xl mb-8 font-bold tracking-tight">
+                  <span className="logo-shine block mb-2">Innovation Spotlight</span>
+                  <span className="text-foreground">PRISM</span>
                 </h2>
 
                 {/* DESCRIPTION */}
-                <p className="text-lg md:text-xl text-gray-700 leading-relaxed max-w-3xl mx-auto mb-10">
+                <p className="text-xl md:text-2xl text-foreground/80 leading-relaxed max-w-3xl mx-auto mb-12 font-medium">
                   PRISM is an automated regulatory intelligence platform built for precision, traceability,
-                  and enterprise-scale compliance. It delivers structured, explainable, and audit-ready insights
-                  for modern financial ecosystems.
+                  and enterprise-scale compliance.
                 </p>
 
                 {/* FEATURE GRID */}
-                <div className="grid md:grid-cols-3 gap-6">
+                <div className="grid md:grid-cols-3 gap-8">
 
                   {[
                     {
                       title: "Precision",
-                      desc: "Accurate insights you can trust"
+                      desc: "Accurate insights you can trust",
+                      icon: Shield
                     },
                     {
                       title: "Traceability",
-                      desc: "Full audit trail and explainability"
+                      desc: "Full audit trail and explainability",
+                      icon: Target
                     },
                     {
                       title: "Scalability",
-                      desc: "Built for enterprise-scale compliance"
+                      desc: "Built for enterprise-scale compliance",
+                      icon: Zap
                     }
                   ].map((item, idx) => (
-                    <div
+                    <motion.div
                       key={idx}
-                      className="relative rounded-2xl p-6 bg-white/60 border border-gray-200 shadow-md
-                hover:shadow-xl transition group overflow-hidden"
+                      whileHover={{ y: -10 }}
+                      className="relative rounded-3xl p-8 bg-card/40 border border-primary/10 shadow-lg
+                hover:border-primary/40 transition-all duration-500 group/item overflow-hidden"
                     >
-
-                      {/* inner highlight */}
-                      <div className="absolute inset-0 bg-linear-to-br from-gray-200 via-white to-gray-100 opacity-0 group-hover:opacity-100 transition" />
+                      {/* Inner Glow */}
+                      <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover/item:opacity-100 transition-opacity duration-500" />
 
                       <div className="relative z-10">
-                        <h3 className="text-xl font-semibold text-gray-800 mb-2">
+                        <div className="mb-4 inline-flex p-3 rounded-2xl bg-primary/10 text-primary">
+                           <item.icon className="w-6 h-6" />
+                        </div>
+                        <h3 className="text-2xl font-bold text-foreground mb-3">
                           {item.title}
                         </h3>
-                        <p className="text-gray-600 text-sm">
+                        <p className="text-foreground/70 text-base leading-relaxed">
                           {item.desc}
                         </p>
                       </div>
-
-                    </div>
+                    </motion.div>
                   ))}
 
                 </div>
@@ -635,7 +589,7 @@ export default function AdvisoryHome() {
 
       {/* Why Choose Us */}
       <div className="h-px w-full bg-linear-to-r from-transparent via-amber-600/70 to-transparent"></div>
-      <section className={`py-24 ${sectionStyles.warm}`}>
+      <section className={`py-24 ${sectionStyles.premium}`}>
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -644,11 +598,11 @@ export default function AdvisoryHome() {
             className="text-center mb-16"
           >
             <h2 className="text-5xl md:text-6xl font-extrabold mb-6">
-              <span className="bg-linear-to-r from-slate-700 via-gray-500 to-slate-700 bg-clip-text text-transparent">
+              <span className="text-foreground">
                 Why Choose Us
               </span>
             </h2>
-            <p className="text-2xl md:text-xl font-semibold text-transparent bg-linear-to-r from-slate-700 via-gray-500 to-slate-500 bg-clip-text uppercase tracking-widest text-center max-w-4xl mx-auto leading-relaxed px-4 whitespace-normal">
+            <p className="text-2xl md:text-xl font-semibold text-primary uppercase tracking-widest text-center max-w-4xl mx-auto leading-relaxed px-4 whitespace-normal">
               Strategic cybersecurity and digital risk solutions designed for executive leadership and organizational resilience
             </p>
           </motion.div>
@@ -662,14 +616,14 @@ export default function AdvisoryHome() {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
               >
-                <Card className="p-6 h-full hover:shadow-xl transition-all duration-300 group border-gray-200 hover:border-purple-300">
+                <Card className="p-6 h-full hover:shadow-xl transition-all duration-300 group border-border hover:border-primary/50 bg-card">
                   <div className="mb-4">
                     <div className="w-14 h-14 rounded-xl bg-linear-to-br from-blue-500 via-purple-500 to-pink-500 p-3 group-hover:scale-110 transition-transform duration-300">
                       <item.icon className="w-full h-full text-white" />
                     </div>
                   </div>
-                  <h3 className="text-lg mb-2 text-gray-900">{item.title}</h3>
-                  <p className="text-gray-600 text-sm">{item.description}</p>
+                  <h3 className="text-lg mb-2 text-foreground">{item.title}</h3>
+                  <p className="text-foreground/70 text-sm">{item.description}</p>
                 </Card>
               </motion.div>
             ))}

@@ -11,6 +11,7 @@ import { NotFound } from "./pages/NotFound";
 import { News } from "./pages/News";
 import { Research } from "./pages/Research";
 import { About } from "./pages/About";
+import { Innovation } from "./pages/Innovation";
 
 export const router = createBrowserRouter([
   {
@@ -22,6 +23,7 @@ export const router = createBrowserRouter([
       { path: "advisory/industries", element: <Industries /> },
       { path: "advisory/how-we-work", element: <HowWeWork /> },
       { path: "advisory/case-studies", element: <CaseStudies /> },
+      { path: "innovation", element: <Innovation /> },
       { path: "contact", element: <Contact /> },
       { path: "advisory/about", element: <About /> },
       { path: "news", element: <News /> },
