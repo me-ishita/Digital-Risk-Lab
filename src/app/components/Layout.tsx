@@ -101,7 +101,7 @@ export function Layout() {
               </Link>
 
               <Link to="/register" className="px-5 py-2 bg-primary hover:bg-primary/80 text-primary-foreground font-semibold rounded-full transition-all duration-300 shadow-md">
-                Login / Signup
+                Register
               </Link>
 
               {/* Theme Toggle */}
@@ -178,12 +178,7 @@ export function Layout() {
                 >
                   Case Studies
                 </Link>
-                <Link
-                  to="/innovation"
-                  className="block py-2 text-base text-foreground/80 hover:bg-muted hover:text-foreground"
-                >
-                  Innovation
-                </Link>
+                
                 <Link
                   to="/news"
                   className="block py-2 text-base text-foreground/80 hover:bg-muted hover:text-foreground"
@@ -200,7 +195,7 @@ export function Layout() {
                   to="/register"
                   className="block mt-4 px-6 py-3 bg-primary text-primary-foreground rounded-xl text-center font-semibold"
                 >
-                  Login / Signup
+                  Register
                 </Link>
               </motion.div>
             )}
@@ -239,8 +234,9 @@ function Footer() {
               </div>
             </div>
             <p className="text-muted-foreground text-sm max-w-sm">
-              Capability building for cyber, compliance, and digital risk
-              professionals.
+              From Vision to Enterprise,
+              Where Ideas Scale into Digital Ventures
+
             </p>
           </div>
 
@@ -278,9 +274,7 @@ function Footer() {
               Quick Access
             </h3>
             <ul className="space-y-2 text-sm">
-              <li>
-                <Link to="/innovation" className="text-muted-foreground hover:text-foreground transition-colors">Innovation</Link>
-              </li>
+              
               <li>
                 <Link to="/news" className="text-muted-foreground hover:text-foreground transition-colors">News</Link>
               </li>
@@ -291,7 +285,7 @@ function Footer() {
               </li>
               <li>
                 <Link to="/register" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Login / Signup
+                Register
                 </Link>
               </li>
             </ul>

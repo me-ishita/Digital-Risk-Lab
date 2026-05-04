@@ -6,7 +6,7 @@ import {
   Users, Zap, Database
 } from 'lucide-react';
 import { ImageWithFallback } from '../../components/figma/ImageWithFallback';
-
+import prismLogo from '../../../assets/Prism-Logo.png';
 
 export function Innovation() {
 
@@ -107,8 +107,8 @@ export function Innovation() {
           {/* LEFT - ABOUT */}
           <div className="space-y-6">
             <h2 className="text-4xl font-bold text-gray-900">
-              The Architecture of Innovation            
-              </h2>
+              The Architecture of Innovation
+            </h2>
             <p className="text-lg text-gray-700 leading-relaxed">
               Innovation at Digital Risk Lab is where ideas are transformed into scalable,
               production-ready technologies—bridging advanced engineering, AI intelligence,
@@ -171,53 +171,128 @@ export function Innovation() {
       </section>
 
       {/* PRISM */}
-      <section className="py-24 bg-background">
+      <div className="h-px w-full bg-linear-to-r from-transparent via-amber-600/70 to-transparent"></div>
+      <section className="py-28 bg-linear-to-br from-amber-50 via-orange-50 to-yellow-100 text-gray-900">
         <div className="max-w-7xl mx-auto px-6">
 
-          <h2 className="text-4xl font-bold text-center mb-4">
-            PRISM — Live Innovation
-          </h2>
-          <p className="text-center text-muted-foreground mb-12">
-            A fully operational AI-powered regulatory intelligence platform
-          </p>
+          {/* HEADER */}
+          <div className="text-center mb-20">
+            <div className="flex justify-center items-center gap-4 mb-4">
+              <img src={prismLogo} alt="PRISM Logo" className="w-12 h-12" />
 
-          {/* WORKFLOW */}
-          <div className="grid md:grid-cols-5 gap-6">
-            {prismWorkflow.map((step, i) => {
-              const Icon = step.icon;
-              return (
-                <motion.div
-                  key={i}
-                  whileHover={{ y: -5 }}
-                  className="bg-card rounded-xl overflow-hidden shadow-lg border"
-                >
-                  <img src={step.image} className="h-32 w-full object-cover" />
-                  <div className="p-4 text-center">
-                    <Icon className="mx-auto mb-2 text-primary" />
-                    <h4 className="font-semibold">{step.title}</h4>
-                    <p className="text-sm text-muted-foreground">{step.description}</p>
+              <h2 className="text-4xl md:text-5xl font-bold">
+                <span className="text-5xl md:text-6xl font-extrabold mb-6">Live Innovation — </span>
+                <span className="bg-linear-to-r from-[#d4af37] to-[#f5d06f] bg-clip-text text-transparent text-5xl md:text-6xl font-extrabold mb-6">
+                  PRISM
+                </span>
+              </h2>
+            </div>
+
+            <p className="text-2xl md:text-xl font-semibold text-primary uppercase tracking-widest text-center max-w-4xl mx-auto leading-relaxed px-4 whitespace-normal">
+              AI-powered regulatory intelligence transforming compliance into automated, traceable, and scalable systems.
+            </p>
+          </div>
+
+          {/* MAIN LAYOUT */}
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+
+            {/* LEFT - INFO CARDS (VERTICAL) */}
+            <div className="flex flex-col gap-6">
+
+              {/* WHY */}
+              <motion.div
+                whileHover={{ y: -6 }}
+                className="bg-white border border-amber-200 rounded-xl p-6 shadow-lg"
+              >
+                <h3 className="text-xl font-semibold mb-3 text-amber-600">
+                  Why PRISM Exists
+                </h3>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  Basel 3.1 introduces massive regulatory complexity with hundreds of formulas and cross-references.
+                  PRISM eliminates manual interpretation risk by replacing it with intelligent automation—reducing errors,
+                  timelines, and compliance costs.
+                </p>
+              </motion.div>
+
+              {/* HOW */}
+              <motion.div
+                whileHover={{ y: -6 }}
+                className="bg-white border border-amber-200 rounded-xl p-6 shadow-lg"
+              >
+                <h3 className="text-xl font-semibold mb-3 text-amber-600">
+                  How PRISM Works
+                </h3>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  PRISM processes regulatory documents through a five-step pipeline—extracting text, structuring logic,
+                  interpreting formulas using AI, executing calculations, and generating fully auditable COREP outputs.
+                </p>
+              </motion.div>
+
+              {/* IMPACT */}
+              <motion.div
+                whileHover={{ y: -6 }}
+                className="bg-white border border-amber-200 rounded-xl p-6 shadow-lg"
+              >
+                <h3 className="text-xl font-semibold mb-3 text-amber-600">
+                  Where PRISM Creates Impact
+                </h3>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  PRISM accelerates compliance operations, strengthens governance, enables regulatory intelligence,
+                  and ensures audit readiness—transforming compliance into a scalable, intelligent system.
+                </p>
+              </motion.div>
+
+            </div>
+
+            {/* RIGHT - WORKFLOW */}
+            <div className="relative flex justify-center items-center">
+
+              <div className="relative w-105 h-105">
+
+                {prismWorkflow.map((step, i) => {
+                  const angle = (i / prismWorkflow.length) * 2 * Math.PI;
+                  const radius = 170;
+
+                  const x = radius * Math.cos(angle);
+                  const y = radius * Math.sin(angle);
+
+                  const Icon = step.icon;
+
+                  return (
+                    <motion.div
+                      key={i}
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ delay: i * 0.2 }}
+                      className="absolute"
+                      style={{
+                        left: `calc(50% + ${x}px - 60px)`,
+                        top: `calc(50% + ${y}px - 60px)`
+                      }}
+                    >
+                      <div className="w-28 h-28 bg-white border border-amber-200 rounded-xl p-3 text-center shadow-md hover:scale-105 transition">
+
+                        <Icon className="mx-auto mb-1 text-amber-600" size={20} />
+                        <h4 className="text-sm font-semibold text-gray-800">{step.title}</h4>
+                        <p className="text-[10px] text-gray-500">
+                          {step.description}
+                        </p>
+                      </div>
+                    </motion.div>
+                  );
+                })}
+
+                {/* CENTER */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="w-28 h-28 rounded-full bg-linear-to-br from-amber-400 to-yellow-300 flex items-center justify-center text-white font-bold shadow-lg">
+                    PRISM
                   </div>
-                </motion.div>
-              );
-            })}
-          </div>
-
-          {/* PRISM CONTENT */}
-          <div className="mt-16 grid md:grid-cols-2 gap-10">
-            <div>
-              <h3 className="text-xl font-semibold mb-3">What PRISM Does</h3>
-              <p className="text-muted-foreground">
-                Converts complex regulatory frameworks into structured, executable outputs—ensuring compliance is accurate, auditable, and scalable.
-              </p>
+                </div>
+              </div>
             </div>
 
-            <div>
-              <h3 className="text-xl font-semibold mb-3">Business Impact</h3>
-              <p className="text-muted-foreground">
-                Reduces compliance time from weeks to minutes while improving accuracy, audit readiness, and operational efficiency.
-              </p>
-            </div>
           </div>
+
         </div>
       </section>
 
@@ -270,7 +345,7 @@ export function Innovation() {
         </button>
       </section>
         */}
-        
+
     </div>
   );
 }
