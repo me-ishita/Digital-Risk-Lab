@@ -209,8 +209,7 @@ export default function AdvisoryHome() {
 
       {/* CORE PILLARS - CLICK FLIP */}
       <div className="h-px w-full bg-linear-to-r from-transparent via-amber-600/70 to-transparent"></div>
-      <section className={`py-24 px-6 md:px-20 ${sectionStyles.premium}`}>
-      <div className="absolute inset-0 bg-[radial-gradient(#00000005_1px,transparent_1px)] bg-size-[20px_20px] pointer-events-none"></div>
+      <section className="py-24 bg-white">
         {/* Flipping Cards */}
          <motion.div
                     initial={{ opacity: 0, y: 30 }}
@@ -234,7 +233,7 @@ export default function AdvisoryHome() {
 
       {/* ABOUT */}
       <div className="h-px w-full bg-linear-to-r from-transparent via-amber-600/70 to-transparent"></div>
-      <section className={`py-24 ${sectionStyles.warm} overflow-hidden`}>
+      <section className="py-24 bg-slate-500/10">
         
         <div className="container mx-auto px-6">
 
@@ -333,7 +332,7 @@ export default function AdvisoryHome() {
 
       {/* How We Work */}
       <div className="h-px w-full bg-linear-to-r from-transparent via-amber-600/70 to-transparent"></div>
-      <section className={`py-24 ${sectionStyles.warm} overflow-hidden`}>
+      <section className="py-24 bg-white">
         <div className="container mx-auto px-6">
 
           {/* HEADER */}
@@ -398,7 +397,7 @@ export default function AdvisoryHome() {
 
       {/* SERVICES GRID */}
       <div className="h-px w-full bg-linear-to-r from-transparent via-amber-600/70 to-transparent"></div>
-      <section className={`py-24 px-6 md:px-20 ${sectionStyles.warm}`}>
+      <section className="py-24 bg-slate-500/10">
 
         {/* HEADER */}
         <div className="text-center mb-20">
@@ -481,7 +480,7 @@ export default function AdvisoryHome() {
 
       {/* Innovation Spotlight - PRISM */}
       <div className="h-px w-full bg-linear-to-r from-transparent via-primary/50 to-transparent"></div>
-      <section className="py-24 relative overflow-hidden bg-background">
+      <section className="py-24 bg-white">
 
         {/* Dynamic Spotlight Glow */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-200 h-200 bg-primary/10 rounded-full blur-[120px] pointer-events-none animate-pulse-slow" />
@@ -525,8 +524,8 @@ export default function AdvisoryHome() {
 
                 {/* LOGO-SHINE TITLE */}
                 <h2 className="text-5xl md:text-6xl mb-8 font-bold tracking-tight">
-                  <span className="logo-shine block mb-2">Innovation Spotlight</span>
-                  <span className="text-foreground">PRISM</span>
+                  <span className="text-foreground block mb-2">Innovation Spotlight</span>
+                  <span className="logo-shine">PRISM</span>
                 </h2>
 
                 {/* DESCRIPTION */}
@@ -588,7 +587,7 @@ export default function AdvisoryHome() {
 
       {/* Why Choose Us */}
       <div className="h-px w-full bg-linear-to-r from-transparent via-amber-600/70 to-transparent"></div>
-      <section className={`py-24 ${sectionStyles.premium}`}>
+      <section className="py-24 bg-slate-500/10">
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -629,6 +628,9 @@ export default function AdvisoryHome() {
           </div>
         </div>
       </section>
+
+      <div className="h-px w-full bg-linear-to-r from-transparent via-amber-600/70 to-transparent"></div>
+
 
     </div>
   );

@@ -65,7 +65,7 @@ export function Acceleration() {
 
   return (
     <div className="min-h-screen pt-20">
-      <section className="relative py-24 bg-gradient-to-br from-orange-50 via-amber-50 to-amber-100 overflow-hidden">
+      <section className="relative py-24 bg-linear-to-br from-orange-50 via-amber-50 to-amber-100 overflow-hidden">
         <div className="absolute inset-0">
           <ImageWithFallback
             src="https://images.pexels.com/photos/7698819/pexels-photo-7698819.jpeg"
@@ -107,7 +107,7 @@ export function Acceleration() {
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.4 }}
-              className="bg-gradient-to-br from-orange-100 to-amber-100 rounded-xl p-8 border border-primary/20 shadow-lg"
+              className="bg-linear-to-br from-orange-100 to-amber-100 rounded-xl p-8 border border-primary/20 shadow-lg"
             >
               <h3 className="text-2xl font-semibold text-foreground mb-4">The Function</h3>
               <p className="text-foreground leading-relaxed">
@@ -158,7 +158,7 @@ export function Acceleration() {
         </div>
       </section>
 
-      <section className="py-24 bg-gradient-to-br from-amber-50 to-orange-50">
+      <section className="py-24 bg-linear-to-br from-amber-50 to-orange-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -186,7 +186,7 @@ export function Acceleration() {
                   transition={{ delay: index * 0.15 }}
                   className="bg-card rounded-xl p-8 border border-border shadow-lg"
                 >
-                  <div className="w-16 h-16 bg-gradient-to-br from-orange-200 to-amber-200 rounded-full flex items-center justify-center mb-6">
+                  <div className="w-16 h-16 bg-linear-to-br from-orange-200 to-amber-200 rounded-full flex items-center justify-center mb-6">
                     <Icon size={32} className="text-foreground" />
                   </div>
                   <h4 className="text-xl font-semibold text-foreground mb-3">{benefit.title}</h4>
@@ -215,7 +215,7 @@ export function Acceleration() {
           </motion.div>
 
           <div className="relative max-w-4xl mx-auto">
-            <div className="hidden md:block absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-orange-200 via-primary to-amber-300 -translate-y-1/2" />
+            <div className="hidden md:block absolute top-1/2 left-0 right-0 h-1 bg-linear-to-r from-orange-200 via-primary to-amber-300 -translate-y-1/2" />
 
             <div className="grid grid-cols-1 md:grid-cols-4 gap-6 relative">
               {accelerationProcess.map((item, index) => (
@@ -245,7 +245,7 @@ export function Acceleration() {
         </div>
       </section>
 
-      <section className="py-24 bg-gradient-to-br from-orange-50 to-amber-50">
+      <section className="py-24 bg-linear-to-br from-orange-50 to-amber-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -275,7 +275,7 @@ export function Acceleration() {
                     transition={{ delay: index * 0.1 }}
                     className="flex items-start gap-3"
                   >
-                    <CheckCircle size={24} className="text-primary flex-shrink-0 mt-0.5" />
+                    <CheckCircle size={24} className="text-primary shrink-0 mt-0.5" />
                     <p className="text-foreground">{achievement}</p>
                   </motion.div>
                 ))}
@@ -356,7 +356,7 @@ export function Acceleration() {
         </div>
       </section>
 
-      <section className="py-24 bg-gradient-to-br from-amber-100 to-orange-100">
+      <section className="py-24 bg-linear-to-br from-amber-100 to-orange-100">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
