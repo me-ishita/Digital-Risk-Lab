@@ -168,13 +168,35 @@ export function Layout() {
                 </Link>
                 <Link
                   to="/advisory/services"
-                  className="block py-2 pl-4 text-sm text-foreground/80 hover:bg-muted hover:text-foreground"
+                  className="block py-2 text-sm text-foreground/80 hover:bg-muted hover:text-foreground"
                 >
                   Services
                 </Link>
+
+                <Link
+                  to="/innovation"
+                  className="block py-2 text-sm text-foreground/80 hover:bg-muted hover:text-foreground"
+                >
+                  Innovation
+                </Link>
+
+                <Link
+                  to="/incubation"
+                  className="block py-2 text-sm text-foreground/80 hover:bg-muted hover:text-foreground"
+                >
+                  Incubation
+                </Link>
+
+                <Link
+                  to="/acceleration"
+                  className="block py-2 text-sm text-foreground/80 hover:bg-muted hover:text-foreground"
+                >
+                  Acceleration
+                </Link>
+
                 <Link
                   to="/advisory/case-studies"
-                  className="block py-2 pl-4 text-sm text-foreground/80 hover:bg-muted hover:text-foreground"
+                  className="block py-2 text-sm text-foreground/80 hover:bg-muted hover:text-foreground"
                 >
                   Case Studies
                 </Link>
