@@ -23,7 +23,7 @@ const cards: CardType[] = [
         title: 'Innovation',
         route: '/innovation',
         icon: Sparkles,
-        gradient: 'from-[#5F7FA8] via-[#BFD4EC] to-[#5F7FA8]',
+        gradient: 'from-[#769dbb] to-[#F5F3EF]',
         imageFront:
             'https://images.unsplash.com/photo-1674027444485-cec3da58eef4?w=600',
         imageBack:
@@ -43,7 +43,7 @@ const cards: CardType[] = [
         title: 'Incubation',
         route: '/incubation',
         icon: Rocket,
-        gradient: 'from-[#6B9BD1] via-[#A9C7E8] to-[#6B9BD1]',
+        gradient: 'from-[#769dbb] to-[#F5F3EF]',
         imageFront:
             'https://images.unsplash.com/photo-1599658880436-c61792e70672?w=600',
         imageBack:
@@ -63,7 +63,7 @@ const cards: CardType[] = [
         title: 'Acceleration',
         route: '/acceleration',
         icon: TrendingUp,
-        gradient: 'from-[#4A90E2] via-[#A6C8F5] to-[#4A90E2]',
+        gradient: 'from-[#769dbb] to-[#F5F3EF]',
         imageFront:
             'https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=1200',
         imageBack:
