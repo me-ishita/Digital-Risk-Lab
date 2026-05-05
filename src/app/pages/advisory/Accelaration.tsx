@@ -356,7 +356,7 @@ export function Acceleration() {
         </div>
       </section>
 
-      <section className="py-24 bg-linear-to-br from-amber-100 to-orange-100">
+      <section className="py-24 bg-linear-to-br from-amber-50 to-orange-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
