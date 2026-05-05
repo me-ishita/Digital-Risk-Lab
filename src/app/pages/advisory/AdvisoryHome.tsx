@@ -222,7 +222,7 @@ export default function AdvisoryHome() {
 
       {/* CORE PILLARS - CLICK FLIP */}
       <div className="h-px w-full bg-linear-to-r from-transparent via-blue-800/70 to-transparent"></div>
-      <section className="py-24 bg-linear-to-br from-[#5F7A9F] via-[#D8C3A5] to-[#F5EFE6] ">
+      <section className="py-24 bg-linear-to-br from-[#EAF4FF] via-[#C7DBF4] to-[#5F7A9F] ">
         {/* Flipping Cards */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -244,7 +244,7 @@ export default function AdvisoryHome() {
 
       {/* ABOUT */}
       <div className="h-px w-full bg-linear-to-r from-transparent via-blue-800/70 to-transparent"></div>
-      <section className="py-24 bg-linear-to-br from-[#F5EFE6] via-[#D8C3A5] to-[#5F7A9F]">
+      <section className="py-24 bg-linear-to-br from-[#C7DBF4] to-[#EAF4FF]">
 
         <div className="container mx-auto px-6">
 
@@ -343,7 +343,7 @@ export default function AdvisoryHome() {
 
       {/* How We Work */}
       <div className="h-px w-full bg-linear-to-r from-transparent via-blue-800/70 to-transparent"></div>
-      <section className="py-24 bg-linear-to-br from-[#5F7A9F] via-[#D8C3A5] to-[#F5EFE6] ">
+      <section className="py-24 bg-linear-to-br from-[#EAF4FF] via-[#C7DBF4] to-[#5F7A9F]  ">
         <div className="container mx-auto px-6">
 
           {/* HEADER */}
@@ -408,7 +408,7 @@ export default function AdvisoryHome() {
 
       {/* SERVICES GRID */}
       <div className="h-px w-full bg-linear-to-r from-transparent via-blue-800/70 to-transparent"></div>
-      <section className="py-24 bg-linear-to-br from-[#F5EFE6] via-[#D8C3A5] to-[#5F7A9F]">
+      <section className="py-24 bg-linear-to-br from-[#C7DBF4] to-[#EAF4FF]">
 
         {/* HEADER */}
         <div className="text-center mb-20">
@@ -491,7 +491,7 @@ export default function AdvisoryHome() {
 
       {/* Innovation Spotlight - PRISM */}
       <div className="h-px w-full bg-linear-to-r from-transparent via-blue-800/70 to-transparent"></div>
-      <section className="py-24 bg-linear-to-br from-[#5F7A9F] via-[#D8C3A5] to-[#F5EFE6] ">
+      <section className="py-24 bg-linear-to-br from-[#EAF4FF] via-[#C7DBF4] to-[#5F7A9F]  ">
 
         {/* HEADER OUTSIDE CARD */}
         <div className="text-center mb-12">
@@ -656,7 +656,7 @@ export default function AdvisoryHome() {
 
       {/* Why Choose Us */}
       <div className="h-px w-full bg-linear-to-r from-transparent via-blue-800/70 to-transparent"></div>
-      <section className="py-24 bg-linear-to-br from-[#F5EFE6] via-[#D8C3A5] to-[#5F7A9F]">
+      <section className="py-24 bg-linear-to-br from-[#C7DBF4] to-[#EAF4FF]">
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
