@@ -122,9 +122,9 @@ export default function AdvisoryHome() {
   ];
 
   const sectionStyles = {
-    light: "bg-background", 
-    soft: "bg-background",  
-    warm: "bg-background",  
+    light: "bg-background",
+    soft: "bg-background",
+    warm: "bg-background",
     base: "bg-background",
     premium: "bg-background"
   };
@@ -208,33 +208,31 @@ export default function AdvisoryHome() {
       </section>
 
       {/* CORE PILLARS - CLICK FLIP */}
-      <div className="h-px w-full bg-linear-to-r from-transparent via-amber-600/70 to-transparent"></div>
-      <section className="py-24 bg-white">
+      <div className="h-px w-full bg-linear-to-r from-transparent via-blue-800/70 to-transparent"></div>
+      <section className="py-24 bg-linear-to-br from-[#5F7A9F] via-[#D8C3A5] to-[#F5EFE6] ">
         {/* Flipping Cards */}
-         <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className="text-center mb-16"
-                >
-                    <h2 className="text-5xl md:text-6xl font-extrabold mb-6">
-                        <span className="text-foreground">
-                            Our Core Pillars
-                        </span>
-                    </h2>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-5xl md:text-6xl text-foreground font-extrabold mb-6">
+              Our Core Pillars
+          </h2>
 
-                    <p className="text-lg md:text-xl font-semibold text-primary uppercase tracking-widest whitespace-nowrap max-w-full mx-auto">
-                        Combining strategic acceleration with cutting-edge innovation to deliver comprehensive digital risk solutions.
-                    </p>
-                </motion.div>
+          <p className="text-2xl md:text-xl font-semibold text-primary uppercase tracking-widest text-center max-w-4xl mx-auto leading-relaxed px-4 whitespace-normal">
+            Combining strategic acceleration with cutting-edge innovation to deliver comprehensive digital risk solutions.
+          </p>
+        </motion.div>
         <FlippingCards />
 
       </section>
 
       {/* ABOUT */}
-      <div className="h-px w-full bg-linear-to-r from-transparent via-amber-600/70 to-transparent"></div>
-      <section className="py-24 bg-slate-500/10">
-        
+      <div className="h-px w-full bg-linear-to-r from-transparent via-blue-800/70 to-transparent"></div>
+      <section className="py-24 bg-linear-to-br from-[#F5EFE6] via-[#D8C3A5] to-[#5F7A9F]">
+
         <div className="container mx-auto px-6">
 
           {/* HEADING */}
@@ -263,23 +261,23 @@ export default function AdvisoryHome() {
                   <motion.div
                     key={index}
                     initial={{ opacity: 0, y: 100, rotate: 0, x: 0 }}
-                    whileInView={{ 
-                      opacity: 1, 
-                      y: yOffsets[index], 
+                    whileInView={{
+                      opacity: 1,
+                      y: yOffsets[index],
                       rotate: rotations[index],
                       x: xOffsets[index]
                     }}
                     viewport={{ once: true, margin: "-100px" }}
-                    transition={{ 
-                      duration: 0.8, 
+                    transition={{
+                      duration: 0.8,
                       delay: index * 0.15,
                       type: "spring",
                       stiffness: 50,
                       damping: 15
                     }}
-                    whileHover={{ 
-                      scale: 1.05, 
-                      rotate: 0, 
+                    whileHover={{
+                      scale: 1.05,
+                      rotate: 0,
                       y: -20,
                       x: xOffsets[index],
                       zIndex: 50,
@@ -289,7 +287,7 @@ export default function AdvisoryHome() {
                     style={{ zIndex: index }}
                   >
                     <Card className="h-full rounded-3xl overflow-hidden relative group border border-border shadow-2xl bg-card/40 backdrop-blur-xl transition-all duration-500">
-                      
+
                       {/* METALLIC GLASS BACKGROUND */}
                       <div className="absolute inset-0 bg-card/40 backdrop-blur-xl" />
 
@@ -317,7 +315,7 @@ export default function AdvisoryHome() {
                             {item.title}
                           </h3>
                         </div>
-                        <p className="text-foreground/80 text-sm md:text-base leading-relaxed">
+                        <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
                           {item.description}
                         </p>
                       </div>
@@ -331,8 +329,8 @@ export default function AdvisoryHome() {
       </section>
 
       {/* How We Work */}
-      <div className="h-px w-full bg-linear-to-r from-transparent via-amber-600/70 to-transparent"></div>
-      <section className="py-24 bg-white">
+      <div className="h-px w-full bg-linear-to-r from-transparent via-blue-800/70 to-transparent"></div>
+      <section className="py-24 bg-linear-to-br from-[#5F7A9F] via-[#D8C3A5] to-[#F5EFE6] ">
         <div className="container mx-auto px-6">
 
           {/* HEADER */}
@@ -343,7 +341,7 @@ export default function AdvisoryHome() {
               </span>
             </h2>
 
-            <p className="text-lg md:text-xl font-semibold text-primary uppercase tracking-widest whitespace-nowrap max-w-full mx-auto">
+            <p className="text-2xl md:text-xl font-semibold text-primary uppercase tracking-widest text-center max-w-4xl mx-auto leading-relaxed px-4 whitespace-normal">
               A structured, intelligence-driven approach to managing digital risk
             </p>
           </div>
@@ -381,7 +379,7 @@ export default function AdvisoryHome() {
                       {phase.title}
                     </h3>
 
-                    <p className="text-foreground/80 text-sm leading-relaxed">
+                    <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
                       {phase.description}
                     </p>
                   </div>
@@ -396,8 +394,8 @@ export default function AdvisoryHome() {
       </section>
 
       {/* SERVICES GRID */}
-      <div className="h-px w-full bg-linear-to-r from-transparent via-amber-600/70 to-transparent"></div>
-      <section className="py-24 bg-slate-500/10">
+      <div className="h-px w-full bg-linear-to-r from-transparent via-blue-800/70 to-transparent"></div>
+      <section className="py-24 bg-linear-to-br from-[#F5EFE6] via-[#D8C3A5] to-[#5F7A9F]">
 
         {/* HEADER */}
         <div className="text-center mb-20">
@@ -447,11 +445,11 @@ export default function AdvisoryHome() {
                       </h3>
                     </div>
 
-                    <p className="text-foreground/80 text-lg leading-relaxed mb-8 grow">
+                    <p className="text-muted-foreground text-lg leading-relaxed mb-8 grow">
                       {item.description}
                     </p>
 
-                    <motion.div 
+                    <motion.div
                       whileHover={{ x: 5 }}
                       className="inline-flex items-center text-sm font-bold text-primary cursor-pointer uppercase tracking-widest"
                     >
@@ -479,12 +477,12 @@ export default function AdvisoryHome() {
       </section>
 
       {/* Innovation Spotlight - PRISM */}
-      <div className="h-px w-full bg-linear-to-r from-transparent via-primary/50 to-transparent"></div>
-      <section className="py-24 bg-white">
+      <div className="h-px w-full bg-linear-to-r from-transparent via-blue-800/70 to-transparent"></div>
+      <section className="py-24 bg-linear-to-br from-[#5F7A9F] via-[#D8C3A5] to-[#F5EFE6] ">
 
         {/* Dynamic Spotlight Glow */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-200 h-200 bg-primary/10 rounded-full blur-[120px] pointer-events-none animate-pulse-slow" />
-        
+
         {/* subtle grid background */}
         <div className="absolute inset-0 bg-grid-primary/[0.03] bg-size-[50px_50px]"></div>
 
@@ -500,18 +498,21 @@ export default function AdvisoryHome() {
           <div className="max-w-5xl mx-auto">
 
             <div className="relative rounded-[40px] p-10 md:p-16 overflow-hidden
-        bg-card/30 backdrop-blur-2xl border border-primary/20 shadow-[0_0_50px_rgba(212,175,55,0.1)] group">
+bg-white/80 backdrop-blur-xl 
+border border-[#B8956A]/40 
+shadow-[0_25px_80px_rgba(0,0,0,0.08)]
+group">
 
               {/* SPARKLE/LIGHT BEAM EFFECT */}
               <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <motion.div 
-                  animate={{ 
+                <motion.div
+                  animate={{
                     x: ['-100%', '200%'],
                     opacity: [0, 0.3, 0]
                   }}
-                  transition={{ 
-                    duration: 4, 
-                    repeat: Infinity, 
+                  transition={{
+                    duration: 4,
+                    repeat: Infinity,
                     repeatDelay: 3,
                     ease: "easeInOut"
                   }}
@@ -523,13 +524,15 @@ export default function AdvisoryHome() {
               <div className="relative z-10 text-center">
 
                 {/* LOGO-SHINE TITLE */}
-                <h2 className="text-5xl md:text-6xl mb-8 font-bold tracking-tight">
-                  <span className="text-foreground block mb-2">Innovation Spotlight</span>
-                  <span className="logo-shine">PRISM</span>
+                <h2 className="text-5xl md:text-6xl mb-6 font-bold tracking-tight text-gray-900">
+                  <span className="block mb-2 text-blue-900">Innovation Spotlight</span>
+                  <span className="bg-linear-to-r from-[#4A7FA8] to-[#FF7A18] bg-clip-text text-transparent">
+                    PRISM
+                  </span>
                 </h2>
 
                 {/* DESCRIPTION */}
-                <p className="text-xl md:text-2xl text-foreground/80 leading-relaxed max-w-3xl mx-auto mb-12 font-medium">
+                <p className="text-lg md:text-xl text-gray-700 leading-relaxed max-w-3xl mx-auto mb-12 font-medium">
                   PRISM is an automated regulatory intelligence platform built for precision, traceability,
                   and enterprise-scale compliance.
                 </p>
@@ -557,15 +560,19 @@ export default function AdvisoryHome() {
                     <motion.div
                       key={idx}
                       whileHover={{ y: -10 }}
-                      className="relative rounded-3xl p-8 bg-card/40 border border-primary/10 shadow-lg
-                hover:border-primary/40 transition-all duration-500 group/item overflow-hidden"
-                    >
+                      className="relative rounded-3xl p-8 
+bg-linear-to-br from-[#ffffff] to-[#f8f4ed] 
+border border-[#E6D3B5] 
+shadow-[0_10px_25px_rgba(0,0,0,0.05),inset_0_1px_0_rgba(255,255,255,0.6)]
+hover:shadow-[0_20px_40px_rgba(0,0,0,0.1)] 
+transition-all duration-500 
+group/item overflow-hidden">
                       {/* Inner Glow */}
                       <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover/item:opacity-100 transition-opacity duration-500" />
-
+                      <div className="absolute inset-0 rounded-3xl border border-transparent 
+group-hover/item:border-[#B8956A]/40 transition-all duration-500" />
                       <div className="relative z-10">
-                        <div className="mb-4 inline-flex p-3 rounded-2xl bg-primary/10 text-primary">
-                           <item.icon className="w-6 h-6" />
+                        <div className="mb-4 inline-flex p-3 rounded-2xl bg-[#F5EFE6] text-[#B8956A]">                          <item.icon className="w-6 h-6" />
                         </div>
                         <h3 className="text-2xl font-bold text-foreground mb-3">
                           {item.title}
@@ -574,20 +581,41 @@ export default function AdvisoryHome() {
                           {item.desc}
                         </p>
                       </div>
+
+
                     </motion.div>
                   ))}
 
                 </div>
               </div>
+              {/* VIEW DETAILS LINK */}
+              <div className="text-lg flex justify-center mt-10">
+                <a
+                  href="https://prism-rho-ruddy.vercel.app/"
+                  className="group inline-flex items-center gap-2 text-[#B8956A] font-semibold relative"
+                >
+                  <span className="relative">
+                    View Details
+                    {/* Animated underline */}
+                    <span className="absolute left-0 -bottom-1 h-0.5 w-0 bg-[#B8956A] transition-all duration-300 group-hover:w-full"></span>
+                  </span>
+
+                  {/* Arrow animation */}
+                  <span className="transition-transform duration-300 group-hover:translate-x-1">
+                    →
+                  </span>
+                </a>
+              </div>
             </div>
+
           </div>
 
         </motion.div>
       </section>
 
       {/* Why Choose Us */}
-      <div className="h-px w-full bg-linear-to-r from-transparent via-amber-600/70 to-transparent"></div>
-      <section className="py-24 bg-slate-500/10">
+      <div className="h-px w-full bg-linear-to-r from-transparent via-blue-800/70 to-transparent"></div>
+      <section className="py-24 bg-linear-to-br from-[#F5EFE6] via-[#D8C3A5] to-[#5F7A9F]">
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -629,7 +657,7 @@ export default function AdvisoryHome() {
         </div>
       </section>
 
-      <div className="h-px w-full bg-linear-to-r from-transparent via-amber-600/70 to-transparent"></div>
+      <div className="h-px w-full bg-linear-to-r from-transparent via-blue-800/70 to-transparent"></div>
 
 
     </div>

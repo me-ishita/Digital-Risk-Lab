@@ -3,19 +3,19 @@
 :root {
   --font-size: 16px;
   --background: #ede4d8; /* FT Paper Beige */
-  --foreground: #14110f; /* Dark Brown */
+  --foreground: #292b57; /* Dark Blue */
   --card: #f5efe6;
   --card-foreground: #14110f;
   --popover: #f5efe6;
-  --popover-foreground: #14110f;
-  --primary: #b59667; /* Gold */
+  --popover-foreground: #292b57;
+  --primary: #1E3A8A; /* Blue */
   --primary-foreground: #ede4d8;
   --secondary: #d0ae79;
-  --secondary-foreground: #14110f;
+  --secondary-foreground: #292b57;
   --muted: #e2d1bc;
-  --muted-foreground: #85786b;
+  --muted-foreground: #0c214b;
   --accent: #d0ae79;
-  --accent-foreground: #14110f;
+  --accent-foreground: #292b57;
   --destructive: #d4183d;
   --destructive-foreground: #ffffff;
   --border: rgba(20, 17, 15, 0.1);
@@ -26,6 +26,7 @@
   --font-weight-normal: 400;
   --ring: #b59667;
   --radius: 0.625rem;
+  --text-muted: #6B7280;
 }
 
 .dark {

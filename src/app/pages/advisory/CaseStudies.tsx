@@ -48,6 +48,7 @@ const caseStudies = [
 export function CaseStudies() {
   return (
     <div className="pt-20 bg-background text-foreground">
+            <div className="h-px w-full bg-linear-to-r from-transparent via-blue-800/70 to-transparent"></div>
 
       {/* HERO */}
       <section className="py-16 bg-card/30">
@@ -203,6 +204,7 @@ export function CaseStudies() {
           </div>
         </div>
       </section>
+      <div className="h-px w-full bg-linear-to-r from-transparent via-blue-800/70 to-transparent"></div>
 
     </div>
   );

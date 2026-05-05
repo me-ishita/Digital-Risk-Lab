@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "motion/react";
 import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
 import { Sun, Moon, ChevronDown, Menu, X } from "lucide-react";
-import brandLogo from "@/assets/b402c8efd70b38e0d5cb2eef9fe01649b01c6575.png";
+import brandLogo from "@/assets/logo.png";
 
 export function Layout() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -51,7 +51,7 @@ export function Layout() {
               <img
                 src={brandLogo}
                 alt="Digital Risk Lab"
-                className="h-9 w-9 sm:h-11 sm:w-11 object-contain rounded-sm shrink-0"
+                className="h-10 w-10 sm:h-13 sm:w-13 object-contain rounded-sm shrink-0"
               />
               <div className="flex flex-col leading-none min-w-0">
                 <span className="font-display text-lg sm:text-2xl md:text-3xl font-bold tracking-tight truncate">

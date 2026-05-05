@@ -136,6 +136,8 @@ export function Services() {
   return (
     <div className="min-h-screen pt-24">
       {/* Hero Section */}
+            <div className="h-px w-full bg-linear-to-r from-transparent via-blue-800/70 to-transparent"></div>
+
       <section className="py-10 bg-linear-to-br from-background via-card to-background relative overflow-hidden">
         <div className="absolute inset-0 bg-grid-primary/5 bg-size-[50px_50px]"></div>
         <motion.div
@@ -251,97 +253,6 @@ export function Services() {
         </div>
       </section>
 
-      {/* Innovation Spotlight - PRISM */}
-      <div className="h-px w-full bg-linear-to-r from-transparent via-amber-600/70 to-transparent"></div>
-
-      <section className="py-20 bg-background relative overflow-hidden">
-
-        {/* subtle grid background */}
-        <div className="absolute inset-0 bg-grid-gray-900/[0.03] bg-size-[50px_50px]"></div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="container mx-auto px-6 relative z-10"
-        >
-
-          {/* FLOATING PRISM CARD */}
-          <div className="max-w-5xl mx-auto">
-
-            <div className="relative rounded-3xl p-10 md:p-14 overflow-hidden
-        bg-card/70 backdrop-blur-xl border border-border shadow-2xl group">
-
-              {/* METALLIC SHINE OVERLAY */}
-              <div className="pointer-events-none absolute inset-0">
-                <div className="shine-metal absolute top-0 left-[-120%] h-full w-[60%]" />
-              </div>
-
-              {/* subtle gradient glow */}
-              <div className="absolute inset-0 bg-linear-to-br from-card via-background to-card opacity-80" />
-
-              {/* CONTENT */}
-              <div className="relative z-10 text-center">
-
-                {/* TITLE */}
-                <h2 className="text-5xl md:text-6xl mb-8 font-bold tracking-tight">
-                  <span className="logo-shine block mb-2">Innovation Spotlight</span>
-                  <span className="text-foreground">PRISM</span>
-                </h2>
-
-                {/* DESCRIPTION */}
-                <p className="text-lg md:text-xl text-foreground/80 leading-relaxed max-w-3xl mx-auto mb-10">
-                  PRISM is an automated regulatory intelligence platform built for precision, traceability,
-                  and enterprise-scale compliance. It delivers structured, explainable, and audit-ready insights
-                  for modern financial ecosystems.
-                </p>
-
-                {/* FEATURE GRID */}
-                <div className="grid md:grid-cols-3 gap-6">
-
-                  {[
-                    {
-                      title: "Precision",
-                      desc: "Accurate insights you can trust"
-                    },
-                    {
-                      title: "Traceability",
-                      desc: "Full audit trail and explainability"
-                    },
-                    {
-                      title: "Scalability",
-                      desc: "Built for enterprise-scale compliance"
-                    }
-                  ].map((item, idx) => (
-                    <div
-                      key={idx}
-                      className="relative rounded-2xl p-6 bg-card/60 border border-border shadow-md
-                hover:shadow-xl transition group overflow-hidden"
-                    >
-
-                      {/* inner highlight */}
-                      <div className="absolute inset-0 bg-linear-to-br from-card via-background to-card opacity-0 group-hover:opacity-100 transition" />
-
-                      <div className="relative z-10">
-                        <h3 className="text-xl font-semibold text-gray-800 mb-2">
-                          {item.title}
-                        </h3>
-                        <p className="text-gray-600 text-sm">
-                          {item.desc}
-                        </p>
-                      </div>
-
-                    </div>
-                  ))}
-
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </motion.div>
-      </section>
-
       {/* Industries Section */}
       <div className="h-px w-full bg-linear-to-r from-transparent via-amber-600/70 to-transparent"></div>
 
@@ -388,6 +299,8 @@ export function Services() {
           </div>
         </div>
       </section>
+      <div className="h-px w-full bg-linear-to-r from-transparent via-blue-800/70 to-transparent"></div>
+
 
 
     </div>

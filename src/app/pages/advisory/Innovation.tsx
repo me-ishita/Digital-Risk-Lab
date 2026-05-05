@@ -6,7 +6,7 @@ import {
   Users, Zap, Database
 } from 'lucide-react';
 import { ImageWithFallback } from '../../components/figma/ImageWithFallback';
-import prismLogo from '../../../assets/Prism-Logo.png';
+import prismLogo from '../../../assets/Prism logo.png';
 
 export function Innovation() {
 
@@ -100,22 +100,23 @@ export function Innovation() {
       </section>
 
       {/* PURPOSE BLOCK */}
+      <div className="h-px w-full bg-linear-to-r from-transparent via-blue-800/70 to-transparent"></div>
 
-      <section className="py-24 bg-linear-to-br from-amber-50 to-orange-50">
+      <section className="py-24 bg-background">
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
 
           {/* LEFT - ABOUT */}
           <div className="space-y-6">
-            <h2 className="text-4xl font-bold text-gray-900">
+            <h2 className="text-4xl font-bold text-foreground">
               The Architecture of Innovation
             </h2>
-            <p className="text-lg text-gray-700 leading-relaxed">
+            <p className="text-lg text-primary leading-relaxed">
               Innovation at Digital Risk Lab is where ideas are transformed into scalable,
               production-ready technologies—bridging advanced engineering, AI intelligence,
               and real-world enterprise execution.
             </p>
 
-            <p className="text-lg text-gray-700 leading-relaxed">
+            <p className="text-lg text-primary leading-relaxed">
               We don’t just build products—we design systems that can evolve, adapt,
               and scale within complex environments. Our approach ensures every innovation
               is aligned with real business needs and future growth.
@@ -157,12 +158,12 @@ export function Innovation() {
                   })()}
                 </div>
 
-                <h3 className="text-2xl font-bold">
+                <h3 className="text-2xl font-bold text-blue-950">
                   {storyCards[active].title}
                 </h3>
               </div>
 
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-gray-700 leading-relaxed">
                 {storyCards[active].desc}
               </p>
             </div>
@@ -172,7 +173,7 @@ export function Innovation() {
 
       {/* PRISM */}
       <div className="h-px w-full bg-linear-to-r from-transparent via-amber-600/70 to-transparent"></div>
-      <section className="py-28 bg-linear-to-br from-amber-50 via-orange-50 to-yellow-100 text-gray-900">
+      <section className="py-24 bg-background">
         <div className="max-w-7xl mx-auto px-6">
 
           {/* HEADER */}
@@ -180,8 +181,8 @@ export function Innovation() {
             <div className="flex justify-center items-center gap-4 mb-4">
               <img src={prismLogo} alt="PRISM Logo" className="w-12 h-12" />
 
-              <h2 className="text-4xl md:text-5xl font-bold">
-                <span className="text-5xl md:text-6xl font-extrabold mb-6">Live Innovation — </span>
+              <h2 className="text-5xl md:text-6xl font-extrabold mb-6">
+                <span className="text-foreground">Live Innovation — </span>
                 <span className="bg-linear-to-r from-[#d4af37] to-[#f5d06f] bg-clip-text text-transparent text-5xl md:text-6xl font-extrabold mb-6">
                   PRISM
                 </span>
@@ -297,39 +298,101 @@ export function Innovation() {
       </section>
 
       {/* UPCOMING */}
-      <section className="py-24 bg-linear-to-br from-amber-50 to-orange-50">
+      <div className="h-px w-full bg-linear-to-r from-transparent via-amber-600/70 to-transparent"></div>
+      <section className="py-24 bg-background">
         <div className="max-w-7xl mx-auto px-6 text-center">
 
-          <h2 className="text-4xl font-bold mb-4">
-            Upcoming Innovations
+          <h2 className="text-5xl md:text-6xl font-extrabold mb-6">
+            <span className="text-foreground"> Upcoming Innovations </span>
           </h2>
-          <p className="text-muted-foreground mb-12">
+
+          <p className="text-2xl md:text-xl font-semibold text-primary uppercase tracking-widest text-center max-w-4xl mx-auto leading-relaxed px-4 whitespace-normal">
             Expanding our innovation portfolio across industries
           </p>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-10 mt-20">
 
-            <motion.div whileHover={{ scale: 1.03 }} className="bg-white p-6 rounded-xl shadow-lg">
-              <img src="https://images.pexels.com/photos/5475752/pexels-photo-5475752.jpeg" className="rounded mb-4" />
-              <h3 className="text-xl font-semibold">Civil Nuclear Security Controller</h3>
-              <p className="text-muted-foreground">
-                Advanced security intelligence platform for critical infrastructure protection.
-              </p>
-              <span className="text-sm text-primary font-medium">Coming Soon</span>
+            {/* CARD 1 */}
+            <motion.div
+              whileHover={{ y: -8 }}
+              className="group relative bg-white rounded-2xl border border-[#E6D3B5] shadow-md hover:shadow-2xl transition-all duration-500 overflow-hidden"
+            >
+              {/* IMAGE */}
+              <div className="overflow-hidden rounded-t-2xl">
+                <img
+                  src="https://images.pexels.com/photos/5475752/pexels-photo-5475752.jpeg"
+                  className="w-full h-60 object-cover group-hover:scale-105 transition duration-500"
+                />
+              </div>
+
+              {/* CONTENT */}
+              <div className="p-7">
+
+                {/* TITLE */}
+                <h3 className="text-2xl font-bold text-[#292b57] mb-3 leading-snug">
+                  Civil Nuclear Security Controller
+                </h3>
+
+                {/* DESCRIPTION */}
+                <p className="text-[15px] leading-relaxed text-[#1E3A8A] mb-5">
+                  Advanced security intelligence platform for critical infrastructure protection.
+                </p>
+
+                {/* STATUS BADGE */}
+                <span className="inline-block px-4 py-1.5 text-xs font-semibold tracking-wide 
+        bg-[#F5EFE6] text-[#B8956A] border border-[#E6D3B5] rounded-full">
+                  Coming Soon
+                </span>
+
+              </div>
+
+              {/* subtle glow */}
+              <div className="absolute inset-0 rounded-2xl border border-transparent group-hover:border-[#B8956A]/40 transition-all"></div>
             </motion.div>
 
-            <motion.div whileHover={{ scale: 1.03 }} className="bg-white p-6 rounded-xl shadow-lg">
-              <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=600" className="rounded mb-4" />
-              <h3 className="text-xl font-semibold">Core Banking Platform – AKOIN</h3>
-              <p className="text-muted-foreground">
-                Next-generation digital banking infrastructure for scalable financial ecosystems.
-              </p>
-              <span className="text-sm text-primary font-medium">In Development</span>
+
+            {/* CARD 2 */}
+            <motion.div
+              whileHover={{ y: -8 }}
+              className="group relative bg-white rounded-2xl border border-[#E6D3B5] shadow-md hover:shadow-2xl transition-all duration-500 overflow-hidden"
+            >
+              {/* IMAGE */}
+              <div className="overflow-hidden rounded-t-2xl">
+                <img
+                  src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=600"
+                  className="w-full h-60 object-cover group-hover:scale-105 transition duration-500"
+                />
+              </div>
+
+              {/* CONTENT */}
+              <div className="p-7">
+
+                {/* TITLE */}
+                <h3 className="text-2xl font-bold text-[#292b57] mb-3 leading-snug">
+                  Core Banking Platform – AKOIN
+                </h3>
+
+                {/* DESCRIPTION */}
+                <p className="text-[15px] leading-relaxed text-[#1E3A8A] mb-5">
+                  Next-generation digital banking platform for scalable financial ecosystems.
+                </p>
+
+                {/* STATUS BADGE */}
+                <span className="inline-block px-4 py-1.5 text-xs font-semibold tracking-wide 
+        bg-[#EEF2FF] text-[#1E3A8A] border border-[#C7D2FE] rounded-full">
+                  In Development
+                </span>
+
+              </div>
+
+              {/* subtle glow */}
+              <div className="absolute inset-0 rounded-2xl border border-transparent group-hover:border-[#1E3A8A]/30 transition-all"></div>
             </motion.div>
 
           </div>
         </div>
       </section>
+      <div className="h-px w-full bg-linear-to-r from-transparent via-blue-800/70 to-transparent"></div>
 
       {/* CTA 
       <section className="py-20 text-center">
