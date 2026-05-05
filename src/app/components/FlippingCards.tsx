@@ -8,7 +8,7 @@ type CardType = {
     id: number;
     title: string;
     route: string;
-    icon: LucideIcon; 
+    icon: LucideIcon;
     gradient: string;
     imageFront: string;
     imageBack: string;
@@ -17,13 +17,13 @@ type CardType = {
 };
 
 const cards: CardType[] = [
-    
+
     {
         id: 1,
         title: 'Innovation',
         route: '/innovation',
         icon: Sparkles,
-        gradient: 'from-[#b59667] via-[#d0ae79] to-[#b59667]',
+        gradient: 'from-[#5F7FA8] via-[#BFD4EC] to-[#5F7FA8]',
         imageFront:
             'https://images.unsplash.com/photo-1674027444485-cec3da58eef4?w=600',
         imageBack:
@@ -43,7 +43,7 @@ const cards: CardType[] = [
         title: 'Incubation',
         route: '/incubation',
         icon: Rocket,
-        gradient: 'from-[#d4af37] via-[#b59667] to-[#d4af37]',
+        gradient: 'from-[#6B9BD1] via-[#A9C7E8] to-[#6B9BD1]',
         imageFront:
             'https://images.unsplash.com/photo-1599658880436-c61792e70672?w=600',
         imageBack:
@@ -63,7 +63,7 @@ const cards: CardType[] = [
         title: 'Acceleration',
         route: '/acceleration',
         icon: TrendingUp,
-        gradient: 'from-[#b59667] via-[#d0ae79] to-[#b59667]',
+        gradient: 'from-[#4A90E2] via-[#A6C8F5] to-[#4A90E2]',
         imageFront:
             'https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=1200',
         imageBack:
@@ -162,7 +162,7 @@ function FlippingCard({ card, index, isFlipped }: FlippingCardProps) {
 
                 {/* BACK */}
                 <div className="absolute inset-0 backface-hidden rotate-y-180">
-                    <div className={`h-full rounded-2xl overflow-hidden text-white bg-linear-to-br ${card.gradient}`}>
+                    <div className={`h-full rounded-2xl overflow-hidden text-blue-950 bg-linear-to-br ${card.gradient}`}>
 
                         <div className="h-65 overflow-hidden">
                             <img src={card.imageBack} className="w-full h-full object-cover group-hover:scale-105 transition" />
@@ -199,7 +199,7 @@ function FlippingCard({ card, index, isFlipped }: FlippingCardProps) {
 export function FlippingCards() {
     return (
         <section className="py-12">
-            
+
             <div className="container mx-auto px-6">
                 <FlippingCardsCarousel />
             </div>

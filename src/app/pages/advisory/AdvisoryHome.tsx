@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useState, useEffect, useRef } from 'react';
-import { Shield, Target, Zap, Award, Eye, ArrowLeft, ArrowRight } from 'lucide-react';
+import { Shield, Target, Zap, Award, Eye, ArrowLeft, ArrowRight, Icon } from 'lucide-react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from "../../components/ui/button";
 import { Card } from "../../components/ui/card";
@@ -8,30 +8,36 @@ import { FlippingCards } from "../../components/FlippingCards";
 import { useNavigate } from 'react-router-dom';
 import aiGovernanceImg from "../../../assets/ai_governance.png";
 import cyberRiskImg from "../../../assets/cyber_risk.png";
+import prismLogo from '../../../assets/Prism logo.png';
 
 
 export default function AdvisoryHome() {
   const [flipped, setFlipped] = useState<number | null>(null);
+
   const whyChooseUs = [
     {
       icon: Target,
       title: 'Intelligence-driven risk strategies',
-      description: 'Data-backed insights that transform risk into opportunity'
+      description: 'We leverage advanced analytics and real-time intelligence to transform risk into a strategic advantage—enabling faster, smarter, and more confident decision-making across complex business environments.',
+      image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1200'
     },
     {
       icon: Zap,
       title: 'AI and cyber expertise combined',
-      description: 'Unified approach to modern digital threats'
+      description: 'Our integrated approach blends artificial intelligence with deep cybersecurity expertise to proactively identify threats, automate responses, and build resilient digital ecosystems for the future.',
+      image: 'https://media.istockphoto.com/id/2205274485/photo/ai-technology-artificial-intelligence-brain-chip-wide-concepts-copy-space.jpg?b=1&s=612x612&w=0&k=20&c=wj-1wf7bEnLh5F1JWl3SRw7yCEcehUx2ufrF64rJVec='
     },
     {
       icon: Shield,
       title: 'Regulatory-ready frameworks',
-      description: 'Compliant solutions built for global standards'
+      description: 'We design and implement robust, scalable frameworks that ensure compliance with evolving regulations while enabling secure innovation and growth in a rapidly changing digital landscape.',
+      image: 'https://images.pexels.com/photos/32529341/pexels-photo-32529341.jpeg'
     },
     {
       icon: Award,
       title: 'Outcome-focused execution',
-      description: 'Measurable results that drive business value'
+      description: 'We are committed to delivering measurable results that drive business value, enhance security posture, and enable sustainable growth through strategic risk management and innovative solutions.',
+      image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200'
     }
   ];
 
@@ -130,7 +136,14 @@ export default function AdvisoryHome() {
   };
 
 
+  const [activeIndex, setActiveIndex] = useState(0);
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % whyChooseUs.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, []);
 
   const prev = () => {
     if (current > 0) {
@@ -218,7 +231,7 @@ export default function AdvisoryHome() {
           className="text-center mb-16"
         >
           <h2 className="text-5xl md:text-6xl text-foreground font-extrabold mb-6">
-              Our Core Pillars
+            Our Core Pillars
           </h2>
 
           <p className="text-2xl md:text-xl font-semibold text-primary uppercase tracking-widest text-center max-w-4xl mx-auto leading-relaxed px-4 whitespace-normal">
@@ -480,137 +493,165 @@ export default function AdvisoryHome() {
       <div className="h-px w-full bg-linear-to-r from-transparent via-blue-800/70 to-transparent"></div>
       <section className="py-24 bg-linear-to-br from-[#5F7A9F] via-[#D8C3A5] to-[#F5EFE6] ">
 
-        {/* Dynamic Spotlight Glow */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-200 h-200 bg-primary/10 rounded-full blur-[120px] pointer-events-none animate-pulse-slow" />
+        {/* HEADER OUTSIDE CARD */}
+        <div className="text-center mb-12">
+          <h2 className="text-5xl md:text-6xl font-extrabold mb-6 whitespace-nowrap">
+            <span className="text-foreground">
+              Innovation Spotlight
+            </span>
+            <span className="ml-3 bg-linear-to-r from-[#4A7FA8] to-[#FF7A18] bg-clip-text text-transparent">
+              PRISM
+            </span>
+          </h2>
 
-        {/* subtle grid background */}
-        <div className="absolute inset-0 bg-grid-primary/[0.03] bg-size-[50px_50px]"></div>
+          <p className="text-2xl md:text-xl font-semibold text-primary uppercase tracking-widest text-center max-w-4xl mx-auto leading-relaxed px-4 whitespace-normal">
+            AI-powered regulatory intelligence transforming compliance into automated, traceable systems.
+          </p>
+        </div>
 
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1, ease: "easeOut" }}
-          className="container mx-auto px-6 relative z-10"
-        >
+        {/* MAIN CARD */}
+        <div className="max-w-6xl mx-auto">
+          <div className="relative rounded-[40px] p-10 md:p-14 overflow-hidden
+    bg-white/80 backdrop-blur-xl
+    border border-[#B8956A]/40
+    shadow-[0_25px_80px_rgba(0,0,0,0.08)]">
 
-          {/* FLOATING PRISM CARD */}
-          <div className="max-w-5xl mx-auto">
+            {/* INNER GRID */}
+            <div className="grid md:grid-cols-2 gap-12 items-start">
+              {/* Dynamic Spotlight Glow */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-200 h-200 bg-primary/10 rounded-full blur-[120px] pointer-events-none animate-pulse-slow" />
 
-            <div className="relative rounded-[40px] p-10 md:p-16 overflow-hidden
-bg-white/80 backdrop-blur-xl 
-border border-[#B8956A]/40 
-shadow-[0_25px_80px_rgba(0,0,0,0.08)]
-group">
+              {/* subtle grid background */}
+              <div className="absolute inset-0 bg-grid-primary/[0.03] bg-size-[50px_50px]"></div>
 
-              {/* SPARKLE/LIGHT BEAM EFFECT */}
-              <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <motion.div
-                  animate={{
-                    x: ['-100%', '200%'],
-                    opacity: [0, 0.3, 0]
-                  }}
-                  transition={{
-                    duration: 4,
-                    repeat: Infinity,
-                    repeatDelay: 3,
-                    ease: "easeInOut"
-                  }}
-                  className="absolute top-0 left-0 w-32 h-full bg-linear-to-r from-transparent via-primary/40 to-transparent skew-x-[-25deg]"
-                />
-              </div>
+              {/* LEFT SIDE — PRISM STORY CARD */}
+              <motion.div
+                whileHover={{ y: -6 }}
+                className="relative rounded-3xl p-6 
+                            bg-background
+                            border border-[#E6D3B5]
+                            shadow-[0_10px_30px_rgba(0,0,0,0.06)]
+                            transition-all duration-500 overflow-hidden">
 
-              {/* CONTENT */}
-              <div className="relative z-10 text-center">
+                {/* subtle glow */}
+                <div className="absolute inset-0 bg-primary/5 opacity-0 hover:opacity-100 transition-opacity duration-500" />
 
-                {/* LOGO-SHINE TITLE */}
-                <h2 className="text-5xl md:text-6xl mb-6 font-bold tracking-tight text-gray-900">
-                  <span className="block mb-2 text-blue-900">Innovation Spotlight</span>
-                  <span className="bg-linear-to-r from-[#4A7FA8] to-[#FF7A18] bg-clip-text text-transparent">
-                    PRISM
-                  </span>
-                </h2>
+                <div className="relative z-10">
 
-                {/* DESCRIPTION */}
-                <p className="text-lg md:text-xl text-gray-700 leading-relaxed max-w-3xl mx-auto mb-12 font-medium">
-                  PRISM is an automated regulatory intelligence platform built for precision, traceability,
-                  and enterprise-scale compliance.
-                </p>
+                  {/* LOGO + HEADING */}
+                  <div className="flex items-center gap-4 mb-4">
+                    <img
+                      src={prismLogo}
+                      alt="PRISM Logo"
+                      className="w-12 h-12 object-contain"
+                    />
+                    <h3 className="text-3xl font-bold text-foreground tracking-tight">
+                      About PRISM
+                    </h3>
+                  </div>
 
-                {/* FEATURE GRID */}
-                <div className="grid md:grid-cols-3 gap-8">
-
-                  {[
-                    {
-                      title: "Precision",
-                      desc: "Accurate insights you can trust",
-                      icon: Shield
-                    },
-                    {
-                      title: "Traceability",
-                      desc: "Full audit trail and explainability",
-                      icon: Target
-                    },
-                    {
-                      title: "Scalability",
-                      desc: "Built for enterprise-scale compliance",
-                      icon: Zap
-                    }
-                  ].map((item, idx) => (
-                    <motion.div
-                      key={idx}
-                      whileHover={{ y: -10 }}
-                      className="relative rounded-3xl p-8 
-bg-linear-to-br from-[#ffffff] to-[#f8f4ed] 
-border border-[#E6D3B5] 
-shadow-[0_10px_25px_rgba(0,0,0,0.05),inset_0_1px_0_rgba(255,255,255,0.6)]
-hover:shadow-[0_20px_40px_rgba(0,0,0,0.1)] 
-transition-all duration-500 
-group/item overflow-hidden">
-                      {/* Inner Glow */}
-                      <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover/item:opacity-100 transition-opacity duration-500" />
-                      <div className="absolute inset-0 rounded-3xl border border-transparent 
-group-hover/item:border-[#B8956A]/40 transition-all duration-500" />
-                      <div className="relative z-10">
-                        <div className="mb-4 inline-flex p-3 rounded-2xl bg-[#F5EFE6] text-[#B8956A]">                          <item.icon className="w-6 h-6" />
-                        </div>
-                        <h3 className="text-2xl font-bold text-foreground mb-3">
-                          {item.title}
-                        </h3>
-                        <p className="text-foreground/70 text-base leading-relaxed">
-                          {item.desc}
-                        </p>
-                      </div>
-
-
-                    </motion.div>
-                  ))}
+                  {/* CONTENT */}
+                  <p className="text-primary leading-relaxed text-base md:text-lg lg:text-[17.28px] mt-8">
+                    PRISM is an end-to-end AI-powered regulatory intelligence platform designed to transform
+                    complex regulatory documentation into structured, executable, and fully auditable outputs.
+                    It automates formula extraction, interpretation, and COREP reporting with complete traceability—
+                    eliminating manual inefficiencies introduced by Basel 3.1 complexity. Built for financial institutions,
+                    compliance teams, and audit functions, PRISM enables organisations to move from manual execution
+                    to intelligent, scalable regulatory oversight.
+                  </p>
 
                 </div>
-              </div>
-              {/* VIEW DETAILS LINK */}
-              <div className="text-lg flex justify-center mt-10">
-                <a
-                  href="https://prism-rho-ruddy.vercel.app/"
-                  className="group inline-flex items-center gap-2 text-[#B8956A] font-semibold relative"
-                >
-                  <span className="relative">
-                    View Details
-                    {/* Animated underline */}
-                    <span className="absolute left-0 -bottom-1 h-0.5 w-0 bg-[#B8956A] transition-all duration-300 group-hover:w-full"></span>
-                  </span>
+              </motion.div>
 
-                  {/* Arrow animation */}
-                  <span className="transition-transform duration-300 group-hover:translate-x-1">
-                    →
-                  </span>
-                </a>
+
+              {/* RIGHT SIDE — FEATURE STACK */}
+              <div className="flex flex-col gap-6">
+
+                {[
+                  {
+                    title: "Precision",
+                    desc: "Accurate insights you can trust.",
+                    icon: Shield
+                  },
+                  {
+                    title: "Traceability",
+                    desc: "Full audit trail and explainability.",
+                    icon: Target
+                  },
+                  {
+                    title: "Scalability",
+                    desc: "Built for enterprise-scale compliance.",
+                    icon: Zap
+                  }
+                ].map((item, idx) => (
+                  <motion.div
+                    key={idx}
+                    whileHover={{ y: -6, scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    transition={{ type: "spring", stiffness: 200, damping: 15 }}
+                    className="relative flex items-start gap-5 p-6 rounded-2xl
+      bg-background
+      border border-[#E6D3B5]
+      shadow-[0_8px_20px_rgba(0,0,0,0.05)]
+      hover:shadow-[0_15px_35px_rgba(0,0,0,0.1)]
+      transition-all duration-500 overflow-hidden group"
+                  >
+
+                    {/* subtle hover glow */}
+                    <div className="absolute inset-0 bg-linear-to-r from-[#4A7FA8]/5 via-[#B8956A]/10 to-[#4A7FA8]/5 
+      opacity-0 group-hover:opacity-100 transition duration-500" />
+
+                    {/* left accent line */}
+                    <div className="absolute left-0 top-0 h-full w-0.75 
+      bg-linear-to-b from-[#4A7FA8] via-[#B8956A] to-[#4A7FA8] opacity-70 group-hover:opacity-100" />
+
+                    {/* ICON */}
+                    <div className="relative z-10 p-3 rounded-xl 
+      bg-[#F5EFE6] text-[#B8956A] 
+      group-hover:scale-110 group-hover:bg-white 
+      transition-all duration-300 shadow-sm">
+
+                      <item.icon className="w-5 h-5" />
+                    </div>
+
+                    {/* TEXT */}
+                    <div className="relative z-10">
+                      <h4 className="text-xl md:text-2xl font-semibold text-foreground tracking-tight">
+                        {item.title}
+                      </h4>
+
+                      <p className="text-primary text-base md:text-lg leading-[1.7] mt-2">
+                        {item.desc}
+                      </p>
+                    </div>
+
+                  </motion.div>
+                ))}
+
               </div>
+
+            </div>
+
+            {/* CTA */}
+            <div className="text-center mt-12">
+              <a
+                href="https://prism-rho-ruddy.vercel.app/"
+                className="group inline-flex items-center gap-2 text-[#B8956A] font-semibold text-lg relative"
+              >
+                <span className="relative">
+                  View Details
+                  <span className="absolute left-0 -bottom-1 h-0.5 w-0 bg-[#B8956A] transition-all duration-300 group-hover:w-full"></span>
+                </span>
+
+                <span className="transition-transform duration-300 group-hover:translate-x-1">
+                  →
+                </span>
+              </a>
             </div>
 
           </div>
+        </div>
 
-        </motion.div>
       </section>
 
       {/* Why Choose Us */}
@@ -633,27 +674,83 @@ group-hover/item:border-[#B8956A]/40 transition-all duration-500" />
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {whyChooseUs.map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-              >
-                <Card className="p-6 h-full hover:shadow-xl transition-all duration-300 group border-border hover:border-primary/50 bg-card">
-                  <div className="mb-4">
-                    <div className="w-14 h-14 rounded-xl bg-linear-to-br from-blue-500 via-purple-500 to-pink-500 p-3 group-hover:scale-110 transition-transform duration-300">
-                      <item.icon className="w-full h-full text-white" />
+          <div className="relative max-w-6xl xl:max-w-7xl mx-auto min-h-105 md:min-h-120 flex items-center justify-center">
+
+            {whyChooseUs.map((item, index) => {
+              const isActive = activeIndex === index;
+              const Icon = item.icon;
+              return (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{
+                    opacity: isActive ? 1 : 0,
+                    scale: isActive ? 1 : 0.95
+                  }}
+                  transition={{ duration: 0.5 }}
+                  className={`absolute w-full flex justify-center items-center ${isActive ? "z-10" : "z-0 pointer-events-none"
+                    }`}
+                >
+                  <div className="rounded-3xl overflow-hidden 
+bg-background 
+border border-[#E6D3B5]
+shadow-[0_25px_60px_rgba(0,0,0,0.08)]
+w-full max-w-3xl md:max-w-4xl mx-auto transition-all duration-500">
+
+                    {/* IMAGE */}
+                    <div className="relative h-64 md:h-72 overflow-hidden">
+                      <img
+                        src={item.image}
+                        className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-linear-to-t from-black/10 to-transparent" />
+                    </div>
+
+                    {/* CONTENT */}
+                    <div className="p-8 md:p-10">
+
+                      {/* ICON + TITLE */}
+                      <div className="flex items-center gap-4 mb-4">
+                        <div
+  className="w-14 h-14 rounded-xl 
+  bg-linear-to-br from-[#4A7FA8] via-[#7A8299] to-[#B8956A]
+  p-3 shadow-lg flex items-center justify-center"
+>
+  <Icon className="w-full h-full text-white" />
+</div>
+
+                        <h3 className="text-2xl md:text-3xl font-semibold text-foreground tracking-tight">
+                          {item.title}
+                        </h3>
+                      </div>
+
+                      {/* DESCRIPTION */}
+                      <p className="text-primary text-base md:text-lg leading-relaxed tracking-wide">
+                        {item.description}
+                      </p>
+
                     </div>
                   </div>
-                  <h3 className="text-lg mb-2 text-foreground">{item.title}</h3>
-                  <p className="text-foreground/70 text-sm">{item.description}</p>
-                </Card>
-              </motion.div>
+                </motion.div>
+              );
+            })}
+
+          </div>
+
+          {/* DOT NAVIGATION */}
+          <div className="flex justify-center mt-14 md:mt-16 gap-4 relative z-20">
+            {whyChooseUs.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => setActiveIndex(idx)}
+                className={`w-3.5 h-3.5 rounded-full transition-all duration-300 ${activeIndex === idx
+                    ? 'bg-[#da9e4a] scale-125 shadow-[0_0_10px_rgba(198,167,125,0.8)]'
+                    : 'bg-[#ffffff]/60 hover:bg-[#ffffff]'
+                  }`}
+              />
             ))}
           </div>
+          
         </div>
       </section>
 
