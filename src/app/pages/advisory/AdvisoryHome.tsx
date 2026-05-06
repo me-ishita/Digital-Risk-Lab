@@ -222,7 +222,7 @@ export default function AdvisoryHome() {
 
       {/* CORE PILLARS - CLICK FLIP */}
       <div className="h-px w-full bg-linear-to-r from-transparent via-blue-800/70 to-transparent"></div>
-      <section className="py-24 bg-[#DFE2E8] ">
+      <section className="py-24 bg-background">
         {/* Flipping Cards */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -244,19 +244,19 @@ export default function AdvisoryHome() {
 
       {/* ABOUT */}
       <div className="h-px w-full bg-linear-to-r from-transparent via-blue-800/70 to-transparent"></div>
-      <section className="py-24 bg-[#FAFAF8]">
+      <section className="py-24 bg-[#0f0d0c]">
 
         <div className="container mx-auto px-6">
 
           {/* HEADING */}
           <div className="text-center mb-16">
             <h2 className="text-5xl md:text-6xl font-extrabold mb-6">
-              <span className="text-foreground">
+              <span className="text-white">
                 About Us
               </span>
             </h2>
 
-            <p className="text-2xl md:text-xl font-semibold text-primary uppercase tracking-widest text-center max-w-4xl mx-auto leading-relaxed px-4 whitespace-normal">
+            <p className="text-2xl md:text-xl font-semibold text-[#d4af37] uppercase tracking-widest text-center max-w-4xl mx-auto leading-relaxed px-4 whitespace-normal">
               A forward-thinking ecosystem designed to build, launch, and scale the next generation of digital ventures.
             </p>
           </div>
@@ -343,7 +343,7 @@ export default function AdvisoryHome() {
 
       {/* How We Work */}
       <div className="h-px w-full bg-linear-to-r from-transparent via-blue-800/70 to-transparent"></div>
-      <section className="py-24 bg-[#DFE2E8] ">
+      <section className="py-24 bg-background ">
         <div className="container mx-auto px-6">
 
           {/* HEADER */}
@@ -408,17 +408,17 @@ export default function AdvisoryHome() {
 
       {/* SERVICES GRID */}
       <div className="h-px w-full bg-linear-to-r from-transparent via-blue-800/70 to-transparent"></div>
-      <section className="py-24 bg-[#FAFAF8]">
+      <section className="py-24 bg-[#0f0d0c]">
 
         {/* HEADER */}
         <div className="text-center mb-20">
           <h2 className="text-5xl md:text-6xl font-extrabold mb-6">
-            <span className="text-foreground">
+            <span className="text-white">
               Strategic Capabilities
             </span>
           </h2>
 
-          <p className="text-2xl md:text-xl font-semibold text-primary uppercase tracking-widest text-center max-w-4xl mx-auto leading-relaxed px-4 whitespace-normal">
+          <p className="text-2xl md:text-xl font-semibold text-[#d4af37] uppercase tracking-widest text-center max-w-4xl mx-auto leading-relaxed px-4 whitespace-normal">
             From risk assessment to regulatory compliance, we enable secure and scalable digital transformation
           </p>
         </div>
@@ -480,7 +480,7 @@ export default function AdvisoryHome() {
         <div className="text-center mt-16">
           <button
             onClick={() => navigate('/advisory/services')}
-            className="inline-flex items-center gap-1 text-lg font-semibold text-foreground/80 hover:text-foreground transition"
+            className="inline-flex items-center gap-1 text-lg font-semibold text-[#d4af37]/80 hover:text-[#d4af37] transition"
           >
             View All Advisory Services
             <ArrowRight className="w-5 h-5" />
@@ -491,7 +491,7 @@ export default function AdvisoryHome() {
 
       {/* Innovation Spotlight - PRISM */}
       <div className="h-px w-full bg-linear-to-r from-transparent via-blue-800/70 to-transparent"></div>
-      <section className="py-24 bg-[#DFE2E8]  ">
+      <section className="py-24 bg-background  ">
 
         {/* HEADER OUTSIDE CARD */}
         <div className="text-center mb-12">
@@ -511,10 +511,11 @@ export default function AdvisoryHome() {
 
         {/* MAIN CARD */}
         <div className="max-w-6xl mx-auto">
-          <div className="relative rounded-[40px] p-10 md:p-14 overflow-hidden
-    bg-[#FAFAF8]
-    border border-[#B8956A]/40
-    shadow-[0_25px_80px_rgba(0,0,0,0.08)]">
+          <div className="relative rounded-[40px] p-10 mt-10 md:p-14 overflow-hidden
+bg-black/40 backdrop-blur-xl
+border border-white/10
+shadow-[0_25px_80px_rgba(0,0,0,0.6)]
+">
 
             {/* INNER GRID */}
             <div className="grid md:grid-cols-2 gap-12 items-start">
@@ -656,7 +657,7 @@ export default function AdvisoryHome() {
 
       {/* Why Choose Us */}
       <div className="h-px w-full bg-linear-to-r from-transparent via-blue-800/70 to-transparent"></div>
-      <section className="py-24 bg-[#FAFAF8]">
+      <section className="py-24 bg-[#0f0d0c]">
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -665,11 +666,11 @@ export default function AdvisoryHome() {
             className="text-center mb-16"
           >
             <h2 className="text-5xl md:text-6xl font-extrabold mb-6">
-              <span className="text-foreground">
+              <span className="text-white">
                 Why Choose Us
               </span>
             </h2>
-            <p className="text-2xl md:text-xl font-semibold text-primary uppercase tracking-widest text-center max-w-4xl mx-auto leading-relaxed px-4 whitespace-normal">
+            <p className="text-2xl md:text-xl font-semibold text-[#d4af37] uppercase tracking-widest text-center max-w-4xl mx-auto leading-relaxed px-4 whitespace-normal">
               Strategic cybersecurity and digital risk solutions designed for executive leadership and organizational resilience
             </p>
           </motion.div>

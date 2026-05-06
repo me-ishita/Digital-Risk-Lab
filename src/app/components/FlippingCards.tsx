@@ -23,11 +23,11 @@ const cards: CardType[] = [
         title: 'Innovation',
         route: '/innovation',
         icon: Sparkles,
-        gradient: 'from-[#769dbb] to-[#F5F3EF]',
+        gradient: 'from-[#0f0d0c] to-[#181513]',
         imageFront:
             'https://images.unsplash.com/photo-1674027444485-cec3da58eef4?w=600',
         imageBack:
-            'https://images.unsplash.com/photo-1744640326166-433469d102f2?w=600',
+            'https://media.istockphoto.com/id/2164746643/photo/artificial-intelligence-idea-ai-light-bulb-idea-concept.jpg?b=1&s=612x612&w=0&k=20&c=u76poggPI6qRKK6n0a08_C4NDYMvbMSaI7shcQBV0dA=',
         points: [
             'AI & Emerging Tech Development',
             'Product Architecture & System Design',
@@ -43,11 +43,11 @@ const cards: CardType[] = [
         title: 'Incubation',
         route: '/incubation',
         icon: Rocket,
-        gradient: 'from-[#769dbb] to-[#F5F3EF]',
+        gradient: 'from-[#0f0d0c] to-[#181513]',
         imageFront:
             'https://images.unsplash.com/photo-1599658880436-c61792e70672?w=600',
         imageBack:
-            'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200',
+            'https://media.istockphoto.com/id/1344939844/photo/hand-holding-drawing-virtual-lightbulb-with-brain-on-bokeh-background-for-creative-and-smart.jpg?b=1&s=612x612&w=0&k=20&c=-wlvWS-XTNTxhD6_ewD5T8vRsiTrvnId8b7uf-5-Ucw=',
         points: [
             'Idea Validation & Market Research',
             'Business Model & Strategy Design',
@@ -63,11 +63,11 @@ const cards: CardType[] = [
         title: 'Acceleration',
         route: '/acceleration',
         icon: TrendingUp,
-        gradient: 'from-[#769dbb] to-[#F5F3EF]',
+        gradient: 'from-[#0f0d0c] to-[#181513]',
         imageFront:
             'https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=1200',
         imageBack:
-            'https://images.unsplash.com/photo-1677442135136-760c813028c0?w=600',
+            'https://media.istockphoto.com/id/2186725773/photo/automation-and-optimization-of-business-processes-with-gears.jpg?b=1&s=612x612&w=0&k=20&c=58JqDMTzzo3qNcuICMMxC_Y03L_QtRYSL3B8Yo9rvOs=',
         points: [
             'Go-to-Market Strategy',
             'Enterprise Partnerships & Alliances',
@@ -162,7 +162,7 @@ function FlippingCard({ card, index, isFlipped }: FlippingCardProps) {
 
                 {/* BACK */}
                 <div className="absolute inset-0 backface-hidden rotate-y-180">
-                    <div className={`h-full rounded-2xl overflow-hidden text-blue-950 bg-linear-to-br ${card.gradient}`}>
+                    <div className={`h-full rounded-2xl overflow-hidden text-[#d4af37] bg-linear-to-br ${card.gradient}`}>
 
                         <div className="h-65 overflow-hidden">
                             <img src={card.imageBack} className="w-full h-full object-cover group-hover:scale-105 transition" />

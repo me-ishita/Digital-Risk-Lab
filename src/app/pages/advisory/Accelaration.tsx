@@ -107,7 +107,7 @@ export function Acceleration() {
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.4 }}
-              className="bg-linear-to-br from-orange-100 to-amber-100 rounded-xl p-8 border border-primary/20 shadow-lg"
+              className="bg-card rounded-xl p-8 border border-primary/20 shadow-lg"
             >
               <h3 className="text-2xl font-semibold text-foreground mb-4">The Function</h3>
               <p className="text-foreground leading-relaxed">
@@ -158,7 +158,7 @@ export function Acceleration() {
         </div>
       </section>
 
-      <section className="py-24 bg-linear-to-br from-amber-50 to-orange-50">
+      <section className="py-24 bg-[#0f0d0c]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -166,10 +166,10 @@ export function Acceleration() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold text-foreground mb-4">
+            <h2 className="text-4xl font-bold text-white mb-4">
               For Corporate Partners
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-lg text-white max-w-2xl mx-auto">
               Access innovative solutions and accelerate digital transformation
             </p>
           </motion.div>
@@ -245,7 +245,7 @@ export function Acceleration() {
         </div>
       </section>
 
-      <section className="py-24 bg-linear-to-br from-orange-50 to-amber-50">
+      <section className="py-24 bg-[#0f0d0c]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -253,10 +253,10 @@ export function Acceleration() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-4xl font-bold text-foreground mb-6">
+              <h2 className="text-4xl font-bold text-white mb-6">
                 Success Stories
               </h2>
-              <p className="text-lg text-muted-foreground mb-8">
+              <p className="text-lg text-white mb-8">
                 Our partnerships have created measurable value for both startups and enterprises
               </p>
               <div className="space-y-4">
@@ -276,7 +276,7 @@ export function Acceleration() {
                     className="flex items-start gap-3"
                   >
                     <CheckCircle size={24} className="text-primary shrink-0 mt-0.5" />
-                    <p className="text-foreground">{achievement}</p>
+                    <p className="text-white">{achievement}</p>
                   </motion.div>
                 ))}
               </div>
@@ -356,7 +356,7 @@ export function Acceleration() {
         </div>
       </section>
 
-      <section className="py-24 bg-linear-to-br from-amber-50 to-orange-50">
+      {/*<section className="py-24 bg-linear-to-br from-amber-50 to-orange-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -382,7 +382,7 @@ export function Acceleration() {
             </div>
           </motion.div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 }

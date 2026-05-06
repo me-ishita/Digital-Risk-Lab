@@ -173,7 +173,7 @@ export function Innovation() {
 
       {/* PRISM */}
       <div className="h-px w-full bg-linear-to-r from-transparent via-amber-600/70 to-transparent"></div>
-      <section className="py-24 bg-background">
+      <section className="py-24 bg-[#0f0d0c]">
         <div className="max-w-7xl mx-auto px-6">
 
           {/* HEADER */}
@@ -182,14 +182,14 @@ export function Innovation() {
               <img src={prismLogo} alt="PRISM Logo" className="w-12 h-12" />
 
               <h2 className="text-5xl md:text-6xl font-extrabold mb-6">
-                <span className="text-foreground">Live Innovation — </span>
+                <span className="text-white">Live Innovation — </span>
                 <span className="bg-linear-to-r from-[#d4af37] to-[#f5d06f] bg-clip-text text-transparent text-5xl md:text-6xl font-extrabold mb-6">
                   PRISM
                 </span>
               </h2>
             </div>
 
-            <p className="text-2xl md:text-xl font-semibold text-primary uppercase tracking-widest text-center max-w-4xl mx-auto leading-relaxed px-4 whitespace-normal">
+            <p className="text-2xl md:text-xl font-semibold text-[#d4af37] uppercase tracking-widest text-center max-w-4xl mx-auto leading-relaxed px-4 whitespace-normal">
               AI-powered regulatory intelligence transforming compliance into automated, traceable, and scalable systems.
             </p>
           </div>
@@ -293,7 +293,22 @@ export function Innovation() {
             </div>
 
           </div>
+{/* CTA */}
+            <div className="text-center mt-12">
+              <a
+                href="https://prism-rho-ruddy.vercel.app/"
+                className="group inline-flex items-center gap-2 text-[#d4af37] font-semibold text-lg relative"
+              >
+                <span className="relative">
+                  View Details
+                  <span className="absolute left-0 -bottom-1 h-0.5 w-0 text-[#d4af37] bg-[#B8956A] transition-all duration-300 group-hover:w-full"></span>
+                </span>
 
+                <span className="transition-transform duration-300 group-hover:translate-x-1">
+                  →
+                </span>
+              </a>
+            </div>
         </div>
       </section>
 

@@ -100,7 +100,7 @@ export function Incubation() {
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.4 }}
-              className="bg-linear-to-br from-amber-100 to-orange-100 rounded-xl p-8 border border-primary/20 shadow-lg"
+              className="bg-card rounded-xl p-8 border border-primary/20 shadow-lg"
             >
               <h3 className="text-2xl font-semibold text-foreground mb-4">The Function</h3>
               <p className="text-foreground leading-relaxed">
@@ -151,7 +151,7 @@ export function Incubation() {
         </div>
       </section>
 
-      <section className="py-24 bg-linear-to-br from-amber-50 to-orange-50">
+      <section className="py-24 bg-[#0f0d0c]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -159,10 +159,10 @@ export function Incubation() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold text-foreground mb-4">
+            <h2 className="text-4xl font-bold text-white mb-4">
               Your Journey With Us
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-lg text-white max-w-2xl mx-auto">
               A structured pathway from idea to market-ready startup
             </p>
           </motion.div>
@@ -252,7 +252,7 @@ export function Incubation() {
         </div>
       </section>
 
-      <section className="py-24 bg-linear-to-br from-amber-50 to-orange-50">
+      <section className="py-24 bg-[#0f0d0c]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -260,10 +260,10 @@ export function Incubation() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-4xl font-bold text-foreground mb-4">
+            <h2 className="text-4xl font-bold text-white mb-4">
               Success Metrics
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-lg text-white max-w-2xl mx-auto">
               Our track record speaks for itself
             </p>
           </motion.div>
@@ -286,7 +286,7 @@ export function Incubation() {
         </div>
       </section>
 
-      <section className="py-24 bg-background">
+      {/*<section className="py-24 bg-background">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -305,7 +305,8 @@ export function Incubation() {
             </button>
           </motion.div>
         </div>
-      </section>
+      </section> 
+      */}
     </div>
   );
 }
