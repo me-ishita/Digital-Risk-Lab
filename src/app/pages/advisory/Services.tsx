@@ -107,12 +107,6 @@ export function Services() {
       gradient: 'from-gray-400 via-gray-500 to-gray-400'
     },
     {
-      icon: Code,
-      name: 'Technology & SaaS',
-      description: 'Cloud security, AI governance',
-      gradient: 'from-zinc-400 via-zinc-500 to-zinc-400'
-    },
-    {
       icon: Briefcase,
       name: 'Government & Public Sector',
       description: 'Critical infrastructure protection',
@@ -121,15 +115,9 @@ export function Services() {
     {
       icon: ShoppingCart,
       name: 'Retail & E-commerce',
-      description: 'Payment security, fraud detection',
+      description: 'Payment security, fraud detection, data protection',
       gradient: 'from-zinc-400 via-zinc-500 to-zinc-400'
     },
-    {
-      icon: GraduationCap,
-      name: 'Education & Institutions',
-      description: 'Digital learning security, student data protection',
-      gradient: 'from-gray-400 via-gray-500 to-gray-400'
-    }
   ];
   const navigate = useNavigate();
 
@@ -272,7 +260,7 @@ export function Services() {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
             {industries.map((industry, index) => (
               <motion.div
                 key={index}

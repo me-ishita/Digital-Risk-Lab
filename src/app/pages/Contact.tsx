@@ -144,7 +144,7 @@ export function Contact() {
                   <button
                     type="submit"
                     disabled={status === "submitting"}
-                    className="w-full min-h-[52px] px-6 sm:px-8 py-3.5 sm:py-4 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary/90 active:scale-[0.99] disabled:opacity-70 disabled:cursor-not-allowed transition-all duration-300 flex items-center justify-center gap-2 shadow-lg"
+                    className="w-full min-h-13 px-6 sm:px-8 py-3.5 sm:py-4 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary/90 active:scale-[0.99] disabled:opacity-70 disabled:cursor-not-allowed transition-all duration-300 flex items-center justify-center gap-2 shadow-lg"
                   >
                     {status === "submitting" ? (
                       <>
@@ -190,8 +190,8 @@ export function Contact() {
                     <Mail className="w-5 h-5 text-primary mt-1 shrink-0" />
                     <div className="min-w-0">
                       <div className="font-medium">Email</div>
-                      <a href="mailto:contact@digitalrisklabs.com" className="text-primary hover:opacity-80 text-sm break-all font-medium">
-                        contact@digitalrisklabs.com
+                      <a href="mailto:info@digitalrisklabs.com" className="text-primary hover:opacity-80 text-sm break-all font-medium">
+                        info@digitalrisklabs.com
                       </a>
                     </div>
                   </div>
@@ -253,8 +253,8 @@ export function Contact() {
               Book a consultation directly with our advisory team.
             </p>
             <a
-              href="mailto:contact@digitalrisklabs.com?subject=Consultation%20Request"
-              className="inline-flex items-center gap-2 min-h-[52px] px-6 sm:px-8 py-3.5 sm:py-4 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary/90 active:scale-[0.99] transition-all shadow-md"
+              href="mailto:info@digitalrisklabs.com?subject=Consultation%20Request"
+              className="inline-flex items-center gap-2 min-h-13 px-6 sm:px-8 py-3.5 sm:py-4 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary/90 active:scale-[0.99] transition-all shadow-md"
             >
               <Mail className="w-5 h-5" />
               <span>Schedule a Consultation</span>

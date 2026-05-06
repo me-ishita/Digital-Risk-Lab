@@ -1,6 +1,7 @@
 import { motion } from 'motion/react';
-import { TrendingUp, Handshake, Target, Globe, Building, Briefcase, ArrowRight, CheckCircle } from 'lucide-react';
+import { TrendingUp, Handshake, Target, Globe, Building, Briefcase, ArrowRight, CheckCircle, ShoppingCart, Heart, Building2 } from 'lucide-react';
 import { ImageWithFallback } from '../../components/figma/ImageWithFallback';
+import { Card } from '@/app/components/ui/card';
 
 export function Acceleration() {
   const services = [
@@ -60,6 +61,33 @@ export function Acceleration() {
     {
       step: 'Scaling',
       description: 'Expand successful partnerships',
+    },
+  ];
+
+  const industries = [
+    {
+      icon: Building2,
+      name: 'Financial Services',
+      description: 'Fraud prevention, regulatory compliance',
+      gradient: 'from-zinc-400 via-zinc-500 to-zinc-400'
+    },
+    {
+      icon: Heart,
+      name: 'Healthcare',
+      description: 'Patient data security, HIPAA compliance',
+      gradient: 'from-gray-400 via-gray-500 to-gray-400'
+    },
+    {
+      icon: Briefcase,
+      name: 'Government & Public Sector',
+      description: 'Critical infrastructure protection',
+      gradient: 'from-gray-400 via-gray-500 to-gray-400'
+    },
+    {
+      icon: ShoppingCart,
+      name: 'Retail & E-commerce',
+      description: 'Payment security, fraud detection, data protection', 
+      gradient: 'from-zinc-400 via-zinc-500 to-zinc-400'
     },
   ];
 
@@ -328,28 +356,28 @@ export function Acceleration() {
             </h2>
           </motion.div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-            {[
-              'FinTech',
-              'HealthTech',
-              'AI & ML',
-              'SaaS',
-              'Cybersecurity',
-              'IoT',
-              'RegTech',
-              'InsurTech',
-              'Supply Chain',
-              'E-Commerce',
-            ].map((industry, index) => (
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-9xl mx-auto">
+            {industries.map((industry, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.05 }}
-                className="bg-card rounded-xl p-6 border border-border hover:border-primary transition-all shadow-lg text-center"
+                transition={{ delay: index * 0.1 }}
               >
-                <p className="font-semibold text-foreground">{industry}</p>
+                <Card className="p-6 hover:shadow-xl transition-all duration-300 group border-gray-200 hover:border-purple-300 relative overflow-hidden">
+                  <div className={`absolute inset-0 bg-linear-to-br ${industry.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}></div>
+
+                  <div className="relative z-10">
+                    <div className="mb-4">
+                      <div className={`w-12 h-12 rounded-xl bg-linear-to-br ${industry.gradient} p-3 group-hover:scale-110 transition-transform duration-300`}>
+                        <industry.icon className="w-full h-full text-white" />
+                      </div>
+                    </div>
+                    <h3 className="text-xl mb-2">{industry.name}</h3>
+                    <p className="text-gray-600 text-sm">{industry.description}</p>
+                  </div>
+                </Card>
               </motion.div>
             ))}
           </div>

@@ -100,8 +100,8 @@ export function Layout() {
                 Research
               </Link>
 
-              <Link to="/register" className="px-5 py-2 bg-primary hover:bg-primary/80 text-primary-foreground font-semibold rounded-full transition-all duration-300 shadow-md">
-                Register
+              <Link to="/contact" className="px-5 py-2 bg-primary hover:bg-primary/80 text-primary-foreground font-semibold rounded-full transition-all duration-300 shadow-md">
+                Contact Us
               </Link>
 
               {/* Theme Toggle */}
@@ -214,10 +214,10 @@ export function Layout() {
                   Research
                 </Link>
                 <Link
-                  to="/register"
+                  to="/contact"
                   className="block mt-4 px-6 py-3 bg-primary text-primary-foreground rounded-xl text-center font-semibold"
                 >
-                  Register
+                  Contact Us
                 </Link>
               </motion.div>
             )}
@@ -238,7 +238,7 @@ function Footer() {
   return (
     <footer className="bg-background border-t border-border">
       <div className="container mx-auto px-6 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           <div>
             <div className="flex items-center space-x-2 mb-4">
               <img
@@ -293,6 +293,35 @@ function Footer() {
 
           <div>
             <h3 className="font-semibold mb-4 text-primary">
+              Solution
+            </h3>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <Link to="/innovation" className="text-muted-foreground hover:text-foreground transition-colors">
+                  Innovation
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/incubation"
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  Incubation
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/acceleration"
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  Acceleration
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="font-semibold mb-4 text-primary">
               Quick Access
             </h3>
             <ul className="space-y-2 text-sm">
@@ -306,8 +335,8 @@ function Footer() {
                 </Link>
               </li>
               <li>
-                <Link to="/register" className="text-muted-foreground hover:text-foreground transition-colors">
-                Register
+                <Link to="/contact" className="text-muted-foreground hover:text-foreground transition-colors">
+                Contact Us
                 </Link>
               </li>
             </ul>

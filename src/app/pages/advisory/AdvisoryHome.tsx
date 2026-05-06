@@ -102,14 +102,14 @@ export default function AdvisoryHome() {
       icon: Shield,
       image: "https://images.unsplash.com/photo-1625014618427-fbc980b974f5?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTR8fGlubm92YXRpb258ZW58MHx8MHx8fDA%3D",
       description:
-        "Bridging technology and strategy to help organizations thrive securely. We combine cybersecurity, AI, and business insight to drive resilient innovation."
+        "Bridging technology and strategy to help organisations thrive securely. We combine cybersecurity, AI, and business insight to drive resilient innovation."
     },
     {
       title: "Our Mission",
       icon: Target,
       image: "https://images.unsplash.com/photo-1737703121444-c568a9d3bc0e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGlubm92YXRpb24lMjBsYWJ8ZW58MHx8MHx8fDA%3D",
       description:
-        "To empower organizations to innovate securely in a digital-first world. We ensure risk management enables growth rather than restricting progress."
+        "To empower organisations to innovate securely in a digital-first world. We ensure risk management enables growth rather than restricting progress."
     },
     {
       title: "Our Vision",
@@ -671,7 +671,7 @@ shadow-[0_25px_80px_rgba(0,0,0,0.6)]
               </span>
             </h2>
             <p className="text-2xl md:text-xl font-semibold text-[#d4af37] uppercase tracking-widest text-center max-w-4xl mx-auto leading-relaxed px-4 whitespace-normal">
-              Strategic cybersecurity and digital risk solutions designed for executive leadership and organizational resilience
+              Strategic cybersecurity and digital risk solutions designed for executive leadership and organisational resilience
             </p>
           </motion.div>
 
