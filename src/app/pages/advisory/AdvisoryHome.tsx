@@ -512,7 +512,7 @@ export default function AdvisoryHome() {
         {/* MAIN CARD */}
         <div className="max-w-6xl mx-auto">
           <div className="relative rounded-[40px] p-10 md:p-14 overflow-hidden
-    bg-white/80 backdrop-blur-xl
+    bg-[#FAFAF8]
     border border-[#B8956A]/40
     shadow-[0_25px_80px_rgba(0,0,0,0.08)]">
 
@@ -528,7 +528,7 @@ export default function AdvisoryHome() {
               <motion.div
                 whileHover={{ y: -6 }}
                 className="relative rounded-3xl p-6 
-                            bg-background
+                            bg-card
                             border border-[#E6D3B5]
                             shadow-[0_10px_30px_rgba(0,0,0,0.06)]
                             transition-all duration-500 overflow-hidden">
@@ -590,7 +590,7 @@ export default function AdvisoryHome() {
                     whileTap={{ scale: 0.98 }}
                     transition={{ type: "spring", stiffness: 200, damping: 15 }}
                     className="relative flex items-start gap-5 p-6 rounded-2xl
-      bg-background
+      bg-card
       border border-[#E6D3B5]
       shadow-[0_8px_20px_rgba(0,0,0,0.05)]
       hover:shadow-[0_15px_35px_rgba(0,0,0,0.1)]
@@ -636,11 +636,11 @@ export default function AdvisoryHome() {
             <div className="text-center mt-12">
               <a
                 href="https://prism-rho-ruddy.vercel.app/"
-                className="group inline-flex items-center gap-2 text-[#B8956A] font-semibold text-lg relative"
+                className="group inline-flex items-center gap-2 text-primary font-semibold text-lg relative"
               >
                 <span className="relative">
                   View Details
-                  <span className="absolute left-0 -bottom-1 h-0.5 w-0 bg-[#B8956A] transition-all duration-300 group-hover:w-full"></span>
+                  <span className="absolute left-0 -bottom-1 h-0.5 w-0 text-primary bg-[#B8956A] transition-all duration-300 group-hover:w-full"></span>
                 </span>
 
                 <span className="transition-transform duration-300 group-hover:translate-x-1">
@@ -692,7 +692,7 @@ export default function AdvisoryHome() {
                     }`}
                 >
                   <div className="rounded-3xl overflow-hidden 
-bg-background 
+bg-card 
 border border-[#E6D3B5]
 shadow-[0_25px_60px_rgba(0,0,0,0.08)]
 w-full max-w-3xl md:max-w-4xl mx-auto transition-all duration-500">
