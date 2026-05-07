@@ -155,7 +155,7 @@ export function Incubation() {
               {incubationCards.map((_, i) => (
                 <div
                   key={i}
-                  className={`h-2 w-6 rounded-full transition-all duration-300 ${i === activeIncubation
+                  className={`h-2 w-6 rounded-full transition-all duration-400 ${i === activeIncubation
                     ? 'bg-amber-500' : 'bg-gray-300'
                     }`}
                 />
@@ -307,27 +307,7 @@ export function Incubation() {
 
                     </div>
 
-                    {/* ARROW CONNECTOR */}
-                    {index < journeySteps.length - 1 && (
-                      <div className="hidden lg:flex absolute top-1/2 -right-6 items-center justify-center">
-                        <div className="w-10 h-10 rounded-full 
-                  bg-[#d4af37]/20 border border-[#d4af37]/40 
-                  flex items-center justify-center 
-                  group-hover:scale-110 transition">
-
-                          <svg
-                            className="w-5 h-5 text-[#d4af37]"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="2"
-                            viewBox="0 0 24 24"
-                          >
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-                          </svg>
-                        </div>
-                      </div>
-                    )}
-
+                    
                   </motion.div>
                 );
               })}
