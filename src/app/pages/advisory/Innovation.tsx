@@ -93,9 +93,12 @@ export function Innovation() {
         </div>
 
         <div className="relative z-10 max-w-6xl mx-auto text-center px-6">
-          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
-            Engineering Intelligent Digital Systems
+          <h1 className="ttext-5xl md:text-6xl font-bold mb-6 text-amber-50">
+            Designing Scalable Digital Intelligence
           </h1>
+          <p className="text-xl text-white max-w-3xl mx-auto">
+            Where advanced engineering and innovation converge to deliver scalable solutions for complex modern challenges.
+          </p>
         </div>
       </section>
 
@@ -107,16 +110,16 @@ export function Innovation() {
 
           {/* LEFT - ABOUT */}
           <div className="space-y-6">
-            <h2 className="text-4xl font-bold text-foreground">
-              The Architecture of Innovation
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground leading-tight">
+              The Framework Behind Innovation
             </h2>
-            <p className="text-lg text-primary leading-relaxed">
+            <p className="text-lg md:text-xl text-primary leading-relaxed">
               Innovation at Digital Risk Lab is where ideas are transformed into scalable,
               production-ready technologies—bridging advanced engineering, AI intelligence,
               and real-world enterprise execution.
             </p>
 
-            <p className="text-lg text-primary leading-relaxed">
+            <p className="text-lg md:text-xl text-primary leading-relaxed">
               We don’t just build products—we design systems that can evolve, adapt,
               and scale within complex environments. Our approach ensures every innovation
               is aligned with real business needs and future growth.
@@ -140,7 +143,7 @@ export function Innovation() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="bg-white rounded-2xl shadow-xl overflow-hidden border border-amber-200"
+            className="bg-card rounded-2xl shadow-xl overflow-hidden border border-amber-200"
           >
             <div className="h-64">
               <img
@@ -158,12 +161,12 @@ export function Innovation() {
                   })()}
                 </div>
 
-                <h3 className="text-2xl font-bold text-blue-950">
+                <h3 className="text-2xl font-bold text-foreground">
                   {storyCards[active].title}
                 </h3>
               </div>
 
-              <p className="text-gray-700 leading-relaxed">
+              <p className="text-primary leading-relaxed">
                 {storyCards[active].desc}
               </p>
             </div>
@@ -293,22 +296,22 @@ export function Innovation() {
             </div>
 
           </div>
-{/* CTA */}
-            <div className="text-center mt-12">
-              <a
-                href="https://prism-rho-ruddy.vercel.app/"
-                className="group inline-flex items-center gap-2 text-[#d4af37] font-semibold text-lg relative"
-              >
-                <span className="relative">
-                  View Details
-                  <span className="absolute left-0 -bottom-1 h-0.5 w-0 text-[#d4af37] bg-[#B8956A] transition-all duration-300 group-hover:w-full"></span>
-                </span>
+          {/* CTA */}
+          <div className="text-center mt-12">
+            <a
+              href="https://prism-rho-ruddy.vercel.app/"
+              className="group inline-flex items-center gap-2 text-[#d4af37] font-semibold text-lg relative"
+            >
+              <span className="relative">
+                View Details
+                <span className="absolute left-0 -bottom-1 h-0.5 w-0 text-[#d4af37] bg-[#B8956A] transition-all duration-300 group-hover:w-full"></span>
+              </span>
 
-                <span className="transition-transform duration-300 group-hover:translate-x-1">
-                  →
-                </span>
-              </a>
-            </div>
+              <span className="transition-transform duration-300 group-hover:translate-x-1">
+                →
+              </span>
+            </a>
+          </div>
         </div>
       </section>
 
