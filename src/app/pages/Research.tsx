@@ -107,27 +107,8 @@ export function Research() {
   }, []);
 
   return (
-    <section className="min-h-screen bg-background pt-20 pb-16 sm:pb-20 md:pb-24">
-      <div className="h-px w-full bg-linear-to-r from-transparent via-blue-800/70 to-transparent"></div>
-      <section className="py-16 bg-card/30">
-        <div className="container mx-auto px-6">
-          <motion.div
-            className="max-w-4xl mx-auto text-center"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-          >
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 text-foreground">
-              Research & Analysis
-            </h1>
-            <p className="text-2xl md:text-xl font-semibold text-primary uppercase tracking-widest text-center max-w-4xl mx-auto leading-relaxed px-4 whitespace-normal">
-              Deep-dive investigations into the future of digital resilience and intelligence.
-            </p>
-          </motion.div>
-        </div>
-      </section>
-      <div className="h-px w-full bg-linear-to-r from-transparent via-amber-600/70 to-transparent"></div>
-
-      <div className="container mx-auto px-4 sm:px-6 pt-16">
+    <section className="min-h-screen bg-background pt-32 pb-16 sm:pb-20 md:pb-24">
+      <div className="container mx-auto px-4 sm:px-6">
 
 
         {loading ? (
