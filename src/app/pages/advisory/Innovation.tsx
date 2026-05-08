@@ -93,7 +93,7 @@ export function Innovation() {
         </div>
 
         <div className="relative z-10 max-w-6xl mx-auto text-center px-6">
-          <h1 className="ttext-5xl md:text-6xl font-bold mb-6 text-amber-50">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white">
             Designing Scalable Digital Intelligence
           </h1>
           <p className="text-xl text-white max-w-3xl mx-auto">
@@ -206,9 +206,9 @@ export function Innovation() {
               {/* WHY */}
               <motion.div
                 whileHover={{ y: -6 }}
-                className="bg-white border border-amber-200 rounded-xl p-6 shadow-lg"
+                className="bg-white border border-indigo-100/50 rounded-xl p-6 shadow-lg"
               >
-                <h3 className="text-xl font-semibold mb-3 text-amber-600">
+                <h3 className="text-xl font-semibold mb-3 text-blue-600">
                   Why PRISM Exists
                 </h3>
                 <p className="text-gray-600 text-sm leading-relaxed">
@@ -221,9 +221,9 @@ export function Innovation() {
               {/* HOW */}
               <motion.div
                 whileHover={{ y: -6 }}
-                className="bg-white border border-amber-200 rounded-xl p-6 shadow-lg"
+                className="bg-white border border-indigo-100/50 rounded-xl p-6 shadow-lg"
               >
-                <h3 className="text-xl font-semibold mb-3 text-amber-600">
+                <h3 className="text-xl font-semibold mb-3 text-blue-600">
                   How PRISM Works
                 </h3>
                 <p className="text-gray-600 text-sm leading-relaxed">
@@ -235,9 +235,9 @@ export function Innovation() {
               {/* IMPACT */}
               <motion.div
                 whileHover={{ y: -6 }}
-                className="bg-white border border-amber-200 rounded-xl p-6 shadow-lg"
+                className="bg-white border border-indigo-100/50 rounded-xl p-6 shadow-lg"
               >
-                <h3 className="text-xl font-semibold mb-3 text-amber-600">
+                <h3 className="text-xl font-semibold mb-3 text-blue-600">
                   Where PRISM Creates Impact
                 </h3>
                 <p className="text-gray-600 text-sm leading-relaxed">
@@ -274,9 +274,9 @@ export function Innovation() {
                         top: `calc(50% + ${y}px - 60px)`
                       }}
                     >
-                      <div className="w-28 h-28 bg-white border border-amber-200 rounded-xl p-3 text-center shadow-md hover:scale-105 transition">
+                      <div className="w-28 h-28 bg-white border border-indigo-100/50 rounded-xl p-3 text-center shadow-md hover:scale-105 transition">
 
-                        <Icon className="mx-auto mb-1 text-amber-600" size={20} />
+                        <Icon className="mx-auto mb-1 text-blue-600" size={20} />
                         <h4 className="text-sm font-semibold text-gray-800">{step.title}</h4>
                         <p className="text-[10px] text-gray-500">
                           {step.description}
@@ -288,7 +288,7 @@ export function Innovation() {
 
                 {/* CENTER */}
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-28 h-28 rounded-full bg-linear-to-br from-amber-400 to-yellow-300 flex items-center justify-center text-white font-bold shadow-lg">
+                  <div className="w-28 h-28 rounded-full bg-linear-to-br from-indigo-600 to-blue-800 flex items-center justify-center text-white font-bold shadow-2xl shadow-blue-500/30 border border-blue-400/20">
                     PRISM
                   </div>
                 </div>
