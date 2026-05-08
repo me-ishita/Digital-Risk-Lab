@@ -299,7 +299,7 @@ export function Innovation() {
           {/* CTA */}
           <div className="text-center mt-12">
             <a
-              href="https://prism-rho-ruddy.vercel.app/"
+              href="https://innovation-prism.vercel.app/n"
               className="group inline-flex items-center gap-2 text-[#d4af37] font-semibold text-lg relative"
             >
               <span className="relative">

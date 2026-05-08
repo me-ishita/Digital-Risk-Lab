@@ -636,7 +636,7 @@ shadow-[0_25px_80px_rgba(0,0,0,0.6)]
             {/* CTA */}
             <div className="text-center mt-12">
               <a
-                href="https://prism-rho-ruddy.vercel.app/"
+                href="https://innovation-prism.vercel.app/"
                 className="group inline-flex items-center gap-2 text-primary font-semibold text-lg relative"
               >
                 <span className="relative">
