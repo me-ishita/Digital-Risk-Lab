@@ -55,28 +55,28 @@ export function Acceleration() {
     {
       step: 'Assessment',
       description: 'We evaluate product maturity, scalability, and enterprise readiness to align your solution with real market opportunities.',
-      image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=800',
+      image: 'https://images.pexels.com/photos/7691720/pexels-photo-7691720.jpeg',
       icon: Search,
 
     },
     {
       step: 'Strategic Alignment',
       description: 'Connect with enterprise partners whose business challenges align with your innovation and growth potential.',
-      image: 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800',
+      image: 'https://media.istockphoto.com/id/2210586431/photo/technology-leadership-business-the-way-forward-innovation-futuristic-artificial-intelligence.jpg?b=1&s=612x612&w=0&k=20&c=96qJwQq2HvvPgdPH2f08tWvUS2jwDlTyYwkTq4qHk04=',
       icon: Handshake,
 
     },
     {
       step: 'Pilot Deployment',
       description: 'Launch controlled pilot programs within enterprise environments to validate performance and business impact.',
-      image: 'https://images.unsplash.com/photo-1556761175-b413da4baf72?w=800',
+      image: 'https://content.pexels.com/aigc-bundle/images/7b189f9e-fd23-4a17-9b22-b7a59db66249.jpg',
       icon: Rocket,
 
     },
     {
       step: 'Scale & Expansion',
       description: 'Transform successful pilots into long-term partnerships and scale across markets, business units and global regions.',
-      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800',
+      image: 'https://media.istockphoto.com/id/1311598658/photo/businessman-trading-online-stock-market-on-teblet-screen-digital-investment-concept.jpg?b=1&s=612x612&w=0&k=20&c=bpQMsH07ziELXla0SZJt84-w0JkxsVXs05c7T2Iygks=',
       icon: TrendingUp,
     },
   ];
