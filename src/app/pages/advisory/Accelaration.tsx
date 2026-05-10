@@ -163,7 +163,7 @@ export function Acceleration() {
             transition={{ duration: 0.8 }}
             className="text-center mb-12"
           >
-            <h1 className="text-5xl md:text-6xl font-bold text-amber-50 mb-6">
+            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
               Accelerating Growth Into Enterprise Success
             </h1>
             <p className="text-xl text-white max-w-3xl mx-auto">

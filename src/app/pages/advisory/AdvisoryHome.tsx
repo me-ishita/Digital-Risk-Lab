@@ -9,6 +9,7 @@ import { useNavigate } from 'react-router-dom';
 import aiGovernanceImg from "../../../assets/ai_governance.png";
 import cyberRiskImg from "../../../assets/cyber_risk.png";
 import prismLogo from '../../../assets/Prism logo.png';
+import prismBG from '../../../assets/prism-bg.png';
 
 
 export default function AdvisoryHome() {
@@ -186,7 +187,7 @@ export default function AdvisoryHome() {
           >
 
             {/* MAIN HEADING - METALLIC SILVER */}
-            <span className="bg-linear-to-r from-gray-200 via-gray-300 to-gray-300 bg-clip-text text-transparent">
+            <span className="text-white">
               From Vision to Enterprise
             </span>
 
@@ -206,7 +207,7 @@ export default function AdvisoryHome() {
           <div className="flex gap-6 mt-10">
             <button
               onClick={() => navigate('/advisory/services')}
-              className="px-7 py-3 rounded-xl bg-linear-to-r from-zinc-500 via-zinc-600 to-zinc-500 text-white font-medium shadow-xl hover:scale-105 transition"
+              className="px-7 py-3 rounded-xl bg-linear-to-r from-zinc-100 via-zinc-200 to-zinc-100 text-primary border border-zinc-300 font-medium shadow-xl hover:scale-105 transition"
             >
               Explore Services
             </button>
@@ -214,7 +215,7 @@ export default function AdvisoryHome() {
               onClick={() => navigate('//contact')}
               className="px-7 py-3 rounded-xl border border-white/30 text-white hover:bg-white/10 transition"
             >
-              Talk to an Advisor
+              Talk to an Adviser
             </button>
           </div>
         </div>
@@ -321,8 +322,8 @@ export default function AdvisoryHome() {
                       {/* CONTENT */}
                       <div className="p-6 relative z-10 flex flex-col">
                         <div className="flex items-center gap-3 mb-3">
-                          <div className="w-10 h-10 flex items-center justify-center rounded-xl bg-linear-to-br from-gray-500 to-gray-700 shadow-md group-hover:scale-110 transition">
-                            <item.icon className="w-5 h-5 text-white" />
+                          <div className="w-10 h-10 flex items-center justify-center rounded-xl bg-linear-to-br from-zinc-100 to-zinc-200 border border-zinc-300 shadow-md group-hover:scale-110 transition">
+                            <item.icon className="w-5 h-5 text-primary" />
                           </div>
                           <h3 className="text-xl md:text-2xl font-semibold text-foreground">
                             {item.title}
@@ -381,7 +382,7 @@ export default function AdvisoryHome() {
                     />
 
                     {/* STEP BADGE */}
-                    <div className="absolute top-4 left-4 bg-linear-to-br from-gray-500 via-gray-700 to-gray-500 text-white px-4 py-1 rounded-full text-sm font-semibold shadow-lg">
+                    <div className="absolute top-4 left-4 bg-linear-to-br from-zinc-100 via-zinc-200 to-zinc-100 text-primary border border-zinc-300 px-4 py-1 rounded-full text-sm font-semibold shadow-lg">
                       Step {phase.step}
                     </div>
                   </div>
@@ -495,14 +496,32 @@ export default function AdvisoryHome() {
 
         {/* HEADER OUTSIDE CARD */}
         <div className="text-center mb-12">
-          <h2 className="text-5xl md:text-6xl font-extrabold mb-6 whitespace-nowrap">
-            <span className="text-foreground">
-              Innovation Spotlight
-            </span>
-            <span className="ml-3 bg-linear-to-r from-[#4A7FA8] to-[#FF7A18] bg-clip-text text-transparent">
-              PRISM
-            </span>
-          </h2>
+          <div className="flex justify-center items-center gap-4 mb-6 flex-wrap">
+  
+  {/* Small icon */}
+  <img 
+    src={prismLogo} 
+    alt="PRISM Logo" 
+    className="w-12 h-12 object-contain"
+  />
+
+  {/* Title */}
+  <h2 className="flex items-center gap-3 text-5xl md:text-6xl font-extrabold leading-tight">
+    
+    <span className="text-foreground whitespace-nowrap">
+      Live Innovation —
+    </span>
+
+    {/* PRISM TEXT IMAGE */}
+    <img
+      src={prismBG}
+      alt="PRISM"
+      className="h-10 md:h-12 w-auto object-contain"
+    />
+    
+  </h2>
+
+</div>
 
           <p className="text-2xl md:text-xl font-semibold text-primary uppercase tracking-widest text-center max-w-4xl mx-auto leading-relaxed px-4 whitespace-normal">
             AI-powered regulatory intelligence transforming compliance into automated, traceable systems.
@@ -636,12 +655,12 @@ shadow-[0_25px_80px_rgba(0,0,0,0.6)]
             {/* CTA */}
             <div className="text-center mt-12">
               <a
-                href="https://innovation-prism.vercel.app/"
+                href="/Prism-Brochure/index.html"
                 className="group inline-flex items-center gap-2 text-primary font-semibold text-lg relative"
               >
                 <span className="relative">
                   View Details
-                  <span className="absolute left-0 -bottom-1 h-0.5 w-0 text-primary bg-[#B8956A] transition-all duration-300 group-hover:w-full"></span>
+                  <span className="absolute left-0 -bottom-1 h-0.5 w-0 text-primary bg-[#f5f4f4] transition-all duration-300 group-hover:w-full"></span>
                 </span>
 
                 <span className="transition-transform duration-300 group-hover:translate-x-1">

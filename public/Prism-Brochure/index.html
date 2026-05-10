@@ -1,0 +1,1152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PRISM — AI-Powered Regulatory Reporting</title>
+<link rel="icon" href="./Prism logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Figtree:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --white:#FFFFFF;
+  --off:#FAFAF8;
+  --paper:#F5F3EF;
+  --mist:#EEF0F3;
+  --blue-pale:#EBF1F8;
+  --blue-soft:#D4E4F5;
+  --blue-mid:#2E5F8A;
+  --blue-deep:#1A3A5C;
+  --ink:#1C2130;
+  --ink2:#3D4557;
+  --ink3:#7A8299;
+  --rule:#DFE2E8;
+  --rule-soft:#EDEFF2;
+  --accent:#2E5F8A;
+  --accent2:#4A7FA8;
+  --warm:#B8956A;
+  --warm-pale:#F5EFE6;
+}
+html{font-size:16px;scroll-behavior:smooth}
+body{
+  font-family:'Figtree',sans-serif;
+  background:var(--paper);
+  color:var(--ink);
+  -webkit-print-color-adjust:exact;
+  print-color-adjust:exact;
+}
+
+/* ─── NAV ────────────────────────────────────────── */
+nav{
+  position:sticky;top:0;z-index:200;
+  background:rgba(250,250,248,0.96);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--rule);
+  height:52px;display:flex;align-items:center;
+  padding:0 60px;justify-content:space-between;
+}
+.nav-logo{
+  font-family:'Cormorant Garamond',serif;
+  font-size:20px;font-weight:600;letter-spacing:0.04em;
+  color:var(--ink);cursor:pointer;
+}
+.nav-logo{
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-logo,
+.nav-logo:visited,
+.nav-logo:hover,
+.nav-logo:active{
+  text-decoration: none;
+  color: inherit;
+}
+
+.logo-img {
+  height: 28px;
+  width: auto;
+}
+
+.logo-shine {
+  background: linear-gradient(90deg,
+      #f97316 0%,
+      #fb923c 20%,
+      #fde68a 40%,
+      #93c5fd 60%,
+      #3b82f6 80%,
+      #f97316 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: logoShine 4s linear infinite;
+}
+
+.nav-left{
+  display:flex;
+  align-items:center;
+  gap:18px;
+}
+
+.brand-text{
+  color:#1A3A5C; /* dark professional blue */
+  font-weight:600;
+  letter-spacing:0.04em;
+}
+
+.back-btn{
+  width:36px;
+  height:36px;
+  border-radius:50%;
+  border:1px solid var(--rule);
+  background:var(--white);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  transition:all .25s ease;
+}
+
+.back-icon{
+  width:18px;
+  height:18px;
+  color:var(--ink2);
+  transition:all .25s ease;
+}
+
+/* HOVER EFFECT */
+.back-btn:hover{
+  background:var(--blue-deep);
+  border-color:var(--blue-deep);
+}
+
+.back-btn:hover .back-icon{
+  color:white;
+  transform:translateX(-2px); /* subtle motion */
+}
+
+/* CLICK EFFECT */
+.back-btn:active{
+  transform:scale(0.92);
+}
+
+.hero-logo-wrap{
+  margin-bottom:20px;
+}
+
+.hero-logo{
+  height:50px;
+  width:auto;
+  object-fit:contain;
+}
+
+.prism-title{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-bottom:18px;
+}
+
+.prism-logo{
+  height:42px;
+  width:auto;
+  object-fit:contain;
+}
+
+/* MAIN TITLE TEXT */
+.prism-text{
+  font-family:'Cormorant Garamond', serif;
+  font-size:34px;
+  font-weight:600;
+  letter-spacing:0.08em;
+  color:var(--ink);
+}
+
+/* OPTIONAL: subtle premium line under title */
+.prism-title::after{
+  content:'';
+  display:block;
+  width:40px;
+  height:1.5px;
+  background:var(--warm);
+  margin-left:10px;
+}
+
+.nav-logo span{color:var(--accent)}
+.nav-items{display:flex;gap:4px;align-items:center}
+.nav-item{
+  font-size:12px;font-weight:500;letter-spacing:0.04em;
+  color:var(--ink3);padding:5px 12px;border-radius:3px;
+  cursor:pointer;border:none;background:none;
+  transition:color .18s,background .18s;
+}
+.nav-item:hover,.nav-item.on{color:var(--accent);background:var(--blue-pale)}
+.nav-btn{
+  font-size:11.5px;font-weight:600;letter-spacing:0.08em;
+  text-transform:uppercase;color:var(--white);
+  background:var(--blue-deep);padding:7px 18px;border-radius:3px;
+  border:none;cursor:pointer;transition:background .18s;margin-left:8px;
+}
+.nav-btn:hover{background:var(--accent)}
+
+/* ─── PAGE ANATOMY ───────────────────────────────── */
+.page{
+  width:100%;max-width:1100px;margin:0 auto;
+  padding:0 60px;
+}
+section{padding:80px 0}
+section.hero-s{padding:0}
+
+/* ─── COVER ──────────────────────────────────────── */
+#cover{
+  background:var(--white);
+  min-height:calc(100vh - 52px);
+  display:grid;grid-template-columns:1fr 420px;
+  max-width:100%;
+}
+.cover-l{
+  padding:72px 72px 60px;
+  display:flex;flex-direction:column;justify-content:space-between;
+  border-right:1px solid var(--rule);
+}
+.cover-eyebrow{
+  display:flex;align-items:center;gap:10px;
+  font-size:10.5px;font-weight:600;letter-spacing:0.36em;
+  text-transform:uppercase;color:var(--accent);margin-bottom:56px;
+}
+.cover-eyebrow::before{
+  content:'';width:24px;height:1px;background:var(--accent);flex-shrink:0
+}
+.cover-headline{
+  font-family:'Cormorant Garamond',serif;
+  font-size:68px;font-weight:300;line-height:1.0;
+  color:var(--ink);letter-spacing:-1.5px;margin-bottom:10px;
+}
+.cover-headline strong{font-weight:600;display:block}
+.cover-headline em{color:var(--accent);font-style:normal}
+.cover-tagline{
+  font-size:16px;font-weight:300;line-height:1.75;
+  color:var(--ink2);max-width:500px;margin-top:24px;margin-bottom:48px;
+}
+.cover-meta{
+  display:flex;align-items:center;gap:28px;
+  border-top:1px solid var(--rule-soft);padding-top:28px;
+}
+.cover-meta-item{font-size:12px;color:var(--ink3);letter-spacing:0.04em}
+.cover-meta-item strong{display:block;font-size:13px;font-weight:600;color:var(--ink);margin-bottom:2px}
+.cover-meta-div{width:1px;height:28px;background:var(--rule)}
+
+.cover-r{
+  background:var(--blue-deep);
+  padding:56px 44px;
+  display:flex;flex-direction:column;justify-content:space-between;
+}
+.cover-r-eyebrow{
+  font-size:10px;font-weight:600;letter-spacing:0.3em;
+  text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:36px;
+}
+.stat-stack{display:flex;flex-direction:column;gap:0}
+.stat-item{
+  padding:22px 0;
+  border-bottom:1px solid rgba(255,255,255,0.08);
+}
+.stat-item:last-child{border-bottom:none}
+.stat-n{
+  font-family:'Cormorant Garamond',serif;
+  font-size:50px;font-weight:600;line-height:1;
+  color:var(--white);margin-bottom:4px;
+}
+.stat-n em{
+  font-size:26px;font-style:normal;
+  color:rgba(200,180,150,0.8);font-family:'Figtree',sans-serif;font-weight:300;
+}
+.stat-l{font-size:12px;font-weight:400;color:rgba(255,255,255,0.42);letter-spacing:0.04em}
+.cover-r-foot{
+  font-size:10px;letter-spacing:0.12em;
+  color:rgba(255,255,255,0.2);text-transform:uppercase;
+  padding-top:24px;border-top:1px solid rgba(255,255,255,0.06);
+}
+
+/* ─── TYPOGRAPHY SYSTEM ──────────────────────────── */
+.s-over{
+  font-size:10px;font-weight:600;letter-spacing:0.36em;
+  text-transform:uppercase;color:var(--accent);
+  margin-bottom:10px;display:flex;align-items:center;gap:8px;
+}
+.s-over::before{content:'';width:20px;height:1px;background:var(--accent)}
+.s-h2{
+  font-family:'Cormorant Garamond',serif;
+  font-size:40px;font-weight:300;line-height:1.15;
+  color:var(--ink);letter-spacing:-0.8px;margin-bottom:6px;
+}
+.s-h2 strong{font-weight:600}
+.s-rule{width:32px;height:1.5px;background:var(--warm);margin:14px 0 28px}
+.s-lead{
+  font-size:15px;font-weight:300;line-height:1.85;
+  color:var(--ink2);max-width:640px;
+}
+.label{
+  font-size:10px;font-weight:600;letter-spacing:0.22em;
+  text-transform:uppercase;color:var(--ink3);margin-bottom:6px;
+}
+.body-sm{font-size:13.5px;line-height:1.75;color:var(--ink2);font-weight:300}
+
+/* ─── DIVIDERS ───────────────────────────────────── */
+.h-rule{height:1px;background:var(--rule);margin:0 60px}
+.section-num{
+  font-family:'Cormorant Garamond',serif;
+  font-size:80px;font-weight:300;color:var(--rule);
+  line-height:1;margin-bottom:-8px;letter-spacing:-2px;
+  user-select:none;
+}
+
+/* ─── INTRO SECTION ──────────────────────────────── */
+#intro{background:var(--white)}
+.intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;margin-top:52px}
+.intro-col-head{
+  font-size:15px;font-weight:500;color:var(--ink);
+  margin-bottom:12px;padding-bottom:12px;
+  border-bottom:1px solid var(--rule);
+}
+.intro-col-body{font-size:13.5px;line-height:1.8;color:var(--ink2);font-weight:300}
+.context-bar{
+  background:var(--blue-pale);border-left:2px solid var(--accent);
+  padding:20px 24px;border-radius:0 4px 4px 0;margin-top:32px;
+}
+.context-bar p{font-size:13.5px;line-height:1.7;color:var(--ink2);font-weight:300}
+.context-bar strong{color:var(--blue-deep);font-weight:500}
+
+/* ─── PROBLEM SECTION ────────────────────────────── */
+#problem{background:var(--off)}
+.problem-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:6px;overflow:hidden;margin-top:48px}
+.problem-card{
+  background:var(--white);padding:32px 28px;
+  transition:background .2s;
+}
+.problem-card:hover{background:var(--mist)}
+.pc-icon{
+  width:36px;height:36px;border-radius:6px;
+  background:var(--mist);display:flex;align-items:center;
+  justify-content:center;margin-bottom:18px;
+}
+.pc-title{font-size:14px;font-weight:600;color:var(--ink);margin-bottom:8px}
+.pc-body{font-size:13px;line-height:1.7;color:var(--ink2);font-weight:300}
+.pc-tag{
+  display:inline-block;margin-top:14px;
+  font-size:10px;font-weight:600;letter-spacing:0.14em;
+  text-transform:uppercase;color:var(--accent);
+  padding:3px 8px;background:var(--blue-pale);border-radius:2px;
+}
+
+/* ─── SOLUTION SECTION ───────────────────────────── */
+#solution{background:var(--white)}
+.sol-hero{
+  background:var(--blue-deep);border-radius:6px;
+  padding:52px 56px;margin-top:44px;
+  display:grid;grid-template-columns:1fr 1fr;gap:56px;
+  align-items:center;
+}
+.sol-hero-l .sol-big{
+  font-family:'Cormorant Garamond',serif;
+  font-size:42px;font-weight:300;line-height:1.15;
+  color:var(--white);letter-spacing:-0.8px;
+}
+.sol-hero-l .sol-big strong{font-weight:600}
+.sol-hero-l p{
+  font-size:14px;line-height:1.8;
+  color:rgba(255,255,255,0.52);margin-top:18px;font-weight:300;
+}
+.sol-hero-r{display:flex;flex-direction:column;gap:14px}
+.sol-pill{
+  display:flex;align-items:center;gap:14px;
+  background:rgba(255,255,255,0.06);
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:4px;padding:14px 18px;
+}
+.sol-pill-dot{
+  width:6px;height:6px;border-radius:50%;
+  background:rgba(200,180,150,0.7);flex-shrink:0;
+}
+.sol-pill-text{font-size:13px;color:rgba(255,255,255,0.7);font-weight:300}
+.sol-pill-text strong{color:var(--white);font-weight:500}
+
+/* ─── APPROACH SECTION ───────────────────────────── */
+#approach{background:var(--off)}
+.approach-flow{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:52px;position:relative}
+.approach-flow::before{
+  content:'';position:absolute;top:28px;left:10%;right:10%;
+  height:1px;background:var(--rule);z-index:0;
+}
+.af-step{
+  display:flex;flex-direction:column;align-items:center;
+  position:relative;z-index:1;padding:0 8px;
+}
+.af-dot-wrap{margin-bottom:16px}
+.af-dot{
+  width:56px;height:56px;border-radius:50%;
+  background:var(--white);border:1.5px solid var(--rule);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Cormorant Garamond',serif;font-size:22px;
+  font-weight:600;color:var(--blue-mid);
+  transition:all .25s;cursor:default;
+}
+.af-step:hover .af-dot{background:var(--blue-deep);border-color:var(--blue-deep);color:var(--white)}
+.af-title{font-size:12.5px;font-weight:600;color:var(--ink);text-align:center;margin-bottom:6px}
+.af-body{font-size:11.5px;line-height:1.6;color:var(--ink3);text-align:center;font-weight:300}
+
+.approach-detail{
+  margin-top:48px;display:grid;grid-template-columns:1fr 1fr;gap:32px;
+}
+.ad-card{
+  border:1px solid var(--rule);border-radius:6px;
+  padding:28px 30px;background:var(--white);
+}
+.ad-num{
+  font-family:'Cormorant Garamond',serif;
+  font-size:36px;font-weight:300;color:var(--rule);
+  line-height:1;margin-bottom:12px;
+}
+.ad-title{font-size:14px;font-weight:600;color:var(--ink);margin-bottom:8px}
+.ad-body{font-size:13px;line-height:1.75;color:var(--ink2);font-weight:300}
+.ad-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.ad-tag{
+  font-size:10.5px;font-weight:500;padding:3px 10px;
+  background:var(--mist);color:var(--ink2);border-radius:2px;
+}
+
+/* ─── BENEFITS SECTION ───────────────────────────── */
+#benefits{background:var(--white)}
+.benefits-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:28px;margin-top:48px}
+.ben-card{
+  padding:28px 24px;border-radius:6px;
+  border:1px solid var(--rule-soft);
+  background:var(--off);
+  transition:border-color .2s,background .2s;
+}
+.ben-card:hover{border-color:var(--rule);background:var(--white)}
+.ben-num{
+  font-family:'Cormorant Garamond',serif;
+  font-size:44px;font-weight:600;color:var(--accent);
+  line-height:1;margin-bottom:6px;
+}
+.ben-num em{font-size:20px;font-style:normal;color:var(--ink3);font-family:'Figtree',sans-serif;font-weight:300}
+.ben-title{font-size:14px;font-weight:600;color:var(--ink);margin-bottom:8px}
+.ben-body{font-size:12.5px;line-height:1.7;color:var(--ink2);font-weight:300}
+
+.benefits-quote{
+  background:var(--warm-pale);border-left:2px solid var(--warm);
+  padding:24px 32px;border-radius:0 4px 4px 0;margin-top:32px;
+  font-family:'Cormorant Garamond',serif;
+}
+.benefits-quote p{
+  font-size:20px;font-weight:400;font-style:italic;
+  color:var(--ink);line-height:1.6;
+}
+.benefits-quote cite{
+  display:block;margin-top:12px;font-size:12px;
+  font-style:normal;font-family:'Figtree',sans-serif;
+  color:var(--ink3);letter-spacing:0.06em;
+}
+
+/* ─── USE CASE ───────────────────────────────────── */
+#usecase{background:var(--off)}
+.uc-layout{display:grid;grid-template-columns:1fr 360px;gap:48px;margin-top:44px}
+.uc-main{}
+.uc-scenario{
+  background:var(--white);border:1px solid var(--rule);
+  border-radius:6px;padding:32px;margin-bottom:20px;
+}
+.uc-scenario-tag{
+  font-size:10px;font-weight:600;letter-spacing:0.22em;
+  text-transform:uppercase;color:var(--ink3);margin-bottom:14px;
+}
+.uc-scenario-title{font-size:17px;font-weight:600;color:var(--ink);margin-bottom:10px}
+.uc-scenario-body{font-size:13.5px;line-height:1.75;color:var(--ink2);font-weight:300}
+.uc-steps{display:flex;flex-direction:column;gap:10px;margin-top:18px}
+.uc-step{
+  display:flex;align-items:flex-start;gap:12px;
+  font-size:13px;line-height:1.6;color:var(--ink2);
+  padding:10px 14px;background:var(--off);border-radius:3px;
+}
+.uc-step-n{
+  font-family:'Cormorant Garamond',serif;
+  font-size:18px;font-weight:600;color:var(--blue-mid);
+  min-width:18px;line-height:1.3;
+}
+.uc-aside{display:flex;flex-direction:column;gap:16px}
+.uc-metric{
+  background:var(--white);border:1px solid var(--rule);
+  border-radius:6px;padding:22px 24px;
+}
+.uc-metric-n{
+  font-family:'Cormorant Garamond',serif;
+  font-size:44px;font-weight:600;color:var(--blue-deep);
+  line-height:1;margin-bottom:4px;
+}
+.uc-metric-l{font-size:12.5px;color:var(--ink2);font-weight:300;line-height:1.5}
+.uc-metric-l strong{display:block;font-size:13px;font-weight:500;color:var(--ink);margin-bottom:2px}
+
+/* ─── CONCLUSION ─────────────────────────────────── */
+#conclusion{background:var(--blue-deep);padding:80px 0}
+#conclusion .s-h2{color:var(--white)}
+#conclusion .s-over{color:rgba(200,180,150,0.8)}
+#conclusion .s-over::before{background:rgba(200,180,150,0.6)}
+#conclusion .s-lead{color:rgba(255,255,255,0.5)}
+.conc-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:48px}
+.conc-l{}
+.conc-points{display:flex;flex-direction:column;gap:14px;margin-top:28px}
+.conc-point{
+  display:flex;align-items:flex-start;gap:14px;
+  padding:16px 18px;background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.08);border-radius:4px;
+}
+.conc-point-dot{
+  width:5px;height:5px;border-radius:50%;
+  background:rgba(200,180,150,0.6);margin-top:6px;flex-shrink:0;
+}
+.conc-point p{font-size:13.5px;line-height:1.65;color:rgba(255,255,255,0.6);font-weight:300}
+.conc-point p strong{color:var(--white);font-weight:500}
+
+.conc-r{display:flex;flex-direction:column;justify-content:space-between}
+.conc-cta{
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:6px;padding:32px;
+  text-align:center;
+}
+.conc-cta-over{
+  font-size:10px;font-weight:600;letter-spacing:0.3em;
+  text-transform:uppercase;color:rgba(200,180,150,0.6);margin-bottom:16px;
+}
+.conc-cta-h{
+  font-family:'Cormorant Garamond',serif;
+  font-size:30px;font-weight:300;color:var(--white);
+  margin-bottom:12px;line-height:1.2;
+}
+.conc-cta-body{
+  font-size:13px;line-height:1.7;color:rgba(255,255,255,0.45);
+  margin-bottom:24px;font-weight:300;
+}
+.conc-cta-rule{width:28px;height:1px;background:rgba(200,180,150,0.4);margin:0 auto 20px}
+.conc-cta-contact{font-size:14px;font-weight:500;color:rgba(200,180,150,0.8);letter-spacing:0.04em}
+.conc-cta-sub{font-size:11px;color:rgba(255,255,255,0.2);margin-top:8px;letter-spacing:0.1em}
+
+.conc-logos{
+  display:flex;flex-direction:column;gap:10px;margin-top:20px;
+}
+.conc-logo-row{
+  display:flex;align-items:center;gap:10px;
+  padding:12px 16px;background:rgba(255,255,255,0.03);
+  border:1px solid rgba(255,255,255,0.06);border-radius:4px;
+}
+.conc-logo-icon{width:28px;height:28px;border-radius:3px;background:rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:center}
+.conc-logo-text{font-size:12px;color:rgba(255,255,255,0.38);font-weight:300}
+.conc-logo-text strong{color:rgba(255,255,255,0.6);font-weight:500}
+
+/* ─── FOOTER ─────────────────────────────────────── */
+footer{
+  background:var(--ink);
+  padding:24px 60px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.foot-brand{
+  font-family:'Cormorant Garamond',serif;
+  font-size:16px;font-weight:400;color:rgba(255,255,255,0.35);letter-spacing:0.04em;
+}
+.foot-brand span{color:rgba(255,255,255,0.18)}
+.foot-txt{font-size:11px;color:rgba(255,255,255,0.2);letter-spacing:0.1em}
+
+/* ─── SCROLL REVEAL ──────────────────────────────── */
+.r{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}
+.r.v{opacity:1;transform:translateY(0)}
+.r1{transition-delay:.05s}.r2{transition-delay:.12s}.r3{transition-delay:.19s}
+.r4{transition-delay:.26s}.r5{transition-delay:.33s}
+
+/* ─── INLINE SVG ICONS ───────────────────────────── */
+.icon-sm{width:18px;height:18px;display:block}
+</style>
+</head>
+<body>
+
+<!-- ─── NAV ────────────────────────────────────────── -->
+<nav>
+  <div class="nav-left">
+  <button 
+  class="back-btn" 
+  onclick="window.location.href='/innovation'"
+  aria-label="Go back"
+>
+  <svg viewBox="0 0 24 24" class="back-icon">
+    <path d="M15 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</button>
+
+  <a href="/innovation" class="nav-logo">
+  <img src="logo.png" alt="Digital Risk Lab Logo" class="logo-img">
+  <span class="brand-text">Digital Risk Lab</span>
+</a>
+</div>
+  <div class="nav-items">
+    <button class="nav-item" onclick="go('intro')">Introduction</button>
+    <button class="nav-item" onclick="go('problem')">Problem</button>
+    <button class="nav-item" onclick="go('solution')">Solution</button>
+    <button class="nav-item" onclick="go('approach')">Approach</button>
+    <button class="nav-item" onclick="go('benefits')">Benefits</button>
+    <button class="nav-item" onclick="go('usecase')">Use Case</button>
+    <button class="nav-btn" onclick="go('conclusion')">Contact</button>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════════════
+     COVER
+═══════════════════════════════════════════════ -->
+<section id="cover" class="hero-s">
+  <div class="cover-l">
+    <div>
+      <div class="prism-title">
+    <img src="Prism logo.png" alt="PRISM Logo" class="prism-logo">
+    <span>
+      <img src="prism-bg.png" alt="PRISM bg" class="logo-img">
+    </span>
+  </div>
+      <div class="cover-eyebrow">AI-Powered Regulatory Intelligence</div>
+      <div class="cover-headline">
+        Regulatory Reporting,<br>
+        <strong>Reimagined <em>with</em><br>Artificial Intelligence</strong>
+      </div>
+      <p class="cover-tagline">
+        PRISM transforms complex regulatory documents into structured, 
+        auditable COREP outputs — automatically, accurately, and at scale.
+      </p>
+    </div>
+    <div class="cover-meta">
+      <div class="cover-meta-item">
+        <strong>Platform</strong>PRISM Basel Intelligence
+      </div>
+      <div class="cover-meta-div"></div>
+      <div class="cover-meta-item">
+        <strong>Regulation</strong>Basel 3.1 · COREP
+      </div>
+      <div class="cover-meta-div"></div>
+      <div class="cover-meta-item">
+        <strong>Status</strong>Production Ready
+      </div>
+    </div>
+  </div>
+  <div class="cover-r">
+    <div class="cover-r-eyebrow">At a Glance</div>
+    <div class="stat-stack">
+      <div class="stat-item">
+        <div class="stat-n">322<em> pages</em></div>
+        <div class="stat-l">Regulatory document processed automatically</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-n">100<em>%</em></div>
+        <div class="stat-l">Audit trace on every output cell</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-n">0<em> errors</em></div>
+        <div class="stat-l">Manual formula transcription eliminated</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-n">5<em>-step</em></div>
+        <div class="stat-l">End-to-end automated pipeline</div>
+      </div>
+    </div>
+    <div class="cover-r-foot">Confidential · 2024 · PRISM</div>
+  </div>
+</section>
+
+<div class="h-rule"></div>
+
+<!-- ═══════════════════════════════════════════════
+     01 · INTRODUCTION
+═══════════════════════════════════════════════ -->
+<section id="intro">
+  <div class="page">
+    <div class="r">
+      <div class="section-num">01</div>
+      <div class="s-over">Introduction</div>
+      <div class="s-h2">The New Era of<br><strong>Regulatory Compliance</strong></div>
+      <div class="s-rule"></div>
+      <p class="s-lead">
+        Basel 3.1 demands precision at every level. PRISM brings 
+        AI-powered intelligence to a process still dominated by manual effort — 
+        reducing risk, accelerating timelines, and delivering audit-ready outputs.
+      </p>
+    </div>
+    <div class="intro-grid">
+      <div class="r r1">
+        <div class="intro-col-head">The Regulatory Landscape</div>
+        <p class="intro-col-body">
+          Financial institutions face an escalating compliance burden. 
+          The Bank of England's Annex II reporting instructions span 322 pages 
+          of formulas, rules, and cross-references — each requiring precise 
+          interpretation before any template can be populated.
+          <br><br>
+          The industry still relies on specialist teams manually reading, 
+          interpreting, and transcribing these rules into calculation engines. 
+          This process is slow, expensive, and inherently error-prone.
+        </p>
+        <div class="context-bar">
+          <p><strong>The core challenge:</strong> Translating 322 pages of dense regulatory language into executable, auditable calculations without introducing error or ambiguity.</p>
+        </div>
+      </div>
+      <div class="r r2">
+        <div class="intro-col-head">What PRISM Changes</div>
+        <p class="intro-col-body">
+          PRISM applies large language models and structured AI pipelines to 
+          automate the entire chain — from raw PDF ingestion to a fully populated, 
+          traceable COREP Excel workbook.
+          <br><br>
+          Every formula is extracted, validated, and executed programmatically. 
+          Every output cell carries a complete audit trail. 
+          Every run is reproducible — down to the bit.
+        </p>
+        <div class="context-bar" style="background:var(--warm-pale);border-color:var(--warm)">
+          <p><strong>The result:</strong> Compliance teams shift from manual transcription to intelligent oversight — reviewing outputs rather than producing them.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="h-rule"></div>
+
+<!-- ═══════════════════════════════════════════════
+     02 · THE PROBLEM
+═══════════════════════════════════════════════ -->
+<section id="problem" style="background:var(--off)">
+  <div class="page">
+    <div class="r">
+      <div class="section-num">02</div>
+      <div class="s-over">The Problem</div>
+      <div class="s-h2">Why Manual Compliance<br><strong>Is No Longer Viable</strong></div>
+      <div class="s-rule"></div>
+      <p class="s-lead">
+        Three systemic failures make the status quo untenable for institutions 
+        operating under Basel 3.1.
+      </p>
+    </div>
+    <div class="problem-cards r">
+      <div class="problem-card">
+        <div class="pc-icon">
+          <svg class="icon-sm" viewBox="0 0 18 18" fill="none">
+            <circle cx="9" cy="9" r="7" stroke="#7A8299" stroke-width="1.2"/>
+            <path d="M9 6v4M9 12.5v.5" stroke="#7A8299" stroke-width="1.3" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="pc-title">Error-Prone Interpretation</div>
+        <p class="pc-body">Manual reading of complex regulatory text introduces ambiguity. A single misread formula propagates silently through hundreds of output cells — only surfacing at audit or examination.</p>
+        <span class="pc-tag">Risk: High</span>
+      </div>
+      <div class="problem-card">
+        <div class="pc-icon">
+          <svg class="icon-sm" viewBox="0 0 18 18" fill="none">
+            <circle cx="9" cy="9" r="6" stroke="#7A8299" stroke-width="1.2"/>
+            <path d="M9 5v4l3 2" stroke="#7A8299" stroke-width="1.2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="pc-title">Unacceptable Lead Times</div>
+        <p class="pc-body">Specialist teams require weeks to interpret updated regulatory instructions and re-validate affected templates. Regulatory change cycles are compressing — this timeline is unsustainable.</p>
+        <span class="pc-tag">Risk: Operational</span>
+      </div>
+      <div class="problem-card">
+        <div class="pc-icon">
+          <svg class="icon-sm" viewBox="0 0 18 18" fill="none">
+            <path d="M3 14V7l6-4 6 4v7" stroke="#7A8299" stroke-width="1.2" stroke-linecap="round"/>
+            <rect x="6.5" y="9.5" width="5" height="4.5" stroke="#7A8299" stroke-width="1.1"/>
+          </svg>
+        </div>
+        <div class="pc-title">Incomplete Audit Trails</div>
+        <p class="pc-body">Without systematic traceability, regulators and internal audit cannot independently verify how each output value was derived. This creates examination risk and limits governance confidence.</p>
+        <span class="pc-tag">Risk: Regulatory</span>
+      </div>
+      <div class="problem-card">
+        <div class="pc-icon">
+          <svg class="icon-sm" viewBox="0 0 18 18" fill="none">
+            <rect x="2" y="3" width="14" height="12" rx="1" stroke="#7A8299" stroke-width="1.2"/>
+            <path d="M6 7h6M6 10h4M6 13h5" stroke="#7A8299" stroke-width="1" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="pc-title">Siloed Knowledge</div>
+        <p class="pc-body">Regulatory expertise is concentrated in a small number of individuals. When those specialists leave or are unavailable, institutional knowledge is lost — and there is no systematic way to capture or transfer it.</p>
+        <span class="pc-tag">Risk: Knowledge</span>
+      </div>
+      <div class="problem-card">
+        <div class="pc-icon">
+          <svg class="icon-sm" viewBox="0 0 18 18" fill="none">
+            <path d="M9 2l2 5h5l-4 3 1.5 5L9 12l-4.5 3L6 10 2 7h5z" stroke="#7A8299" stroke-width="1.1" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="pc-title">High Cost of Change</div>
+        <p class="pc-body">Every regulatory update requires a full re-analysis cycle. With Basel rules evolving continuously, the cost of maintaining accuracy through manual processes grows exponentially with each revision.</p>
+        <span class="pc-tag">Risk: Financial</span>
+      </div>
+      <div class="problem-card" style="background:var(--blue-deep)">
+        <div class="pc-icon" style="background:rgba(255,255,255,0.08)">
+          <svg class="icon-sm" viewBox="0 0 18 18" fill="none">
+            <path d="M3 9l4 4 8-8" stroke="rgba(200,180,150,0.7)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="pc-title" style="color:rgba(255,255,255,0.9)">PRISM Addresses All Five</div>
+        <p class="pc-body" style="color:rgba(255,255,255,0.45)">An AI-native pipeline that automates interpretation, execution, traceability, and change management — systematically and at scale.</p>
+        <span class="pc-tag" style="background:rgba(200,180,150,0.12);color:rgba(200,180,150,0.8)">Solution Available</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="h-rule"></div>
+
+<!-- ═══════════════════════════════════════════════
+     03 · THE SOLUTION
+═══════════════════════════════════════════════ -->
+<section id="solution" style="background:var(--white)">
+  <div class="page">
+    <div class="r">
+      <div class="section-num">03</div>
+      <div class="s-over">The Solution</div>
+      <div class="s-h2">PRISM: Intelligent<br><strong>Regulatory Automation</strong></div>
+      <div class="s-rule"></div>
+      <p class="s-lead">
+        An end-to-end AI platform that reads regulations, extracts every rule, 
+        executes every formula, and delivers fully traceable COREP outputs.
+      </p>
+    </div>
+    <div class="sol-hero r">
+      <div class="sol-hero-l">
+        <div class="sol-big">From document<br>to <strong>auditable output</strong><br>— automatically.</div>
+        <p>PRISM ingests the source regulatory PDF, applies LLM-powered rule extraction, executes all formulas via symbolic mathematics, and populates your COREP templates — with a complete audit trail embedded in every cell.</p>
+      </div>
+      <div class="sol-hero-r">
+        <div class="sol-pill"><div class="sol-pill-dot"></div><div class="sol-pill-text"><strong>PDF Ingestion</strong> — 322-page Annex II processed in full</div></div>
+        <div class="sol-pill"><div class="sol-pill-dot"></div><div class="sol-pill-text"><strong>Rule Extraction</strong> — Every formula, threshold, and aggregation rule captured</div></div>
+        <div class="sol-pill"><div class="sol-pill-dot"></div><div class="sol-pill-text"><strong>LLM Interpretation</strong> — Context-aware understanding of regulatory language</div></div>
+        <div class="sol-pill"><div class="sol-pill-dot"></div><div class="sol-pill-text"><strong>Symbolic Execution</strong> — SymPy evaluates complex multi-parameter expressions precisely</div></div>
+        <div class="sol-pill"><div class="sol-pill-dot"></div><div class="sol-pill-text"><strong>COREP Population</strong> — C07 template filled, colour-coded, and traceable</div></div>
+        <div class="sol-pill"><div class="sol-pill-dot"></div><div class="sol-pill-text"><strong>Audit Export</strong> — JSON audit log and Excel comments on every cell</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="h-rule"></div>
+
+<!-- ═══════════════════════════════════════════════
+     04 · APPROACH
+═══════════════════════════════════════════════ -->
+<section id="approach" style="background:var(--off)">
+  <div class="page">
+    <div class="r">
+      <div class="section-num">04</div>
+      <div class="s-over">Our Approach</div>
+      <div class="s-h2">A Five-Step Automated<br><strong>Intelligence Pipeline</strong></div>
+      <div class="s-rule"></div>
+    </div>
+
+    <div class="approach-flow r">
+      <div class="af-step">
+        <div class="af-dot-wrap"><div class="af-dot">1</div></div>
+        <div class="af-title">Extract</div>
+        <div class="af-body">PDFium-powered text extraction with Unicode normalisation</div>
+      </div>
+      <div class="af-step">
+        <div class="af-dot-wrap"><div class="af-dot">2</div></div>
+        <div class="af-title">Segment</div>
+        <div class="af-body">Smart chunking with template code and section detection</div>
+      </div>
+      <div class="af-step">
+        <div class="af-dot-wrap"><div class="af-dot">3</div></div>
+        <div class="af-title">Interpret</div>
+        <div class="af-body">LLM-powered formula and rule identification with confidence scoring</div>
+      </div>
+      <div class="af-step">
+        <div class="af-dot-wrap"><div class="af-dot">4</div></div>
+        <div class="af-title">Calculate</div>
+        <div class="af-body">SymPy symbolic execution across all COREP rows and columns</div>
+      </div>
+      <div class="af-step">
+        <div class="af-dot-wrap"><div class="af-dot">5</div></div>
+        <div class="af-title">Deliver</div>
+        <div class="af-body">Populated Excel workbook with full audit trail and drill-down</div>
+      </div>
+    </div>
+
+    <div class="approach-detail r">
+      <div class="ad-card r1">
+        <div class="ad-num">01</div>
+        <div class="ad-title">Document Intelligence Layer</div>
+        <p class="ad-body">The PDFium C-engine extracts clean text from all 322 pages. Six critical mathematical symbols are Unicode-normalised. Watermarks and footers stripped. The document is then segmented into 500-word overlapping chunks with metadata enrichment — detecting section headings, template codes, and regulatory references.</p>
+        <div class="ad-tags"><span class="ad-tag">pypdfium2</span><span class="ad-tag">Unicode normalisation</span><span class="ad-tag">Smart chunking</span><span class="ad-tag">FAISS vector index</span></div>
+      </div>
+      <div class="ad-card r2">
+        <div class="ad-num">02</div>
+        <div class="ad-title">Rule Extraction &amp; Enrichment</div>
+        <p class="ad-body">A two-layer detection architecture: regex signal patterns identify formula candidates (explicit expressions, aggregations, min/max, multiplications). LLM enrichment then provides context-aware interpretation, maps rules to template codes (CA1, OF CR SA, CCR), assigns confidence scores, and produces structured FormulaRecord objects with legal references.</p>
+        <div class="ad-tags"><span class="ad-tag">LLM interpretation</span><span class="ad-tag">Regex signal detection</span><span class="ad-tag">FormulaRecord schema</span><span class="ad-tag">Confidence scoring</span></div>
+      </div>
+      <div class="ad-card r3">
+        <div class="ad-num">03</div>
+        <div class="ad-title">Calculation Engine</div>
+        <p class="ad-body">SymPy evaluates every extracted formula with symbolic precision — no floating-point approximation. Row-level parameters (He, Hc, Hfx, t, T, t*, risk_weight) are applied per row. Hierarchical aggregation flows from leaf rows through subtotals to grand totals, mirroring the exact COREP template structure.</p>
+        <div class="ad-tags"><span class="ad-tag">SymPy</span><span class="ad-tag">Row-level parameters</span><span class="ad-tag">Hierarchical aggregation</span><span class="ad-tag">Template indexing</span></div>
+      </div>
+      <div class="ad-card r4">
+        <div class="ad-num">04</div>
+        <div class="ad-title">Output &amp; Audit Generation</div>
+        <p class="ad-body">Two Excel workbooks produced: .xlsx and macro-enabled .xlsm. Colour coding distinguishes input cells (yellow) from calculated cells (blue). Every calculated cell carries a comment with formula ID, expression, step-by-step walkthrough, inputs, result, and ISO timestamp. A JSON audit log captures the complete calculation trail for automated reconciliation.</p>
+        <div class="ad-tags"><span class="ad-tag">Excel output</span><span class="ad-tag">VBA drill-down</span><span class="ad-tag">JSON audit log</span><span class="ad-tag">ISO timestamps</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="h-rule"></div>
+
+<!-- ═══════════════════════════════════════════════
+     05 · BENEFITS
+═══════════════════════════════════════════════ -->
+<section id="benefits" style="background:var(--white)">
+  <div class="page">
+    <div class="r">
+      <div class="section-num">05</div>
+      <div class="s-over">Key Benefits</div>
+      <div class="s-h2">Measurable Impact<br><strong>Across the Organisation</strong></div>
+      <div class="s-rule"></div>
+      <p class="s-lead">PRISM delivers quantifiable improvements for compliance, technology, and audit functions simultaneously.</p>
+    </div>
+    <div class="benefits-grid r">
+      <div class="ben-card r1">
+        <div class="ben-num">100<em>%</em></div>
+        <div class="ben-title">Full Audit Traceability</div>
+        <p class="ben-body">Every output cell carries its formula, inputs, and derivation path. Nothing is untraced. Regulators and internal audit can verify any value independently.</p>
+      </div>
+      <div class="ben-card r2">
+        <div class="ben-num">0<em> manual steps</em></div>
+        <div class="ben-title">Zero Transcription Risk</div>
+        <p class="ben-body">Formula extraction and execution are fully automated. The error class introduced by manual formula reading is eliminated by design, not discipline.</p>
+      </div>
+      <div class="ben-card r3">
+        <div class="ben-num">~80<em>% faster</em></div>
+        <div class="ben-title">Accelerated Change Cycles</div>
+        <p class="ben-body">When Basel rules update, re-run the pipeline on the new PDF. Changed formulas are flagged automatically. No manual re-analysis required.</p>
+      </div>
+      <div class="ben-card r4">
+        <div class="ben-num">SQL<em> access</em></div>
+        <div class="ben-title">Structured Knowledge Base</div>
+        <p class="ben-body">All formulas, variables, legal references, and cross-references persisted to SQLite. Queryable by template code, rule type, or article — a permanent regulatory knowledge asset.</p>
+      </div>
+      <div class="ben-card r5">
+        <div class="ben-num">ms<em> search</em></div>
+        <div class="ben-title">Semantic Search</div>
+        <p class="ben-body">FAISS vector index over the entire 322-page document enables natural language retrieval of any regulatory rule in milliseconds — searchable by any team member.</p>
+      </div>
+      <div class="ben-card" style="background:var(--blue-pale);border-color:var(--blue-soft)">
+        <div class="ben-num" style="color:var(--blue-deep)">∞</div>
+        <div class="ben-title">Reproducibility</div>
+        <p class="ben-body">Bit-identical results on every re-run. Point-in-time reconstruction for regulatory examinations. The same inputs always produce the same outputs — verifiably.</p>
+      </div>
+    </div>
+    <div class="benefits-quote r">
+      <p>"The shift from manual compliance to intelligent automation is not incremental — it is categorical. Institutions that make this transition will have a structural advantage in examination readiness and change velocity."</p>
+      <cite>— Executive perspective on AI-powered regulatory compliance</cite>
+    </div>
+  </div>
+</section>
+
+<div class="h-rule"></div>
+
+<!-- ═══════════════════════════════════════════════
+     06 · USE CASE
+═══════════════════════════════════════════════ -->
+<section id="usecase" style="background:var(--off)">
+  <div class="page">
+    <div class="r">
+      <div class="section-num">06</div>
+      <div class="s-over">Use Case</div>
+      <div class="s-h2">COREP C07 Template<br><strong>Population in Practice</strong></div>
+      <div class="s-rule"></div>
+      <p class="s-lead">A concrete walkthrough of how PRISM processes the standardised approach credit risk template end-to-end.</p>
+    </div>
+    <div class="uc-layout r">
+      <div class="uc-main">
+        <div class="uc-scenario">
+          <div class="uc-scenario-tag">Scenario · Basel 3.1 SA Credit Risk</div>
+          <div class="uc-scenario-title">Automated population of COREP C 07.00 with full traceability</div>
+          <p class="uc-scenario-body">A compliance team receives updated Annex II instructions. Previously, a specialist would spend days interpreting the changes and re-entering formulas. With PRISM, the pipeline runs in minutes.</p>
+          <div class="uc-steps">
+            <div class="uc-step"><div class="uc-step-n">1</div>Updated PDF ingested — 322 pages extracted and normalised in under 60 seconds</div>
+            <div class="uc-step"><div class="uc-step-n">2</div>12 core formulas identified and enriched — CRSA-F1 through CRSA-F12 extracted with confidence scores</div>
+            <div class="uc-step"><div class="uc-step-n">3</div>Row-level parameters loaded — He, Hc, Hfx, t, T, t*, risk_weight applied per asset class row</div>
+            <div class="uc-step"><div class="uc-step-n">4</div>Template indexed — all row codes and column codes mapped to exact Excel cell positions</div>
+            <div class="uc-step"><div class="uc-step-n">5</div>All formulas executed via SymPy — hierarchical aggregation from leaf rows to totals</div>
+            <div class="uc-step"><div class="uc-step-n">6</div>Workbook delivered — colour-coded .xlsx and .xlsm with embedded comments and audit JSON</div>
+          </div>
+        </div>
+        <div class="uc-scenario" style="background:var(--blue-pale);border-color:var(--blue-soft)">
+          <div class="uc-scenario-tag" style="color:var(--blue-mid)">Key Formulas Executed</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:8px">
+            <div style="background:var(--white);padding:12px 14px;border-radius:4px;border:1px solid var(--blue-soft)">
+              <div style="font-size:10.5px;font-weight:600;color:var(--accent);margin-bottom:4px;letter-spacing:0.08em">CRSA-F1</div>
+              <div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--ink)">0040 = 0010 + 0030 + 0035</div>
+              <div style="font-size:11.5px;color:var(--ink3);margin-top:4px">Net exposure sum</div>
+            </div>
+            <div style="background:var(--white);padding:12px 14px;border-radius:4px;border:1px solid var(--blue-soft)">
+              <div style="font-size:10.5px;font-weight:600;color:var(--accent);margin-bottom:4px;letter-spacing:0.08em">CRSA-F4</div>
+              <div style="font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--ink)">C × (1−Hc−Hfx) × (t−t*)/(T−t*)</div>
+              <div style="font-size:11.5px;color:var(--ink3);margin-top:4px">Collateral comprehensive method</div>
+            </div>
+            <div style="background:var(--white);padding:12px 14px;border-radius:4px;border:1px solid var(--blue-soft)">
+              <div style="font-size:10.5px;font-weight:600;color:var(--accent);margin-bottom:4px;letter-spacing:0.08em">CRSA-F9</div>
+              <div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--ink)">0220 = Exposure × Risk Weight</div>
+              <div style="font-size:11.5px;color:var(--ink3);margin-top:4px">Risk-weighted assets</div>
+            </div>
+            <div style="background:var(--white);padding:12px 14px;border-radius:4px;border:1px solid var(--blue-soft)">
+              <div style="font-size:10.5px;font-weight:600;color:var(--accent);margin-bottom:4px;letter-spacing:0.08em">CRSA-F10–12</div>
+              <div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--ink)">TOTAL = Σ (leaf rows)</div>
+              <div style="font-size:11.5px;color:var(--ink3);margin-top:4px">Hierarchical aggregation</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="uc-aside">
+        <div class="uc-metric">
+          <div class="uc-metric-n">&lt;60s</div>
+          <div class="uc-metric-l"><strong>Full pipeline runtime</strong>From PDF input to populated workbook</div>
+        </div>
+        <div class="uc-metric">
+          <div class="uc-metric-n">12</div>
+          <div class="uc-metric-l"><strong>Formulas executed</strong>CRSA-F1 through F12, all C07 rows</div>
+        </div>
+        <div class="uc-metric">
+          <div class="uc-metric-n">2</div>
+          <div class="uc-metric-l"><strong>Output workbooks</strong>.xlsx for submission · .xlsm for audit drill-down</div>
+        </div>
+        <div class="uc-metric">
+          <div class="uc-metric-n">1</div>
+          <div class="uc-metric-l"><strong>Command to re-run</strong>Full pipeline on updated PDF — zero manual effort</div>
+        </div>
+        <div style="background:var(--white);border:1px solid var(--rule);border-radius:6px;padding:22px 24px">
+          <div class="label" style="margin-bottom:10px">Audit trail per cell includes</div>
+          <div style="display:flex;flex-direction:column;gap:7px">
+            <div style="font-size:12.5px;color:var(--ink2);display:flex;align-items:flex-start;gap:8px"><span style="color:var(--accent);font-weight:600;min-width:10px">·</span>Formula ID and description</div>
+            <div style="font-size:12.5px;color:var(--ink2);display:flex;align-items:flex-start;gap:8px"><span style="color:var(--accent);font-weight:600;min-width:10px">·</span>Mathematical expression</div>
+            <div style="font-size:12.5px;color:var(--ink2);display:flex;align-items:flex-start;gap:8px"><span style="color:var(--accent);font-weight:600;min-width:10px">·</span>All input values consumed</div>
+            <div style="font-size:12.5px;color:var(--ink2);display:flex;align-items:flex-start;gap:8px"><span style="color:var(--accent);font-weight:600;min-width:10px">·</span>Step-by-step derivation</div>
+            <div style="font-size:12.5px;color:var(--ink2);display:flex;align-items:flex-start;gap:8px"><span style="color:var(--accent);font-weight:600;min-width:10px">·</span>ISO 8601 timestamp</div>
+            <div style="font-size:12.5px;color:var(--ink2);display:flex;align-items:flex-start;gap:8px"><span style="color:var(--accent);font-weight:600;min-width:10px">·</span>Regulatory article reference</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="h-rule"></div>
+
+<!-- ═══════════════════════════════════════════════
+     07 · CONCLUSION
+═══════════════════════════════════════════════ -->
+<section id="conclusion">
+  <div class="page">
+    <div class="r">
+      <div class="s-over">Conclusion</div>
+      <div class="s-h2">The Intelligent Compliance<br><strong>Advantage</strong></div>
+      <div class="s-rule" style="background:rgba(200,180,150,0.5)"></div>
+      <p class="s-lead">PRISM is not an incremental improvement to existing workflows. It is a structural shift — from manual interpretation to automated intelligence, from partial traceability to complete auditability.</p>
+    </div>
+    <div class="conc-grid r">
+      <div class="conc-l">
+        <div class="label" style="color:rgba(255,255,255,0.3);margin-bottom:16px">Summary of Value</div>
+        <div class="conc-points">
+          <div class="conc-point">
+            <div class="conc-point-dot"></div>
+            <p><strong>Eliminates the manual transcription risk</strong> that is the primary source of formula errors in regulatory reporting today.</p>
+          </div>
+          <div class="conc-point">
+            <div class="conc-point-dot"></div>
+            <p><strong>Delivers full audit traceability</strong> on every output cell — the standard regulators and internal audit increasingly expect.</p>
+          </div>
+          <div class="conc-point">
+            <div class="conc-point-dot"></div>
+            <p><strong>Compresses regulatory change cycles</strong> from weeks to minutes by re-running the automated pipeline on updated source documents.</p>
+          </div>
+          <div class="conc-point">
+            <div class="conc-point-dot"></div>
+            <p><strong>Creates a permanent regulatory knowledge asset</strong> — every formula, rule, and reference stored in a queryable, version-controlled database.</p>
+          </div>
+          <div class="conc-point">
+            <div class="conc-point-dot"></div>
+            <p><strong>Frees compliance specialists</strong> to focus on oversight, governance, and strategic interpretation rather than manual data entry.</p>
+          </div>
+        </div>
+      </div>
+      <div class="conc-r">
+        <div class="conc-cta">
+          <div class="conc-cta-over">Next Step</div>
+          <div class="conc-cta-h">See PRISM in action</div>
+          <p class="conc-cta-body">A 30-minute demonstration of the full pipeline — from raw PDF to a populated, traceable COREP workbook — tailored to your specific template requirements.</p>
+          <div class="conc-cta-rule"></div>
+          <div class="conc-cta-contact">Info@digitalrisklabs.com </div>
+          <div class="conc-cta-sub">https://digitalrisklabs.com/</div>
+        </div>
+        <div class="conc-logos">
+          <div class="conc-logo-row">
+            <div class="conc-logo-icon">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 11V5l4-3 4 3v6" stroke="rgba(255,255,255,0.35)" stroke-width="1"/><rect x="5" y="7" width="4" height="4" stroke="rgba(255,255,255,0.35)" stroke-width="1"/></svg>
+            </div>
+            <div class="conc-logo-text"><strong>Regulatory Compliance Teams</strong> — Automated template population</div>
+          </div>
+          <div class="conc-logo-row">
+            <div class="conc-logo-icon">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="2" y="2" width="4" height="4" rx="0.5" stroke="rgba(255,255,255,0.35)" stroke-width="1"/><rect x="8" y="2" width="4" height="4" rx="0.5" stroke="rgba(255,255,255,0.35)" stroke-width="1"/><rect x="2" y="8" width="4" height="4" rx="0.5" stroke="rgba(255,255,255,0.35)" stroke-width="1"/><rect x="8" y="8" width="4" height="4" rx="0.5" stroke="rgba(255,255,255,0.35)" stroke-width="1"/></svg>
+            </div>
+            <div class="conc-logo-text"><strong>Risk Technology Groups</strong> — API and SQL integration</div>
+          </div>
+          <div class="conc-logo-row">
+            <div class="conc-logo-icon">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5" stroke="rgba(255,255,255,0.35)" stroke-width="1"/><path d="M7 4.5v3.5l2 1.5" stroke="rgba(255,255,255,0.35)" stroke-width="1" stroke-linecap="round"/></svg>
+            </div>
+            <div class="conc-logo-text"><strong>Internal Audit Functions</strong> — Machine-readable audit trail</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ────────────────────────────────────── -->
+<footer>
+  <div class="foot-brand">PRISM<span> Basel Intelligence</span></div>
+  <div class="foot-txt">Confidential · 2024 · All rights reserved</div>
+</footer>
+
+<script>
+function go(id){document.getElementById(id).scrollIntoView({behavior:'smooth'})}
+
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('v')})
+},{threshold:0.1});
+document.querySelectorAll('.r').forEach(el=>obs.observe(el));
+
+const navObs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      const id=e.target.id;
+      document.querySelectorAll('.nav-item').forEach(n=>{
+        n.classList.toggle('on',n.getAttribute('onclick')?.includes(`'${id}'`));
+      });
+    }
+  });
+},{threshold:0.45});
+['intro','problem','solution','approach','benefits','usecase','conclusion'].forEach(id=>{
+  const el=document.getElementById(id);if(el)navObs.observe(el);
+});
+</script>
+</body>
+</html>

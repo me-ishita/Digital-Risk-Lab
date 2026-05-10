@@ -23,7 +23,7 @@ const cards: CardType[] = [
         title: 'Innovation',
         route: '/innovation',
         icon: Sparkles,
-        gradient: 'from-[#0f0d0c] to-[#181513]',
+        gradient: 'from-zinc-100 to-zinc-200',
         imageFront:
             'https://images.unsplash.com/photo-1674027444485-cec3da58eef4?w=600',
         imageBack:
@@ -43,7 +43,7 @@ const cards: CardType[] = [
         title: 'Incubation',
         route: '/incubation',
         icon: Rocket,
-        gradient: 'from-[#0f0d0c] to-[#181513]',
+        gradient: 'from-zinc-100 to-zinc-200',
         imageFront:
             'https://images.unsplash.com/photo-1599658880436-c61792e70672?w=600',
         imageBack:
@@ -63,7 +63,7 @@ const cards: CardType[] = [
         title: 'Acceleration',
         route: '/acceleration',
         icon: TrendingUp,
-        gradient: 'from-[#0f0d0c] to-[#181513]',
+        gradient: 'from-zinc-100 to-zinc-200',
         imageFront:
             'https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=1200',
         imageBack:
@@ -139,8 +139,8 @@ function FlippingCard({ card, index, isFlipped }: FlippingCardProps) {
                         <div className="p-6 space-y-4">
 
                             <div className="flex items-center gap-3">
-                                <div className={`w-10 h-10 rounded-xl bg-linear-to-br ${card.gradient} p-2`}>
-                                    <card.icon className="text-white w-full h-full" />
+                                <div className={`w-10 h-10 rounded-xl bg-linear-to-br ${card.gradient} p-2 border border-zinc-200 shadow-sm`}>
+                                    <card.icon className="text-primary w-full h-full" />
                                 </div>
 
                                 <h3 className="text-3xl font-bold">
@@ -162,7 +162,7 @@ function FlippingCard({ card, index, isFlipped }: FlippingCardProps) {
 
                 {/* BACK */}
                 <div className="absolute inset-0 backface-hidden rotate-y-180">
-                    <div className={`h-full rounded-2xl overflow-hidden text-[#d4af37] bg-linear-to-br ${card.gradient}`}>
+                    <div className={`h-full rounded-2xl overflow-hidden text-primary bg-linear-to-br ${card.gradient} border border-zinc-200`}>
 
                         <div className="h-65 overflow-hidden">
                             <img src={card.imageBack} className="w-full h-full object-cover group-hover:scale-105 transition" />

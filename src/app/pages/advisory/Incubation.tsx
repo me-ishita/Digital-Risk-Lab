@@ -115,7 +115,7 @@ export function Incubation() {
             transition={{ duration: 0.8 }}
             className="text-center mb-12"
           >
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 text-amber-50">
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white">
               Building the Next Generation of Ventures
             </h1>
             <p className="text-xl text-white max-w-3xl mx-auto">
