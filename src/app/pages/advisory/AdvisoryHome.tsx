@@ -462,14 +462,6 @@ export default function AdvisoryHome() {
                     <p className="text-muted-foreground text-lg leading-relaxed mb-8 grow">
                       {item.description}
                     </p>
-
-                    <motion.div
-                      whileHover={{ x: 5 }}
-                      className="inline-flex items-center text-sm font-bold text-primary cursor-pointer uppercase tracking-widest"
-                    >
-                      Learn more
-                      <ArrowRight className="ml-2 w-4 h-4" />
-                    </motion.div>
                   </div>
                 </div>
               </motion.div>
