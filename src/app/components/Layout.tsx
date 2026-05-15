@@ -205,6 +205,13 @@ export function Layout() {
                 </Link>
                 
                 <Link
+                  to="/about"
+                  className="block py-2 text-base text-foreground/80 hover:bg-muted hover:text-foreground"
+                >
+                  About Us
+                </Link>
+
+                <Link
                   to="/news"
                   className="block py-2 text-base text-foreground/80 hover:bg-muted hover:text-foreground"
                 >
@@ -330,6 +337,12 @@ function Footer() {
             <ul className="space-y-2 text-sm">
               
               <li>
+                <Link to="/about" className="text-muted-foreground hover:text-foreground transition-colors">
+                About Us
+                </Link>
+              </li>
+
+              <li>
                 <Link to="/news" className="text-muted-foreground hover:text-foreground transition-colors">News</Link>
               </li>
               <li>
@@ -337,11 +350,7 @@ function Footer() {
                   Research
                 </Link>
               </li>
-              <li>
-                <Link to="/contact" className="text-muted-foreground hover:text-foreground transition-colors">
-                Contact Us
-                </Link>
-              </li>
+              
             </ul>
           </div>
         </div>
