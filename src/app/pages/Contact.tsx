@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from "motion/react";
-import { Mail, MapPin, Phone, Send, CheckCircle2, Loader2 } from "lucide-react";
+import { Mail, MapPin, Phone, Send, CheckCircle2, Loader2, AlertCircle } from "lucide-react";
 import { useState } from "react";
 
 type Status = "idle" | "submitting" | "success" | "error";
@@ -14,19 +14,54 @@ export function Contact() {
   });
   const [status, setStatus] = useState<Status>("idle");
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+ const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+
+  try {
+
     setStatus("submitting");
-    await new Promise((r) => setTimeout(r, 900));
-    setStatus("success");
-    setFormData({
-      name: "",
-      email: "",
-      organization: "",
-      interest: "advisory",
-      message: "",
-    });
-  };
+
+    const response = await fetch(
+      "https://script.google.com/macros/s/AKfycbwj2m4n8NWjCjsRcqoRl8OyQ4IktuoOnxI6t7S7-c1Gy_-8FLxsTvHXYl9AyL1-0Tyn/exec",
+      {
+        method: "POST",
+        body: JSON.stringify(formData),
+        headers: {
+          "Content-Type": "text/plain;charset=utf-8",
+        },
+      }
+    );
+
+    const text = await response.text();
+
+    console.log(text);
+
+    const data = JSON.parse(text);
+
+    if (data.success) {
+
+      setStatus("success");
+
+      setFormData({
+        name: "",
+        email: "",
+        organization: "",
+        interest: "advisory",
+        message: "",
+      });
+
+    } else {
+
+      console.log(data.error);
+      setStatus("error");
+    }
+
+  } catch (err) {
+
+    console.error(err);
+    setStatus("error");
+  }
+};
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -166,12 +201,26 @@ export function Contact() {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0 }}
                         role="status"
-                        className="flex items-start gap-3 bg-green-500/10 border border-green-500/30 text-green-300 text-sm rounded-lg p-4"
-                      >
+                        className="flex items-start gap-3 bg-blue-500/12 border border-blue-500/30 text-blue-700 dark:text-blue-300 text-sm rounded-lg p-4"                      >
                         <CheckCircle2 className="w-5 h-5 shrink-0 mt-0.5" />
                         <span>Thanks — we've received your message and will reply within 24 hours on business days.</span>
                       </motion.div>
                     )}
+
+                    {status === "error" && (
+                      <motion.div
+                        initial={{ opacity: 0, y: -8 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        className="flex items-start gap-3 bg-red-500/10 border border-red-500/30 text-red-600 dark:text-red-300 text-sm rounded-lg p-4"
+                      >
+                        <AlertCircle className="w-5 h-5 shrink-0 mt-0.5" />
+
+                        <span>
+                          Something went wrong. Please try again.
+                        </span>
+                      </motion.div>
+                    )}
+
                   </AnimatePresence>
                 </form>
               </div>

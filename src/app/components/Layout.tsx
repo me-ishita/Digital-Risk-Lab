@@ -88,6 +88,9 @@ export function Layout() {
                 </div>
               </div>
 
+                <Link to="/about" className="px-4 py-2 rounded-full border border-border text-foreground hover:border-primary/60 hover:text-primary transition-all duration-200 bg-card/40 backdrop-blur-sm">
+                About Us
+              </Link>
 
               <Link
                 to="/news"

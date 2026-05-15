@@ -4,6 +4,7 @@ import { Layout } from "./components/Layout";
 import AdvisoryHome from "@/app/pages/advisory/AdvisoryHome";
 import { Services } from "./pages/advisory/Services";
 import { CaseStudies } from "./pages/advisory/CaseStudies";
+import { About } from "./pages/About";
 import { Contact } from "./pages/Contact";
 import { NotFound } from "./pages/NotFound";
 import { News } from "./pages/News";
@@ -23,6 +24,7 @@ export const router = createBrowserRouter([
       { path: "advisory/services", element: <Services /> },
       { path: "advisory/case-studies", element: <CaseStudies /> },
       { path: "innovation", element: <Innovation /> },
+      { path: "about", element: <About/>},
       { path: "contact", element: <Contact /> },
       { path: "news", element: <News /> },
       { path: "news/:id", element: <NewsArticleDetail /> },

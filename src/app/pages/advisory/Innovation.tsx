@@ -404,7 +404,7 @@ export function Innovation() {
 
                 {/* TITLE */}
                 <h3 className="text-2xl font-bold text-[#292b57] mb-3 leading-snug">
-                  Core Banking Platform – AKOIN
+                  Wearable Money – AKOIN
                 </h3>
 
                 {/* DESCRIPTION */}
