@@ -22,7 +22,7 @@ export function Contact() {
     setStatus("submitting");
 
     const response = await fetch(
-      "https://script.google.com/macros/s/AKfycbwj2m4n8NWjCjsRcqoRl8OyQ4IktuoOnxI6t7S7-c1Gy_-8FLxsTvHXYl9AyL1-0Tyn/exec",
+      "https://script.google.com/macros/s/AKfycbxFnvVlx-XsK2D00tSQYA8IWZIwSbdJdbll6UvoouVSn_Y1e--M1DYTQAxbw2qLGEOQCg/exec",
       {
         method: "POST",
         body: JSON.stringify(formData),

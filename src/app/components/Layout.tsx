@@ -278,8 +278,8 @@ function Footer() {
             </h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link to="/advisory" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Lab Home
+                <Link to="/" className="text-muted-foreground hover:text-foreground transition-colors">
+                   Home
                 </Link>
               </li>
               <li>
